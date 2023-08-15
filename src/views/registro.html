@@ -1,15 +1,55 @@
-<form action="" method="">
-    <div>
-        <label>Nombre Completo:</label>
-        <input type="text" name="nombreUsuario">
-    </div>
-    <div>
-        <label>Contraseña:</label>
-        <input type="password" name="passwordUsuario">
-    </div>
-    <div>
-        <label>Email:</label>
-        <input type="email" name="emailUsuario">
-    </div>
-    <button type="submit">Enviar</button>
-</form>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+     <link rel="stylesheet" href="/css/styles.css" />
+
+
+     <title>Sign In</title>
+ </head>
+
+<body>
+    <header>
+
+        <form action="" method="">
+            <div>
+                <label for="nombreUsuario">Nombre:</label>
+                <input type="text" name="nombreUsuario" id="nombreUsuario">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <label for="apellidoUsuario">Apellido:</label>
+                <input type="text" name="apellidoUsuario" id="apellidoUsuario">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <label for="passwordUsuario">Contraseña:</label>
+                <input type="password" name="passwordUsuario" id="passwordUsuario">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <label for="emailUsuario">Email:</label>
+                <input type="email" name="emailUsuario" id="emailUsuario">
+                <span class="feedback"></span>
+            </div>
+            <div>
+                <label for="imagenDePerfil">Foto:</label>
+                <input type="file" name="imagenDePerfil" accept=".jpg, .png">
+                <span class="feedback"></span>
+            </div>
+            <button class="sb" type="submit">Enviar</button>
+        </form>
+    </header>
+
+</body>
