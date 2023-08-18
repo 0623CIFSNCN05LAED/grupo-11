@@ -25,6 +25,15 @@ header{
     display: none;
 }
 
+.navbar a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
+}
+
+.navbar-item{
+    margin: 0 10px;
+}
+
 .hamburguer-menu{
     color: white;
     background-color: rgb(58, 58, 58);
@@ -125,6 +134,10 @@ header{
 
     .hamburguer-menu{
         display: none;
+    }
+
+    .navbar{
+        display: block;
     }
 
     .product-article{
