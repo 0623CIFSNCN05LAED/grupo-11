@@ -7,8 +7,9 @@
 }
 
 body{
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     background-color: rgb(236, 236, 236);
+    font-family: 'Kanit', sans-serif;
 }
 
 /*--------------------------------- HEADER ---------------------------------*/
@@ -46,12 +47,20 @@ header{
     object-position: top;
 }
 
-.filter-bottom{
+.filter-button{
     border: 2px solid rgb(58, 58, 58);
     text-align: center;
     padding: 10px;
     font-weight: 600;
     color: rgb(58, 58, 58);
+}
+
+.product-article{
+    border: 1px solid black;
+}
+
+.product-image{
+    width: 100%;
 }
 
 .sb{
