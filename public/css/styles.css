@@ -123,7 +123,9 @@ header{
         font-size: 1.2rem;
     }
 
-
+    .hamburguer-menu{
+        display: none;
+    }
 
     .product-article{
         width: 49%;
