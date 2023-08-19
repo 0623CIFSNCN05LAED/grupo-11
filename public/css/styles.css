@@ -7,7 +7,7 @@
 }
 
 body{
-    background-color: rgb(236, 236, 236);
+    background-color: rgb(245, 245, 245);
     font-family: 'Kanit', sans-serif;
     color: rgb(58, 58, 58);
 }
@@ -71,9 +71,6 @@ header{
     margin-top: 20px;
 }
 
-.product-link{
-}
-
 .product-article:hover{
     .product-price, .product-discount{
         opacity: 1;
@@ -110,6 +107,7 @@ header{
 .product-name{
     text-align: center;
     padding: 10px;
+    font-size: 1rem;
 }
 
 .sb{
@@ -126,20 +124,45 @@ header{
 
 footer{
     background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+footer a{
+    text-decoration: none;
+    color: rgb(58, 58, 58);
 }
 
 .footer-section{
-    
+    width: 100%;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.footer-logo{
+    width: 100%;
+}
+
+.social-network-icon{
+    margin: 0px 10px;
+}
+
+.footer-input{
+    width: 70%;
+    padding: 10px;
+    margin: 5px;
+    border: solid 1px rgb(58, 58, 58);
+    border-radius: 10px;
 }
 
 /*--------------------------------- MEDIA QUERIES ---------------------------------*/
 
 /* TABLET */
 @media (min-width: 768px){
-    .products-section{
-        font-size: 1.2rem;
-    }
-
+    /* HEADER */
     .hamburguer-menu{
         display: none;
     }
@@ -148,17 +171,47 @@ footer{
         display: block;
     }
 
+    /* MAIN */
+    .products-section{
+        font-size: 1.2rem;
+    }
+
     .product-article{
         width: 49%;
+    }
+
+    /* FOOTER */
+    .social-network-icon{
+        font-size: 1.5rem;
+        margin: 20px 15px 0 15px;
     }
 }
 
 /* DESKTOP */
 @media (min-width: 1200px){
+    /* MAIN */
     .products-section{
         font-size: 1.2rem;
     }
+
     .product-article{
         width: 24%;
+    }
+
+    /* FOOTER */
+    footer{
+        font-size: 1.2rem;
+    }
+
+    .footer-section{
+        width: 50%;
+    }
+
+    .footer-input{
+        width: 80%;
+    }
+
+    .footer-name-input, .footer-email-input{
+        width: 39%;
     }
 }
