@@ -156,6 +156,20 @@ footer a{
     margin: 5px;
     border: solid 1px rgb(58, 58, 58);
     border-radius: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+.footer-submit-button{
+    width: 30%;
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+    border: solid 1px rgb(58, 58, 58);
+    border-radius: 10px;
+    transition: all 0.5s;
+}
+
+.footer-submit-button:hover{
+    background-color: rgb(220, 220, 220);
 }
 
 /*--------------------------------- MEDIA QUERIES ---------------------------------*/
