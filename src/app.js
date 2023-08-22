@@ -7,7 +7,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, '../public')))
 
 // INICIAR SERVIDOR
-const port=3003
+const port=3011
 app.listen(port,()=> {
     console.log(`Se prendio en el puerto ${port}`)
 });
