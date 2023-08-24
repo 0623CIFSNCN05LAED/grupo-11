@@ -1,7 +1,7 @@
 {
   "name": "grupo-11",
   "version": "1.0.0",
-  "description": "",
+  "description": "*2) Definir la tematica del Market Place*",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
