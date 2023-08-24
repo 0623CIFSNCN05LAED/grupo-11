@@ -119,6 +119,19 @@ header{
     color:blue;
     text-decoration: underline;
 }
+.margin{
+    margin-bottom: 6px;
+    margin-top:6px;
+}
+.center{
+    display:flex;
+    justify-content: center;
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 /* CREATE ACCOUNT FORM - LOGIN FORM */
 
