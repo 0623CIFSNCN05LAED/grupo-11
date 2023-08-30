@@ -18,7 +18,7 @@ Buyer-Persona: Nombre, edad, trabajo, estatus social?, sueldo, gustos, etc.
 Descripcion de los integrantes:
 - Nicolas, 23 años, vivo en Capital Federal, buenos aires. Trabajo en una asesora financiera, y soy Licenciado en Economia Empresarial en la UTDT.
 - Luciano, 26 años ,soy de mendoza ,pero vivo en cancun. Soy técnico en administración de empresas
-- Leandro Heffes, tengo 20 años y vivo en Colonia San Miguel Arcángel, un pueblo de Buenos Aires. Trabajo de asistente virtual de manera remota.
+- Leandro Heffes, tengo 20 años y vivo en Buenos Aires. Soy asistente virtual.
 - Trinidad, 26 años, vivo en Cordoba. Soy Licenciada en Kinesiologia y Fisioterapia
 - Lautaro, 26 años, soy de Rio Negro, soy Tec. En Recursos Humanos y Marketing Digital.
 - Camila, 29 años, vivo en Rosario, soy Contadora y Data Analyst
