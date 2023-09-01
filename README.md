@@ -1,8 +1,4 @@
-# grupo-11
-# grupo-11
-
-*2) Definir la tematica del Market Place*
-
+# GRUPO 11
 
 Producto: venta de ropa, oversize, unisex.
 Audiencia: hombres y mujeres 18-35
@@ -22,11 +18,3 @@ Descripcion de los integrantes:
 - Trinidad, 26 años, vivo en Cordoba. Soy Licenciada en Kinesiologia y Fisioterapia
 - Lautaro, 26 años, soy de Rio Negro, soy Tec. En Recursos Humanos y Marketing Digital.
 - Camila, 29 años, vivo en Rosario, soy Contadora y Data Analyst
-
-*3) Buscar Inspiracion en referentes del mercado*
-Sitios de referencia:
-Undefined
-Bullbeny
-luxo
-famed
-Herencia
