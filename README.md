@@ -18,3 +18,6 @@ Descripcion de los integrantes:
 - Trinidad, 26 años, vivo en Cordoba. Soy Licenciada en Kinesiologia y Fisioterapia
 - Lautaro, 26 años, soy de Rio Negro, soy Tec. En Recursos Humanos y Marketing Digital.
 - Camila, 29 años, vivo en Rosario, soy Contadora y Data Analyst
+
+## TRELLO
+### https://trello.com/b/SQsRvjXW/proyecto-integrador
