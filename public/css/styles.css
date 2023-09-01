@@ -206,6 +206,7 @@ footer a {
     border: solid 1px rgb(58, 58, 58);
     border-radius: 10px;
     transition: all 0.5s;
+    color: rgb(58, 58, 58);
 }
 
 .footer-submit-button:hover {
@@ -372,7 +373,6 @@ margin-bottom: 30px;
     border-radius: 25px;
  }
 
-<<<<<<< HEAD
 label {
     margin-bottom: 5px;
     font-weight: bold;
@@ -401,10 +401,3 @@ button:hover {
 
 
 
-=======
- .LG {
-    font-size: 50px;
-    line-height: 1.2;
-    margin-top: 60px;
- }
->>>>>>> d6c3d3cf85e30301fe602d8fa4889250ee9f83fe
