@@ -130,14 +130,54 @@ header{
     text-align: left;
     padding: 10px;
     font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 .form-select {
     padding-right: 30px;
+    cursor: pointer;  
 }
 
+.product-discount-detail{
+    text-align: right;
+    bottom: 0;
+    padding: 0px;
+    transition: all 1s;
+    margin-left: 12px;
+    margin-right: 0px;
+    color: red;
+    font-size: 12px;
+}
 
+.agregar-al-carrito-detail{
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 13px;
+}
 
+.calcular-envio-detail{
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: black;
+    padding-bottom: 7px;
+    font-weight: normal;
+    margin-bottom: 18px;
+    padding: 10px;
+}
+
+.talles-detail{
+    border-color: black;
+    background-color: white;
+    color: black;
+}
 
 
 /* CREATE ACCOUNT FORM - LOGIN FORM */
