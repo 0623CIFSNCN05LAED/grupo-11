@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de producto</title>
-
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
@@ -31,55 +31,29 @@
                 Crear cuenta
             </a>
 
-            <a class="navbar-item" href="/carrito_de_compras"> 
+            <a class="navbar-item" href="/carrito">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
         </nav>
     </header>
-    <!------------------------------------- MAIN ----------------------------------->
-    <main class="detalle_de_producto">
-        <section class="product-article">            
-            <div class="product-image-price-container">
-                <a href="">
-                    <img class="product-image" src="images/buzo.jpg" alt="Buzo">
-                </a>
-            </div>
-            <div>
-                <h1 class="product-name-detail">Hoodie super soft</h1>
-            </div>
-            <ol>
-                <p class="product-price-detail">$4.500</p>
-                <p class="product-discount-detail">25% OFF</p>
-            </ol>
-                          
-                <h4 class="product-style">Talles</h4>
-                <select id="options" class="form-select form-select talles-detail" name="options">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                    </select>
-                
-                <div class="">
-                    <input type="submit" class="agregar-al-carrito-detail" value="AGREGAR AL CARRITO" data-store="product-buy-button" data-component="product.add-to-cart">
-                
-                <div class="product-style">
-                    <span class="calcular-envio-detail">CALCULAR ENVIO</span>
-                </div>                        
-                
+    <!-----------------MAIN-------------->
+    <title>Carrito de Compras</title>
+    <article class="product-article">
+    <div class="product-image-price-container">
+    <img class="product-image" src="/images/campera-jean.jpg" alt="campera-jean">
+    </div>
+    </article>
 
+    <h4 class="margin ">Nombre del producto</h4>
+    <h4 class="margin">Cantidad</h4>
+    <h4 class="margin">Subtotal</h4>
+    <h4 class="margin">Calcular envío</h4>
+    <h4 class="margin">Total</h4>
+    <h4 class="margin center">Iniciar compra</h4>
+    <h4 class="margin center">Ver más productos</h4>
 
-            </div>
-           
-        
+   <!------------------FOOTER------------> 
 
-
-
-
-    </main>
-     <!------------------------------------- FOOTER ----------------------------------->
      <footer>
         <section class="footer-section">
             <h1 class="footer-logo">LOGO</h1>
@@ -98,7 +72,6 @@
                 </a>
             </div>
         </section>
-        
         <section class="footer-section">
             <h3>CONTACTO</h3>
             <form class="footer-form" action="" method="POST">
@@ -115,3 +88,4 @@
     </footer>
 </body>
 </html>
+     
