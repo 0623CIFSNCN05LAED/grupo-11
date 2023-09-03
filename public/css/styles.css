@@ -151,6 +151,31 @@ header {
 .form-select {
     padding-right: 30px;
 }
+.flex{
+    display:flex;
+    
+}
+.flex-position{
+    flex-direction: column;
+}
+.border-s{
+    margin-right:600px;
+    margin-left:600px;
+    margin-bottom: 10px;
+}
+.margin-left{
+    margin-left: 340px;
+    transform: translateY(-400px);
+}
+.up{
+    transform:translateY(-90px) ;
+}
+.recorte{
+    padding-right:550px;
+}
+.recorte-2{
+    padding-right: 680px;
+}
 
 
 
@@ -407,4 +432,4 @@ button:hover {
     line-height: 1.2;
     margin-top: 60px;
  }
->>>>>>> d6c3d3cf85e30301fe602d8fa4889250ee9f83fe
+
