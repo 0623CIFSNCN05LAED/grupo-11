@@ -1,7 +1,7 @@
 module.exports = {
-    home: () => res.render("index"),
-    login: () => res.render("login"),
-    registro: () => res.render("registro"),
-    detalle: () => res.render("detalle_del_producto"),
-    carrito: () => res.render("carrito_de_compras"),
+    home: (req, res) => res.render("index"),
+    login: (req, res) => res.render("login"),
+    registro: (req, res) => res.render("registro"),
+    detalle: (req, res) => res.render("detalle_de_producto"),
+    carrito: (req, res) => res.render("carrito_de_compras")
 }
