@@ -12,6 +12,11 @@ app.listen(port,()=> {
     console.log(`Se prendio en el puerto ${port}`)
 });
 
+// SETS
+
+app.set("view engine", "ejs")
+app.set("views", "./src/views")
+
 // RUTAS
 app.get("/",(req,res)=>{
     res.sendFile(path.join(__dirname, "views/index.html"));
