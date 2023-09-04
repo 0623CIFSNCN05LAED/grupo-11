@@ -122,6 +122,19 @@ header {
     color: blue;
     text-decoration: underline;
 }
+.margin{
+    margin-bottom: 6px;
+    margin-top:6px;
+}
+.center{
+    display:flex;
+    justify-content: center;
+}
+.display{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 
 .product-name-detail{
     text-align: left;
@@ -133,14 +146,79 @@ header {
     text-align: left;
     padding: 10px;
     font-weight: bold;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 14px;
 }
 
 .form-select {
     padding-right: 30px;
+    cursor: pointer;  
+}
+.flex{
+    display:flex;
+    
+}
+.flex-position{
+    flex-direction: column;
+}
+.border-s{
+    margin-right:600px;
+    margin-left:600px;
+    margin-bottom: 10px;
+}
+.margin-left{
+    margin-left: 340px;
+    transform: translateY(-400px);
+}
+.up{
+    transform:translateY(-90px) ;
+}
+.recorte{
+    padding-right:550px;
+}
+.recorte-2{
+    padding-right: 680px;
 }
 
+.product-discount-detail{
+    text-align: right;
+    bottom: 0;
+    padding: 0px;
+    transition: all 1s;
+    margin-left: 12px;
+    margin-right: 0px;
+    color: red;
+    font-size: 12px;
+}
 
+.agregar-al-carrito-detail{
+    background-color: black;
+    text-align: center;
+    color: white;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 13px;
+}
 
+.calcular-envio-detail{
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: black;
+    padding-bottom: 7px;
+    font-weight: normal;
+    margin-bottom: 18px;
+    padding: 10px;
+}
+
+.talles-detail{
+    border-color: black;
+    background-color: white;
+    color: black;
+}
 
 
 /* CREATE ACCOUNT FORM - LOGIN FORM */
@@ -193,6 +271,7 @@ footer a {
     border: solid 1px rgb(58, 58, 58);
     border-radius: 10px;
     transition: all 0.5s;
+    color: rgb(58, 58, 58);
 }
 
 .footer-submit-button:hover {
@@ -359,6 +438,35 @@ margin-bottom: 30px;
     border-radius: 25px;
  }
 
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-items: center;
+}
+
+button:hover {
+    background-color: #555;;
+}
+
+
+
+ HEAD
  .LG {
     font-size: 50px;
     line-height: 1.2;
@@ -366,3 +474,4 @@ margin-bottom: 30px;
  }
 
  
+

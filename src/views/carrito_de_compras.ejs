@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de producto</title>
-
+    <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
@@ -31,50 +31,61 @@
                 Crear cuenta
             </a>
 
-            <a class="navbar-item" href="/carrito_de_compras"> 
+            <a class="navbar-item" href="/carrito">
                 <i class="fa-solid fa-cart-shopping"></i>
             </a>
         </nav>
     </header>
-    <!------------------------------------- MAIN ----------------------------------->
-    <main class="detalle_de_producto">
-        <section class="product-article">            
-            <div class="product-image-price-container">
-                <a href="">
-                    <img class="product-image" src="images/buzo.jpg" alt="Buzo">
-                </a>
-            </div>
-            <div>
-                <h1 class="product-name-detail">Hoodie super soft</h1>
-            </div>
-            <div>
-                <p class="product-price-detail">$4.500</p>
-            <div>
-                <p class="product-discount">25% OFF</p>
+    <!-----------------MAIN-------------->
+    <title>Carrito de Compras</title>
+    <article class="product-article">
+    <div class="product-image-price-container">
+    <img class="product-image" src="/images/campera-jean.jpg" alt="campera-jean">
+    </div>
+    </article>
+    <form action="" method="">
+        <div class="margin-left recorte">
+            <label for="nombreProducto">Nombre del producto:</label>
+            <input type="text" name="nombreProducto" id="nombreProducto">
+            <span class="feedback"></span>
+        </div>
+        <div class="margin-left recorte">
+            <label for="option">Selecciona cantidad:</label>
+            <input type="number" id="cantidad">
+            <select id="option" name="option">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+            </select>
+        </div>
+        <div class="up recorte-2">
+            <label for="Subtotal">Subtotal:</label>
+            <input type="text" name="Subtotal" id="Subtotal">
+            <span class="feedback"></span>
+        </div>
+        <div class="up recorte-2">
+            <label for="CalcularEnvio">Calcular envío:</label>
+            <input for="file" name="CalcularEnvío" id="CalcularEnvío" >
             
-                <h4 class="product-style">Talles</h4>
-                <select id="variation_1" class="form-select" name="variation[0]">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                    </select>
-                    
-                <h3 class="product-style">Agregar al carrito</h3>
-                <h3 class="product-style">Calcular Envio</h3>
+
+            <span class="feedback"></span>
+        </div>
+        <div class="up recorte-2">
+            <label for="Total">Total:</label>
+            <input type="text" name="Total" id="Total">
+            <span class="feedback"></span>
+        </div>
+        <div class="flex flex-position border-s">
+         <button type="submit">Iniciar Compra</button>
+         </div>
+         <div class="flex flex-position border-s">
+         <button type="submit">Ver más productos</button>
+         </div>
 
 
-            </div>
-           
-        
+   <!------------------FOOTER------------> 
 
-
-
-
-    </main>
-     <!------------------------------------- FOOTER ----------------------------------->
      <footer>
         <section class="footer-section">
             <h1 class="footer-logo">LOGO</h1>
@@ -93,7 +104,6 @@
                 </a>
             </div>
         </section>
-        
         <section class="footer-section">
             <h3>CONTACTO</h3>
             <form class="footer-form" action="" method="POST">
@@ -110,3 +120,4 @@
     </footer>
 </body>
 </html>
+     
