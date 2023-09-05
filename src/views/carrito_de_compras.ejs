@@ -10,27 +10,7 @@
 <body>
     <header>
         <!-- LOGO -->
-        <h1>LOGO</h1>
-
-        <!-- HAMBURGUER MENU -->
-        <a href="#" class="hamburguer-menu">
-            <i class="fa-solid fa-bars hamburguer-menu"></i>
-        </a>
-
-        <!-- NAVBAR -->
-        <nav class="navbar">
-            <a class="navbar-item" href="/login">
-                Ingresar
-            </a>
-
-            <a class="navbar-item" href="/registro">
-                Crear cuenta
-            </a>
-
-            <a class="navbar-item" href="/carrito">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-        </nav>
+        <%- include("partials/header")%>
     </header>
     <!-----------------MAIN-------------->
     <title>Carrito de Compras</title>
@@ -46,13 +26,19 @@
             <span class="feedback"></span>
         </div>
         <div class="margin-left recorte">
-            <label for="option">Selecciona cantidad:</label>
-            <input type="number" id="cantidad">
-            <select id="option" name="option">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
+            <h4 for="option">Selecciona cantidad:</h4>
+                <select id="options" class="form-select form-select talles-detail" name="options">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    </select>
             </select>
         </div>
         <div class="up recorte-2">
