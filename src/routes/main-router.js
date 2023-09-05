@@ -18,4 +18,4 @@ router.get("/carrito", mainController.carrito)
 
 // EXPORTACIÓN
 
-module.exports = router
+module.exports = router;
