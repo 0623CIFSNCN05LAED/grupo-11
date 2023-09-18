@@ -31,18 +31,21 @@
             </div>
 
             <!-- PRODUCTS -->
-            <article class="product-article">
-                <div class="product-image-price-container">
-                    <a href="/detalle">
-                        <img class="product-image" src="images/buzo.jpg" alt="Buzo">
-                    </a>
-                    <p class="product-price">$4.500</p>
-                    <p class="product-discount">25% OFF</p>
-                </div>
-                <h2 class="product-name">Hoodie super soft</h2>
-            </article>
+            <% detalles.forEach(product => { %>
 
-            <article class="product-article">
+                <article class="product-article">
+                    <div class="product-image-price-container">
+                        <a href="/detalle/<%= product.id %>">
+                            <img src="/images/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                        </a>
+                        <p class="product-price">$<%= product.price %></p>
+                        <p class="product-discount"><%= product.discount %> OFF</p>
+                    </div>
+                    <h2 class="product-name"><%= product.name %></h2>
+                </article>
+            <% }) %>
+            <!-- Resumido al forEach de arriba -->
+            <!-- <article class="product-article">
                 <div class="product-image-price-container">
                     <a href="">
                         <img class="product-image" src="images/remera-oversize.jpg" alt="Remera oversize">
@@ -73,7 +76,7 @@
                     <p class="product-discount">10% OFF</p>
                 </div>
                 <h2 class="product-name">Jogger</h2>
-            </article>
+            </article> -->
         </section>
     </main>
 
