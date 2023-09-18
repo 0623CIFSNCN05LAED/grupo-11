@@ -23,7 +23,7 @@
             <div>
                 <% detalles.forEach(detalle => { %>
                     
-                    <img <%= detalle.image %> >
+                    <img src="/images/<%= detalle.image %>" alt="<%= detalle.name %>" class="product-image">
                     
                     <h1 class="product-name-detail"><%= detalle.name  %></h1>
 
