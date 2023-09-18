@@ -7,5 +7,7 @@ module.exports = {
     detalle: (req, res) => res.render("detalle_de_producto", {
         detalles: producto,
     }),
-    carrito: (req, res) => res.render("carrito_de_compras")
-}
+    carrito: (req, res) => res.render("carrito_de_compras",{
+     detalle:producto,
+    })
+};
