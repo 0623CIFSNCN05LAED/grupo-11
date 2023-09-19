@@ -4,6 +4,8 @@ const productoServices = {
     getProductId: (id) => {
         return producto.find((product) => product.id == id)
     }
-}
+};
 
-module.exports = productoServices
+
+
+module.exports = productoServices;
