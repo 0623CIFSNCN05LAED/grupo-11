@@ -21,7 +21,7 @@
     </article>
     <form action="" method="">
         <div class="margin-left recorte">
-            <label for="nombreProducto">Nombre del producto></label>
+            <label for="nombreProducto"><%= productos.name %>></label>
             <input type="text" name="nombreProducto" id="nombreProducto">
             <span class="feedback"></span>
         </div>
@@ -61,9 +61,9 @@
         <div class="flex flex-position border-s">
          <button type="submit">Iniciar Compra</button>
          </div>
-         <div class="flex flex-position border-s">
-         <button type="submit">Ver más productos</button>
-         </div>
+         <a class="flex flex-position border-s" href="/">
+           Ver más productos
+         </a>
 
 
    <!------------------FOOTER------------> 

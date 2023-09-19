@@ -17,6 +17,7 @@ router.get("/detalle/:id", mainController.detalleId)
 router.get("detalle/carrito",mainController.detalle)
 
 router.get("/carrito", mainController.carrito)
+router.get("/carrito/",mainController.carrito)
 
 
 
