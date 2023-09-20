@@ -1,4 +1,4 @@
-const productServices=require("../productServices/productServices")
+const productServices = require("../productServices/productServices")
 const producto = require("../data/productos")
 
 const productoServices = {
@@ -9,4 +9,4 @@ const productoServices = {
 
 
 
-module.exports = productServices;
+module.exports = productoServices;
