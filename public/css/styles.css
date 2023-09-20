@@ -226,62 +226,121 @@ header {
 /* -------------------------------- Register ------------------------------ */
 
 
-.rgst-container {
-    
-    display: flex;
-    height:auto;
-    width: auto;
-    /* box-shadow: 0 0 20px rgba(0, 0, 0); */
-    margin: 300px;
-    margin-top: 90px;
-    margin-bottom: 20px;
-}
-.info-rgst {
-    background-color: #c4c4c4;
-    text-align: center;
-    background-size: cover;
-    padding: 158px 30px;
-    width: 60%;
-}
+
+
+
 
 .bg-rgst{
     position:relative;
-    right: 10px;
-    top: 10px;
     overflow: hidden; 
-}
-
-
-.regst-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    width: 100vw;
     height: 100vh;
-    position: relative;
-
 }
+
+
+
 .rgst-image {
     width: 100%;
-    height: auto;
-    object-fit:cover;
+    z-index: 8;
+    opacity: 80% ;
     position:absolute;
-    justify-content: center;
-    opacity: 80%    ;
 
 }
 
-.div-input-rgst {
+.rgst-image-mobile {
+    display: none;
+}
+
+
+.rgst-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    z-index: 100;
+    position: relative;
+    padding: 5rem;
+}
+
+.info-rgst {
+    background-color: #c4c4c4;
+    text-align: center;
+    padding: 158px 50px;
+    width: 30%;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.276);
+}
+
+.box-rgstr-inpt {
+    outline: none;
+    border-color: #424242;
+    border-width: 0px 0px 0px 5px;
+    border-style: solid;
+    padding: 15px 50px;
+    /* margin-bottom: 20px; */
+    background-color: #d2d2d2;
+ }
+
+.input-rgst {
     margin-bottom: 15px;
+    border-radius: 20px;
 }
+
 .form-rgst {
-    padding: 150px 100px;
-    width: 80%;
+    width: 30%;
     text-align: center;
  }
 .labels-rgst{
     color:white;
 }
+
+@media (max-width: 1023px) {
+    .bg-rgst{
+        height: 92vh;
+    }
+    .rgst-image{
+        display: none;
+    }
+    .rgst-image-mobile {
+        width: 100%;
+        z-index: 8;
+        opacity: 80% ;
+        position:absolute;
+        display: flex;
+        height: 100%;
+    
+    }
+    .rgst-container {
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+        align-items: center;
+        padding: 10px   ;
+    }
+    .info-rgst {
+        background-color: #c4c4c4;
+        text-align: center;
+        padding: 50px 20px;
+        width: 80%;
+        font-size: smaller;
+    }
+    
+    .input-rgst {
+        margin-bottom: 1px;
+    }
+    .bt-mg{
+        margin-top: 5px;
+    }
+    .form-rgst {
+        width: 80%;
+        text-align: center;
+     }
+    .labels-rgst{
+        color:white;
+    }
+
+}
+
 
 
 /*--------------------------------- FOOTER ---------------------------------*/
