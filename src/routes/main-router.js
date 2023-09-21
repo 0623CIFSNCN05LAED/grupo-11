@@ -19,6 +19,7 @@ router.get("detalle/carrito",mainController.detalle)
 
 router.get("/carrito", mainController.carrito)
 router.get("/carrito/",mainController.carrito)
+router.get("/create/", mainController.create);//vista formulario
 
 
 

@@ -17,5 +17,11 @@ module.exports = {
 
         res.render("detalle_de_producto", {product})
     },
-    carrito:(req,res)=>res.render("carrito_de_compras")
-}
+    carrito:(req,res)=>{
+        res.render("carrito_de_compras")
+    },
+    create:(req,res)=>{
+        res.render("product-create-form")
+    }};
+
+
