@@ -22,6 +22,9 @@ module.exports = {
     },
     create:(req,res)=>{
         res.render("product-create-form")
+    },
+    products:(req,res)=>{
+        res.render("products")
     }};
 
 

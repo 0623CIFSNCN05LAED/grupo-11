@@ -21,6 +21,7 @@ router.get("/carrito", mainController.carrito)
 router.get("/carrito/",mainController.carrito)
 router.get("/create/", mainController.create);//vista formulario
 
+router.get("/products",mainController.products)
 
 
 // EXPORTACIÓN
