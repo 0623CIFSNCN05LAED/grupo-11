@@ -7,12 +7,37 @@
  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
     <header>
         <!-- LOGO -->
         <%- include("partials/header")%>
     </header>
-    
+    <!-- PRODUCTS -->
+    <section class="products-section">
 
+        <!-- FILTER BUTTON -->
+        <div class="filter-button">
+            <p class="filter-text">FILTROS</p>
+        </div>
+
+        <!-- PRODUCTS -->
+        <% detalles.forEach(product => { %>
+
+            <article class="product-article">
+                <div class="product-image-price-container">
+                    <a href="/detalle/<%= product.id %>">
+                        <img src="/images/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                    </a>
+                    <p class="product-price">$<%= product.price %></p>
+                    <p class="product-discount"><%= product.discount %> OFF</p>
+                </div>
+                <h2 class="product-name"><%= product.name %></h2>
+            </article>
+        <% }) %>
+    </section>
+</main>
+
+    
 
     <footer>
         <%- include("partials/footer") %>

@@ -24,7 +24,7 @@ module.exports = {
         res.render("product-create-form")
     },
     products:(req,res)=>{
-        res.render("products")
+        res.render("products",{detalles:producto})
     }};
 
 
