@@ -12,6 +12,7 @@ const mainRouter = require("./routes/main-router")
 
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(methodOverride("_method"))
+app.use(express.json())
 
 // ************* Start server *************
 

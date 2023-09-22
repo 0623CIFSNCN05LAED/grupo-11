@@ -16,7 +16,7 @@
         <h2 class="title">Formulario de creacion de productos</h2>
     </div>
 
-    <form action="/products" method="post">
+    <form action="/products" method="post" enctype="multipart/form-data">
         <div>
 
             <div class="recorte-2">
@@ -26,24 +26,23 @@
 
             <div class="recorte-2">
                 <label for="price" class="form-input">Precio del producto:</label>
-                <input type="text" id="price" name="price" placeholder="Ej: 150">
+                <input type="number" id="price" name="price" placeholder="Ej: 150">
             </div>
 
             <div class="recorte-2">
                 <label for="discount" class="form-input">Descuento:</label>
-                <input type="text" id="discount" name="discount" placeholder="Ej: 10 off">
+                <input type="number" id="discount" name="discount" placeholder="Ej: 10 off">
             </div>
 
             <div class="recorte-2">
-                <label for="category" class="form-input">Imagen:</label>
-                <input type="file" name="imagenProducto" accept=".jpg .png">
-                <span class="feedback"></span>
+                <label for="image" class="form-input">Imagen:</label>
+                <input type="file" name="image" id="image">
             </div>
 
         </div>
 
         <div>
-            <button type="submit" class="buy-now-button">Guardar producto</button>
+            <button type="submit">Guardar producto</button>
         </div>
     </form>
 

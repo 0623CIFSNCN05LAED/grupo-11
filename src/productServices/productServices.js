@@ -1,10 +1,11 @@
-const productServices = require("../productServices/productServices")
 const producto = require("../data/productos")
 
 const productoServices = {
     getAllProducts:()=>{
-        return products;
+        const productos = producto
+        return productos;
     },
+
     getProductId: (id) => {
         return producto.find((product) => product.id == id)
     }

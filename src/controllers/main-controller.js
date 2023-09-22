@@ -20,12 +20,28 @@ module.exports = {
         res.render("carrito_de_compras")
     },
 
-    create:(req,res)=>{
+    create:(req, res) => {
         res.render("product-create-form")
     },
 
     products:(req,res)=>{
         res.render("products")
+    },
+
+    productCreate: (req, res) => {
+
+    },
+
+    productEditForm: (req, res) => {
+
+    },
+
+    productEdit: (req, res) => {
+
+    },
+
+    productDelete: (req, res) => {
+
     }
 }
 
