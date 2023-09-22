@@ -1,24 +1,29 @@
+// ************* Requires *************
+
 const express = require ('express');
 const path = require('path')
+const methodOverride = require("method-override")
 
 const app = express();
 
 const mainRouter = require("./routes/main-router")
 
-// RUTA PÚBLICA
+// ************* Middlewares *************
 
 app.use(express.static(path.join(__dirname, '../public')))
+app.use(methodOverride("_method"))
+app.use(express.json())
 
-// INICIAR SERVIDOR
+// ************* Start server *************
 
 const PORT= process.env.PORT || 3011
 app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`))
 
-// SETS
+// ************* Template engine *************
 
 app.set("view engine", "ejs")
 app.set("views", "./src/views")
 
-// RUTAS
+// ************* Router *************
 
 app.use(mainRouter)
