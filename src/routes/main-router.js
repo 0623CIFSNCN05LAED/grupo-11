@@ -19,20 +19,15 @@ router.get("/carrito", mainController.carrito)
 
 router.get("/products", mainController.products)
 
-router.get("/products/create", mainController.create);
-router.post("/products", mainController.productCreate)
+router.get("/products/create", mainController.createForm);
+router.post("/products", mainController.productCreateProcess)
 
-<<<<<<< HEAD
-
-// EXPORTACIÓN
-=======
-router.get("/products/:id", mainController.detalleId)
+router.get("/products/:id", mainController.productDetail)
 
 router.get("/products/:id/edit", mainController.productEditForm)
-router.put("/products/:id", mainController.productEdit)
+router.put("/products/:id", mainController.productEditProcess)
 router.delete("/products/:id", mainController.productDelete)
 
 // Export
->>>>>>> bee9bf44fd07e45352a7e70998d24d7313e3a5ad
 
 module.exports = router;
