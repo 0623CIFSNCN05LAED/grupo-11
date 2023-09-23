@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <%- include("partials/head") %>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer">
- <link rel="stylesheet" href="css/styles.css">
+    <%- include("partials/head", {title: "Productos"}) %>
 </head>
 <body>
 
@@ -14,11 +11,6 @@
 
     <!-- PRODUCTS -->
     <section class="products-section">
-
-        <!-- FILTER BUTTON -->
-        <div class="filter-button">
-            <p class="filter-text">FILTROS</p>
-        </div>
 
         <!-- PRODUCTS -->
         <% detalles.forEach(product => { %>
@@ -35,11 +27,9 @@
             </article>
         <% }) %>
     </section>
-</main>
 
     <footer>
         <%- include("partials/footer") %>
     </footer>
-    </body>
-    </html>
-                
+</body>
+</html>
