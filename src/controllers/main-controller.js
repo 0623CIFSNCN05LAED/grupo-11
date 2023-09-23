@@ -25,29 +25,24 @@ module.exports = {
     },
 
     products:(req,res)=>{
-<<<<<<< HEAD
         res.render("products",{detalles:producto})
     }};
-=======
-        res.render("products")
-    },
 
-    productCreate: (req, res) => {
 
-    },
+    //productCreate: (req, res) => {
 
-    productEditForm: (req, res) => {
+    //},
 
-    },
+    //productEditForm: (req, res) => {
 
-    productEdit: (req, res) => {
+    //},
 
-    },
+    //productEdit: (req, res) => {
 
-    productDelete: (req, res) => {
+    //},
 
-    }
-}
->>>>>>> bee9bf44fd07e45352a7e70998d24d7313e3a5ad
+    //productDelete: (req, res) => {
+
+    //}
 
 
