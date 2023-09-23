@@ -7,6 +7,21 @@ const mainController = require("../controllers/main-controller")
 
 const router = Router()
 
+// ******* MULTER ******* //
+const path = require("path")
+const multer = require("multer")
+
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, "../../public/images"),
+    filename: function (req, file, cb) {
+      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+    }
+  })
+
+
+const upload = multer({ storage: storage })
+
+
 // Rutas
 
 router.get("/", mainController.home)
@@ -20,7 +35,7 @@ router.get("/carrito", mainController.carrito)
 router.get("/products", mainController.products)
 
 router.get("/products/create", mainController.createForm);
-router.post("/products", mainController.productCreateProcess)
+router.post("/products", upload.single("image"),mainController.productCreateProcess)
 
 router.get("/products/:id", mainController.productDetail)
 

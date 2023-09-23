@@ -13,11 +13,11 @@
     <section class="products-section">
 
         <!-- PRODUCTS -->
-        <% detalles.forEach(product => { %>
+        <% products.forEach(product => { %>
 
             <article class="product-article">
                 <div class="product-image-price-container">
-                    <a href="/detalle/<%= product.id %>">
+                    <a href="/products/<%= product.id %>">
                         <img src="/images/<%= product.image %>" alt="<%= product.name %>" class="product-image">
                     </a>
                     <p class="product-price">$<%= product.price %></p>

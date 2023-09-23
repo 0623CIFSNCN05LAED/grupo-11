@@ -1,9 +1,14 @@
-const producto = require("../data/productos")
+
 const productoServices = require("../productServices/productServices")
 
-module.exports = {
-    home: (req, res) => res.render("index", {detalles: producto}),
 
+
+module.exports = {
+    home: (req, res) =>{
+        const products = productoServices.getAllProducts()
+        res.render("index", {products})
+    },
+        
     login: (req, res) => res.render("login"),
 
     registro: (req, res) => res.render("registro"),
@@ -13,20 +18,31 @@ module.exports = {
     },
 
     products:(req,res)=>{
-        res.render("products",{detalles:producto})
+        const products = productoServices.getAllProducts()
+        res.render("products",{products})
     },
 
     createForm:(req, res) => {
-        res.render("product-create-form")
+        res.render("product-create-form",)
     },
 
     productCreateProcess: (req, res) => {
 
+        const product = {
+            name: req.body.name,
+            price: Number(req.body.price),
+            discount: Number(req.body.discount),
+            image: req. file ?  req.file.filename : "default-image.png"
+        }
+        console.log(product);
+        productoServices.createProduct(product)
+        res.redirect("/products")
     },
 
     productDetail: (req, res) => {
         const id = req.params.id
         const product = productoServices.getProductId(id)
+        
 
         res.render("detalle_de_producto", {product})
     },
