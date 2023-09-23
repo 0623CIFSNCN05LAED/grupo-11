@@ -7,7 +7,7 @@ const mainController = require("../controllers/main-controller")
 
 const router = Router()
 
-// Rutas
+// ************* Rutas *************
 
 router.get("/", mainController.home)
 

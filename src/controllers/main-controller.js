@@ -21,7 +21,7 @@ module.exports = {
     },
 
     productCreateProcess: (req, res) => {
-
+        
     },
 
     productDetail: (req, res) => {
