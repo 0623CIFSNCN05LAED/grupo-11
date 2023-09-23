@@ -6,7 +6,7 @@ const mainController = require("../controllers/main-controller")
 // ************* Router *************
 
 const router = Router()
-
+// HEAD
 // ******* MULTER ******* //
 const path = require("path")
 const multer = require("multer")
@@ -23,6 +23,9 @@ const upload = multer({ storage: storage })
 
 
 // Rutas
+
+// ************* Rutas *************
+
 
 router.get("/", mainController.home)
 

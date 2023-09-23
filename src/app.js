@@ -13,16 +13,17 @@ const mainRouter = require("./routes/main-router")
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(methodOverride("_method"))
 app.use(express.json())
-
-// ************* Start server *************
-
-const PORT= process.env.PORT || 3011
-app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`))
+app.use(express.urlencoded({extended: false}))
 
 // ************* Template engine *************
 
 app.set("view engine", "ejs")
 app.set("views", "./src/views")
+
+// ************* Start server *************
+
+const PORT= process.env.PORT || 3011
+app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`))
 
 // ************* Router *************
 
