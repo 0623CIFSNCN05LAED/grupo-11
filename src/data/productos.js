@@ -28,6 +28,19 @@ module.exports = {
         console.log(product);
         products.push(newProduct)
         this.saveProduct(products)
+    },
+    update: function(id, product){
+        const products = this.getProducts()
+        const productEdit = products.find((product) => product.id ==id)
+        Object.assign(productEdit, product)
+        this.saveProduct(products)
+
+        return product;
+    },
+    delete: function(id){
+        const product = this.getProducts()
+        const deleteProduct = product.filter((product) => product.id != id)
+        this.saveProduct(deleteProduct)
     }
 
 }

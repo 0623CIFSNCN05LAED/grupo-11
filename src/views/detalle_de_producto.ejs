@@ -40,7 +40,16 @@
             <a class="agregar-al-carrito-detail  " href="/carrito">
                  AGREGAR AL CARRITO
             </a>
+        
+            <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail">
+                <button type="submit" class="agregar-al-carrito-detail">Eliminar</button>   
               
+            </form>
+        
+            <a class="agregar-al-carrito-detail " href="/products/<%= product.id %>/edit/" >
+                 Editar 
+            </a>
+        
             </div>
                 
                 <div class="product-style">

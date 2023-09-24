@@ -46,14 +46,27 @@ module.exports = {
     },
 
     productEditForm: (req, res) => {
-        res.render("product-edit-form")
+        const id = req.params.id
+        const product = productoServices.getProductId(id)
+        res.render("product-edit-form", {product})
     },
 
     productEditProcess: (req, res) => {
+        const product = req.body
+        const id = req.body.id
+        // const image = req.file
+        //     ? req.file.filename
+        //     : productoServices.getProductId(id).image
+        // product.image = image;
 
+        productoServices.updateProduct(id, product)
+        res.redirect("/products")
     },
 
     productDelete: (req, res) => {
-
+        const id = req.params.id
+        productoServices.deleteProduct(id)
+        res.redirect("/products")
+      
     }
 }

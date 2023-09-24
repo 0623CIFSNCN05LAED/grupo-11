@@ -1,12 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Hoodie super soft",
-    "price": 4500,
-    "discount": 25,
-    "image": "buzo.jpg"
-  },
-  {
     "id": 2,
     "name": "Remera oversize",
     "price": 2000,
@@ -28,10 +21,10 @@
     "image": "jogger.jpg"
   },
   {
-    "id": "678ce519-2b3d-4254-9c33-4fedf0c58feb",
-    "name": "zapatillas converse",
-    "price": 50000,
-    "discount": 15,
-    "image": "image-1695525079816.jpg"
+    "id": "c57d64d7-f782-4570-9c72-bd6520298e04",
+    "name": "Buzo overzize",
+    "price": 20000,
+    "discount": 10,
+    "image": "image-1695529172712.jpg"
   }
 ]
