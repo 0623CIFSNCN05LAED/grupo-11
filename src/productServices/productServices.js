@@ -1,18 +1,21 @@
-const producto = require("../data/productos")
+const db = require("../data/db")
 
 const productoServices = {
 
     getAllProducts:()=>{
-        const productos = producto
-        return productos;
+        return db.products.findAll()
     },
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e2e01f1c308cdb09cb337716601cf5fd46d6dc0
 
     getProductId: (id) => {
-        return producto.find((product) => product.id == id)
+        return db.products.findById(id)
+    },
+    createProduct: (product) => {
+        return db.products.create(product)
     }
 };
-
-
 
 module.exports = productoServices;

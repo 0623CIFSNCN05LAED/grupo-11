@@ -1,31 +1,32 @@
-productos = [{
-    name: "Hoodie super soft",
-    price: 4500,
-    discount: 25,
-    image: "buzo.jpg",
-    id: 1,
-},
-{
-    name:"Remera oversize",
-    price: 2000,
-    discount: 15,
-    image: "remera-oversize.jpg",
-    id: 2,
-},
-{
-    name:"Campera de jean",
-    price: 7000,
-    discount: 20,
-    image: "campera-jean.jpg",
-    id: 3,
-},
-{
-    name:"Jogger",
-    price: 3000,
-    discount: 10,
-    image: "jogger.jpg",
-    id: 4,
-}
-]
+const fs = require("fs")
+const path = require("path")
+const { v4: uuidv4 } = require('uuid');
 
-module.exports = productos
+module.exports = {
+    getProducts: function() {
+        const filePath = path.join(__dirname, "./productos.json");
+        const products = JSON.parse(fs.readFileSync(filePath, "utf-8"))
+        return products
+    },
+    saveProduct: function(products) {
+        const filePath = path.join(__dirname, "./productos.json")
+        fs.writeFileSync(filePath, JSON.stringify(products, null, 2))
+    },
+    findAll: function(){
+        return this.getProducts()
+    },
+    findById: function(id){
+        return this.getProducts().find((product) => product.id == id)
+    },
+    create: function(product) {
+        const products = this.getProducts()
+
+        const newProduct = {
+            id: uuidv4(),
+            ...product
+        }
+        products.push(newProduct)
+        this.saveProduct(products)
+    }
+
+}
