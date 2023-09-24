@@ -1,12 +1,5 @@
 [
   {
-    "id": 1,
-    "name": "Hoodie super soft",
-    "price": 4500,
-    "discount": 25,
-    "image": "buzo.jpg"
-  },
-  {
     "id": 2,
     "name": "Remera oversize",
     "price": 2000,
@@ -28,21 +21,10 @@
     "image": "jogger.jpg"
   },
   {
-    "id": "9dfa32ef-6a1c-4aed-a3a4-3893bd0a35b8",
-    "price": null,
-    "discount": null,
-    "image": "default-image.png"
-  },
-  {
-    "id": "c2a8a3d9-ced5-4cbc-ba7e-b1236abc8c37",
-    "price": null,
-    "discount": null,
-    "image": "default-image.png"
-  },
-  {
-    "id": "3a85df3d-4264-4137-bdce-ab0f49f30a7b",
-    "price": null,
-    "discount": null,
-    "image": "default-image.png"
+    "id": "c57d64d7-f782-4570-9c72-bd6520298e04",
+    "name": "Buzo oversize",
+    "price": 12000,
+    "discount": 15,
+    "image": "image-1695529172712.jpg"
   }
 ]

@@ -15,6 +15,12 @@ const productoServices = {
     },
     createProduct: (product) => {
         return db.products.create(product)
+    },
+    updateProduct: (id, product) => {
+        return db.products.update(id, product)
+    },
+    deleteProduct: (id) => {
+        return db.products.delete(id)
     }
 };
 
