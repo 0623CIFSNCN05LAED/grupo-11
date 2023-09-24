@@ -22,9 +22,9 @@
   },
   {
     "id": "c57d64d7-f782-4570-9c72-bd6520298e04",
-    "name": "Buzo overzize",
-    "price": "20000",
-    "discount": "10",
+    "name": "Buzo oversize",
+    "price": 12000,
+    "discount": 15,
     "image": "image-1695529172712.jpg"
   }
 ]

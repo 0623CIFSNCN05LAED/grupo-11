@@ -54,13 +54,18 @@ module.exports = {
     productEditProcess: (req, res) => {
         const product = req.body
         const id = req.params.id
-      
+
+        let productoEditado = {
+            ...product,
+            price: Number(req.body.price),
+            discount: Number(req.body.discount)
+        }
         // const image = req.file
         //     ? req.file.filename
         //     : productoServices.getProductId(id).image
         // product.image = image;
 
-        productoServices.updateProduct(id, product)
+        productoServices.updateProduct(id, productoEditado)
         res.redirect("/products")
     },
 
