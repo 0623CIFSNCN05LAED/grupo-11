@@ -53,7 +53,8 @@ module.exports = {
 
     productEditProcess: (req, res) => {
         const product = req.body
-        const id = req.body.id
+        const id = req.params.id
+      
         // const image = req.file
         //     ? req.file.filename
         //     : productoServices.getProductId(id).image
