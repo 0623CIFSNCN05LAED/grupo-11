@@ -25,6 +25,7 @@ module.exports = {
             id: uuidv4(),
             ...product
         }
+        console.log(product);
         products.push(newProduct)
         this.saveProduct(products)
     }

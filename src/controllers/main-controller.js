@@ -27,14 +27,12 @@ module.exports = {
     },
 
     productCreateProcess: (req, res) => {
-
         const product = {
-            name: req.body.name,
-            price: Number(req.body.price),
-            discount: Number(req.body.discount),
-            image: req. file ?  req.file.filename : "default-image.png"
+           name: req.body.name,
+           price: Number(req.body.price),
+           discount: Number(req.body.discount),
+           image: req.file ? req.file.filename : "defaul-image.png"
         }
-        console.log(product);
         productoServices.createProduct(product)
         res.redirect("/products")
     },

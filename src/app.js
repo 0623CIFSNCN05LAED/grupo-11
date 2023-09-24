@@ -8,6 +8,7 @@ const app = express();
 
 const mainRouter = require("./routes/main-router")
 
+
 // ************* Middlewares *************
 
 app.use(express.static(path.join(__dirname, '../public')))

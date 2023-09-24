@@ -28,21 +28,10 @@
     "image": "jogger.jpg"
   },
   {
-    "id": "9dfa32ef-6a1c-4aed-a3a4-3893bd0a35b8",
-    "price": null,
-    "discount": null,
-    "image": "default-image.png"
-  },
-  {
-    "id": "c2a8a3d9-ced5-4cbc-ba7e-b1236abc8c37",
-    "price": null,
-    "discount": null,
-    "image": "default-image.png"
-  },
-  {
-    "id": "3a85df3d-4264-4137-bdce-ab0f49f30a7b",
-    "price": null,
-    "discount": null,
-    "image": "default-image.png"
+    "id": "678ce519-2b3d-4254-9c33-4fedf0c58feb",
+    "name": "zapatillas converse",
+    "price": 50000,
+    "discount": 15,
+    "image": "image-1695525079816.jpg"
   }
 ]
