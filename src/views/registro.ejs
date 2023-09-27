@@ -36,26 +36,51 @@
                         <div class="input-rgst">
                             <label for="name" class="labels-rgst">Name:</label>
                             <!-- <input type="feedback" id="name" name="name" required> -->
-                            <input type="text" class="box-rgstr-inpt" placeholder="Name" name="name" id="name">
+                            <input type="text" class="box-rgstr-inpt" placeholder="Name" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : ""%>">
+                            <% if (locals.errors && errors.name) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.name.msg %></p>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="input-rgst">
                             <label for="lastName" class="labels-rgst">Last Name:</label>
                             <!-- <input type="feedback" id="lastName" name="lastName" required> -->
-                            <input type="text" class="box-rgstr-inpt" placeholder="Last Name" name="lastName" id="lastName">
+                            <input type="text" class="box-rgstr-inpt" placeholder="Last Name" name="lastName" id="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : ""%>">
+                            <% if (locals.errors && errors.lastName) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.lastName.msg %></p>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="input-rgst">
                             <label for="email" class="labels-rgst">Email:</label>
-                            <input type="email" class="box-rgstr-inpt" placeholder="email" name="email" id="email">
+                            <input type="email" class="box-rgstr-inpt" placeholder="email" name="email" id="email" value="<%= locals.oldData && oldData.email ? oldData.email : ""%>">
+                            <% if (locals.errors && errors.email) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.email.msg %></p>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="input-rgst">
                             <label for="password" class="labels-rgst">Password:</label>
                             <!-- <input type="password" id="password" name="password" required> -->
                             <input type="password" class="box-rgstr-inpt" placeholder="Password" name="password" id="password">
+                            <% if (locals.errors && errors.password) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.password.msg %></p>
+                                </div>
+                            <% } %>
                         </div>
                         <div class="input-rgst">
                             <label for="imagenDePerfil" class="labels-rgst">Foto:</label>
                             <input type="file" name="imagenDePerfil">
                             <span class="feedback"></span>
+                            <% if (locals.errors && errors.imagenDePerfil) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.imagenDePerfil.msg %></p>
+                                </div>
+                            <% } %>
                         </div>
                         <button class="input-rgst bt-mg" type="submit">Register!</button>
                     </form>

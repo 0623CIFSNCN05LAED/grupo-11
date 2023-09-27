@@ -16,6 +16,10 @@ module.exports = {
     procesoRegistro: (req, res) => {
         let errors = validationResult(req)
 
+        if(errors.errors.length > 0){
+            return res.render("registro", {errors: errors.mapped(), oldData: req.body})
+        }
+
         let userInDB = User.findByField("email", req.body.email)
 
         if(userInDB){
