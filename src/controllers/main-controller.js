@@ -1,7 +1,7 @@
-
 const productoServices = require("../productServices/productServices")
-
-
+const {validationResult} = require("express-validator")
+const User = require("../models/User")
+const bcrypt = require("bcryptjs")
 
 module.exports = {
     home: (req, res) =>{
@@ -12,6 +12,26 @@ module.exports = {
     login: (req, res) => res.render("login"),
 
     registro: (req, res) => res.render("registro"),
+
+    procesoRegistro: (req, res) => {
+        let errors = validationResult(req)
+
+        let userInDB = User.findByField("email", req.body.email)
+
+        if(userInDB){
+            return res.render("registro", {errors: {email: {msg: "El email ingresado ya está en uso"}}, oldData: req.body})
+        }
+
+        let nuevoUsuario = {
+            ...req.body,
+            password: bcrypt.hashSync(req.body.password, 10),
+            imagenDePerfil: req.file.filename
+        }
+
+        User.create(nuevoUsuario)
+
+        return res.redirect("/")
+    },
 
     carrito:(req,res)=>{
         res.render("carrito_de_compras")
@@ -28,10 +48,10 @@ module.exports = {
 
     productCreateProcess: (req, res) => {
         const product = {
-           name: req.body.name,
-           price: Number(req.body.price),
-           discount: Number(req.body.discount),
-           image: req.file ? req.file.filename : "defaul-image.png"
+            name: req.body.name,
+            price: Number(req.body.price),
+            discount: Number(req.body.discount),
+            image: req.file ? req.file.filename : "defaul-image.png"
         }
         productoServices.createProduct(product)
         res.redirect("/products")

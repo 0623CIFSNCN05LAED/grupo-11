@@ -2,6 +2,8 @@
 
 const {Router} = require("express")
 const mainController = require("../controllers/main-controller")
+const {body} = require("express-validator")
+const registerValidations = require("../validations/registerValidations")
 
 // ************* Router *************
 
@@ -13,13 +15,15 @@ const path = require("path")
 const multer = require("multer")
 
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, "../../public/images/"),
+    destination: (req, file, cb) => {
+      cb(null, path.join(__dirname, "../../public/images"))
+    },
     filename: function (req, file, cb) {
       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
     }
   })
 
-const upload = multer({ storage: storage })
+const upload = multer({storage})
 
 //Rutas
 
@@ -31,6 +35,7 @@ router.get("/", mainController.home)
 router.get("/login", mainController.login)
 
 router.get("/registro", mainController.registro)
+router.post("/registro", upload.single("imagenDePerfil"), registerValidations, mainController.procesoRegistro)
 
 router.get("/carrito", mainController.carrito)
 
