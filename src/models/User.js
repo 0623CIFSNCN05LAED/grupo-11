@@ -16,6 +16,12 @@ module.exports = {
         return JSON.parse(fs.readFileSync(this.fileName, "utf-8"))
     },
 
+    findByPk: function(id){
+        let allUsers = this.findAllUsers();
+        let userFound = allUsers.find(user => user.id === id);
+        return userFound
+    },
+
     findByField: function(field, text) {
         let users = this.findAllUsers()
         let userFound = users.find(user => user[field] === text)
@@ -36,3 +42,4 @@ module.exports = {
         return(nuevoUsuario)
     }
 }
+
