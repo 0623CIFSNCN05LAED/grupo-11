@@ -39,11 +39,17 @@
 
 
             <div class="input">
-                <input type="email" class="box" placeholder="email">
+                <input type="email" class="box" placeholder="email" name="email" id="email" value="<%= locals.oldData && oldData.email ? oldData.email :""%>">
+                <%if (locals.erros &&  errors.email) { %>
+                    <div>
+                        <p class="error-text"><%=errors.email.msg%></p>
+                    </div>
+                    <% }  %>
                 <input type="password" class="box" placeholder="password">
 
                 <a href="#">Olvide mi contraseña</a>
-                <input type="input" value="login" class="boton-log">
+                <!-- <input type="input" value="login" class="boton-log"> -->
+                <button class="input-rgst bt-mg" type="submit">LOGIN!</button>
             </div>
 
 

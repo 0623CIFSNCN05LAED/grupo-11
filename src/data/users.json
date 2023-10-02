@@ -14,5 +14,13 @@
   "email": "joseperes@gmail.com",
   "password": "$2a$10$Z3/PbHoZ1AnyLjpIUbNmsuc93Kzlk7UAjq6CJdKg1Oe8X55NvXquK",
   "imagenDePerfil": "imagenDePerfil-1695840725006.jpg"
+ },
+ {
+  "id": 3,
+  "name": "nicolas",
+  "lastName": "milsztejn",
+  "email": "nicomilsz@gmail.com",
+  "password": "$2a$10$XK.rbnwAdAlS8WwWDPStYemmYkSIoyW6zeUVqIYd8YFQkp3XZg2dW",
+  "imagenDePerfil": "imagenDePerfil-1696200498651.png"
  }
 ]
