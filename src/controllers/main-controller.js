@@ -12,27 +12,34 @@ module.exports = {
     login: (req, res) => res.render("login"),
 
     ProcesoLogin: (req,res)=>{
+        let resultValidation = validationResult(req)
+
         let userToLogin  = User.findByField("email",req.body.email);
         if(userToLogin){
             let  passwordCheck  =   bcryptjs.compareSync(req.body.password, userToLogin.password)
+
+            if(resultValidation.errors.length > 0){
+                return res.render("login", {errors: resultValidation.mapped(), oldData: req.body})
+            }
+
             if (userToLogin.password  === req.password){
                 return console.log("ok puedes ingresar")
             }
             return res.render("login",{
                 errors:{
-                    email:{
+                    password:{
                         msg  :  "Las credenciales son invalidas"
                     }
                 }
             })
             }
-        return res.render("login",{
+            return res.render("login",{
             errors:{
                 email:{
-                    msg  :  "No se ecuentra ese Email Registrado"
+                    msg  :  "No se ecuentra el Email Registrado"
                 }
             }
-        })
+            })
     },
  
     registro: (req, res) => res.render("registro"),

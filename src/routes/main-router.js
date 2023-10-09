@@ -49,13 +49,18 @@ const registerValidations = [
   })
 ]
 
+const loginValidations = [
+  body("email").notEmpty().withMessage("Debes introducir una dirección de correo").isEmail().withMessage("Debes introducir un correo electrónico válido"),
+  body("password").notEmpty().withMessage("Debes introducir una contraseña").isLength({min: 6}).withMessage("La contraseña debe contener al menos 6 caracteres"),
+]
+
 // ************* Rutas *************
 
 
 router.get("/", mainController.home)
 
 router.get("/login", mainController.login)
-router.post("/login",mainController.ProcesoLogin)
+router.post("/login",loginValidations,mainController.ProcesoLogin)
 
 router.get("/registro", mainController.registro)
 router.post("/registro", upload.single("imagenDePerfil"), registerValidations, mainController.procesoRegistro)
