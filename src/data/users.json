@@ -1,0 +1,18 @@
+[
+ {
+  "id": 1,
+  "name": "Leandro",
+  "lastName": "Heffes",
+  "email": "leandroheffes@outlook.es",
+  "password": "$2a$10$cmWXn.btvW6UwPZVxxs4eubEJP.R/wzzm6RFC7DXv2wZuXOaRJDIa",
+  "imagenDePerfil": "imagenDePerfil-1695840689816.png"
+ },
+ {
+  "id": 2,
+  "name": "Jose",
+  "lastName": "Perez",
+  "email": "joseperes@gmail.com",
+  "password": "$2a$10$Z3/PbHoZ1AnyLjpIUbNmsuc93Kzlk7UAjq6CJdKg1Oe8X55NvXquK",
+  "imagenDePerfil": "imagenDePerfil-1695840725006.jpg"
+ }
+]

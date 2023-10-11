@@ -305,6 +305,10 @@ margin: 10px 0;
     color:white;
 }
 
+.error-text{
+    color: red;
+}
+
 @media (max-width: 1023px) {
     .bg-rgst{
         height: 92vh;
