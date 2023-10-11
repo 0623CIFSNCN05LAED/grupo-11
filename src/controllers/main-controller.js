@@ -18,29 +18,6 @@ module.exports = {
     },
 
     products:(req,res)=>{
-<<<<<<< HEAD
-        res.render("products",{detalles:producto})
-    }};
-
-
-    //productCreate: (req, res) => {
-
-    //},
-
-    //productEditForm: (req, res) => {
-
-    //},
-
-    //productEdit: (req, res) => {
-
-    //},
-
-    //productDelete: (req, res) => {
-
-    //}
-
-
-=======
         const products = productoServices.getAllProducts()
         res.render("products",{products})
     },
@@ -99,4 +76,3 @@ module.exports = {
       
     }
 }
->>>>>>> 9e2e01f1c308cdb09cb337716601cf5fd46d6dc0

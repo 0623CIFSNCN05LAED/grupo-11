@@ -39,15 +39,7 @@ router.get("/products", mainController.products)
 router.get("/products/create", mainController.createForm);
 router.post("/products", upload.single("image"),mainController.productCreateProcess)
 
-<<<<<<< HEAD
-
-
-// EXPORTACIÓN
-
-router.get("/products/:id", mainController.detalleId)
-=======
 router.get("/products/:id", mainController.productDetail)
->>>>>>> 9e2e01f1c308cdb09cb337716601cf5fd46d6dc0
 
 router.get("/products/:id/edit", mainController.productEditForm)
 router.put("/products/:id", mainController.productEditProcess)
@@ -55,9 +47,6 @@ router.put("/products/:id", mainController.productEditProcess)
 router.delete("/products/:id", mainController.productDelete)
 
 // Export
-<<<<<<< HEAD
 
-=======
->>>>>>> 9e2e01f1c308cdb09cb337716601cf5fd46d6dc0
 
 module.exports = router;
