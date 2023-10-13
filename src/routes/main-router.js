@@ -55,6 +55,7 @@ const registerValidations = [
 router.get("/", mainController.home)
 
 router.get("/login", mainController.login)
+router.post("/login", mainController.access)
 
 router.get("/registro", mainController.registro)
 router.post("/registro", upload.single("imagenDePerfil"), registerValidations, mainController.procesoRegistro)

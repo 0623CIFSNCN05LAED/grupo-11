@@ -2,6 +2,7 @@ const productoServices = require("../productServices/productServices")
 const {validationResult} = require("express-validator")
 const User = require("../models/User")
 const bcrypt = require("bcryptjs")
+const userServices = require("../productServices/userServices")
 
 module.exports = {
     home: (req, res) =>{
@@ -10,6 +11,18 @@ module.exports = {
     },
         
     login: (req, res) => res.render("login"),
+
+    access: (req, res) => {
+        const user = userServices.findUserEmail("email", req.body.email)
+       
+        if(!user){
+           return res.redirect("/login")
+        }
+        if(!bcrypt.compareSync(req.body.password, user.password)){
+            return res.send("Contraseña incorrecta")
+        }
+        return res.send("Accedimos")
+    },
 
     registro: (req, res) => res.render("registro"),
 

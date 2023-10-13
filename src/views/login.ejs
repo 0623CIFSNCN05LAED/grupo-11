@@ -30,7 +30,7 @@
             <h3 class="LG"> LOGO </h3>
         </div>
 
-        <form class="form">
+        <form class="form" action="/login" method="POST">
             <h2>login</h2>
 
             <p class="txt-2"> Estamos aquí para hacer que tu experiencia sea excepcional. Gracias por confiar en
@@ -39,11 +39,14 @@
 
 
             <div class="input">
-                <input type="email" class="box" placeholder="email">
-                <input type="password" class="box" placeholder="password">
+                <input type="email" name="email" class="box" placeholder="email">
+                <input type="password" name="password" class="box" placeholder="password">
+
+                <label for="">Recordame</label>
+                <input type="checkbox" name="Recordame">
 
                 <a href="#">Olvide mi contraseña</a>
-                <input type="input" value="login" class="boton-log">
+                <button type="submit" value="login" class="boton-log">
             </div>
 
 

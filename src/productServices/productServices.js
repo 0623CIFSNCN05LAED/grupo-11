@@ -17,7 +17,8 @@ const productoServices = {
     },
     deleteProduct: (id) => {
         return db.products.delete(id)
-    }
+    },
+    
 };
 
 module.exports = productoServices;
