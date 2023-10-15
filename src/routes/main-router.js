@@ -56,6 +56,7 @@ router.get("/", mainController.home)
 
 router.get("/login", mainController.login)
 router.post("/login", mainController.access)
+router.get("/profile/:id", mainController.profile)
 
 router.get("/registro", mainController.registro)
 router.post("/registro", upload.single("imagenDePerfil"), registerValidations, mainController.procesoRegistro)

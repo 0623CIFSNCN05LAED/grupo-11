@@ -39,14 +39,28 @@
 
 
             <div class="input">
+                <label></label>
                 <input type="email" name="email" class="box" placeholder="email">
+
+                <% if(locals.errors && errors.email) { %>
+                    <div class="txt-1" style="color: red;">
+                        <%= errors.email.msg %>
+                    </div>
+                <% } %>
+
                 <input type="password" name="password" class="box" placeholder="password">
+
+                <% if(locals.errors && errors.password) { %>
+                    <div class="txt-1" style="color: red;">
+                        <%= errors.password.msg %>
+                    </div>
+                <% } %>
 
                 <label for="">Recordame</label>
                 <input type="checkbox" name="Recordame">
 
                 <a href="#">Olvide mi contraseña</a>
-                <button type="submit" value="login" class="boton-log">
+                <button type="submit" value="login"  class="boton-log">Login</button>
             </div>
 
 

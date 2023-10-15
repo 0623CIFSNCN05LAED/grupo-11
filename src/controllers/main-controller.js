@@ -12,16 +12,30 @@ module.exports = {
         
     login: (req, res) => res.render("login"),
 
+    profile: (req, res) => res.render("user_profile"),
+
     access: (req, res) => {
         const user = userServices.findUserEmail("email", req.body.email)
        
         if(!user){
-           return res.redirect("/login")
+           return res.render("login", {
+                errors: {
+                    email: {
+                        msg: "Email incorrecto"
+                    }
+                }
+           })
         }
         if(!bcrypt.compareSync(req.body.password, user.password)){
-            return res.send("Contraseña incorrecta")
+            return res.render("login", {
+                errors: {
+                    password: {
+                        msg: "Contraseña incorrecta"
+                    }
+                }
+            })
         }
-        return res.send("Accedimos")
+        return res.render("user_profile", {user})
     },
 
     registro: (req, res) => res.render("registro"),
