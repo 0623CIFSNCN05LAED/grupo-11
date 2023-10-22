@@ -1,22 +1,37 @@
 const productoServices = require("../productServices/productServices")
 const {validationResult} = require("express-validator")
-const User = require("../models/User")
+const User = require("../data/User")
 const bcrypt = require("bcryptjs")
 const userServices = require("../productServices/userServices")
 
 module.exports = {
+
     home: (req, res) =>{
         const products = productoServices.getAllProducts()
         res.render("index", {products})
     },
-        
-    login: (req, res) => res.render("login"),
 
-    profile: (req, res) => res.render("user_profile"),
+// USERS
+
+    login: (req, res) =>  {
+        res.render("login")
+    },
+
+    profile: (req, res) => {
+        console.log(req.cookies.UserEmail);
+        const user = req.session.userLogged
+        res.render("user_profile", {user})
+    },
+
+    logout: (req, res) => {
+        req.session.destroy()
+        req.redirect("/")
+    },
 
     access: (req, res) => {
+
         const user = userServices.findUserEmail("email", req.body.email)
-       
+
         if(!user){
            return res.render("login", {
                 errors: {
@@ -26,6 +41,11 @@ module.exports = {
                 }
            })
         }
+        
+        if(req.body.remember_user != undefined) {
+            res.cookie("UserEmail", req.body.email, {maxAge: (1000 * 60) * 2})
+        }
+
         if(!bcrypt.compareSync(req.body.password, user.password)){
             return res.render("login", {
                 errors: {
@@ -34,11 +54,18 @@ module.exports = {
                     }
                 }
             })
+
+        } else {
+            //userLogged es el nombre que le doy a la propiedad del session
+            req.session.userLogged = user
+            return res.redirect("/profile/" + user.id)
         }
-        return res.render("user_profile", {user})
+        
     },
 
-    registro: (req, res) => res.render("registro"),
+    registro: (req, res) => {
+        res.render("registro")
+    },
 
     procesoRegistro: (req, res) => {
         let errors = validationResult(req)
@@ -63,6 +90,9 @@ module.exports = {
 
         return res.redirect("/")
     },
+
+
+// PRODUCTOS
 
     carrito:(req,res)=>{
         res.render("carrito_de_compras")
