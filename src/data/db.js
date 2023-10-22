@@ -1,5 +1,5 @@
 const products = require("./productos")
-const users = require("../models/User")
+const users = require("./User")
 
 const db = {
     products,

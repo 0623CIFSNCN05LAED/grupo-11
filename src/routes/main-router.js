@@ -7,6 +7,9 @@ const userLogin= require("../middlewares/userLogin");
 
 // ************* Router *************
 
+const guetsMiddleware = require("../middledware/guetsMiddleware")
+const authMiddleware = require("../middledware/authMiddleware")
+
 const router = Router()
 // HEAD
 // ******* MULTER ******* //
@@ -27,40 +30,31 @@ const upload = multer({storage})
 
 // Validaciones
 
-const registerValidations = [
-  body("name").notEmpty().withMessage("Debes introducir tu nombre"),
-  body("lastName").notEmpty().withMessage("Debes introducir tu apellido"),
-  body("email").notEmpty().withMessage("Debes introducir una dirección de correo").isEmail().withMessage("Debes introducir un correo electrónico válido"),
-  body("password").notEmpty().withMessage("Debes introducir una contraseña").isLength({min: 6}).withMessage("La contraseña debe contener al menos 6 caracteres"),
-  body("imagenDePerfil").custom((value, {req}) => {
-      let file = req.file
-      let extencionesAceptadas = [".png", ".jpg"]
-
-      if(!file){
-          throw new Error("Tienes que subir una imagen")
-      } else {
-          let extensionFile = path.extname(file.originalname)
-
-          if(!extencionesAceptadas.includes(extensionFile)){
-              throw new Error(`Las extensiones de archivo que se aceptan son: ${extencionesAceptadas.join(", ")}`)
-          }
-      }
-
-      return true
-  })
-]
+const registerValidations = require("../middledware/registerValidations")
 
 // ************* Rutas *************
 
 
 router.get("/", mainController.home);
 
-router.get("/login", mainController.login)
-router.post("/login", mainController.access)
-router.get("/profile/:id", mainController.profile)
 
+<<<<<<< HEAD
 router.get("/registro", mainController.registro)
 router.post("/registro",upload.single("imagenDePerfil"), registerValidations, mainController.procesoRegistro)
+=======
+//USERS ROUTERS
+
+router.get("/login", guetsMiddleware ,mainController.login)
+router.post("/login", mainController.access)
+router.get("/profile/:id", authMiddleware , mainController.profile)
+router.get("/logout", mainController.logout)
+
+router.get("/registro", guetsMiddleware ,mainController.registro)
+router.post("/registro", upload.single("imagenDePerfil"), registerValidations ,mainController.procesoRegistro)
+
+
+//PRODUCTS ROUTERS
+>>>>>>> 10085a0391ee801a41b6bbe39732b5025bcd5306
 
 router.get("/carrito", mainController.carrito)
 
