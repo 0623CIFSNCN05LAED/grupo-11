@@ -10,12 +10,9 @@ module.exports = {
         const products = productoServices.getAllProducts()
         res.render("index", {products})
     },
-<<<<<<< HEAD
         
     login: (req, res) => res.render("login"),
     
-=======
->>>>>>> 10085a0391ee801a41b6bbe39732b5025bcd5306
 
 // USERS
 

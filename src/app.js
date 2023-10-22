@@ -2,15 +2,14 @@
 
 const express = require ('express');
 const path = require('path')
-const methodOverride = require("method-override")
-const session = require("express-session");
+const methodOverride = require("method-override");
 
 // *********** session ************
 
 const session = require ('express-session');
 
 // ********** Cookies ***********
-const cookies = require("cookie-parser")
+const cookies = require("cookie-parser");
 
 const app = express();
 
@@ -23,19 +22,6 @@ app.use(express.static(path.join(__dirname, '../public')))
 app.use(methodOverride("_method"))
 app.use(express.json())
 app.use(express.urlencoded({extended: false}))
-<<<<<<< HEAD
-=======
-
-app.use(session({
-    secret: "secret",
-    resave: false,
-    saveUninitialized: false
-}))
-
-app.use(cookies())
-
->>>>>>> 10085a0391ee801a41b6bbe39732b5025bcd5306
-// ************* Template engine *************
 
 app.use(
     session({
