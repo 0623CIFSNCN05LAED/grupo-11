@@ -22,5 +22,21 @@
   "email": "lucho.muga2@gmail.com",
   "password": "$2a$10$6VVhPO0uqujh.vWHkPWY4..zCnqCkA2Mt8HSsKzzbevt75z.7LxEe",
   "imagenDePerfil": "imagenDePerfil-1696202830299.png"
+ },
+ {
+  "id": 4,
+  "name": "Trinidad",
+  "lastName": "Puig",
+  "email": "daianatrinidadpuig@gmail.com",
+  "password": "$2a$10$RumwuAl1sMlIpfSXG0TCFO/1.d.6rNlFzHXRX52nbzVaY50hvHi4O",
+  "imagenDePerfil": "imagenDePerfil-1697650630787.jpg"
+ },
+ {
+  "id": 5,
+  "name": "ezequiel nicolas",
+  "lastName": "Carena",
+  "email": "eze_carena@hotmail.com",
+  "password": "$2a$10$QimNP2z3Q3es1ef03/w.f.wZ6OcMmtyGGhtQUJlXGshR/jvkXAsxG",
+  "imagenDePerfil": "imagenDePerfil-1697735678029.jpg"
  }
 ]

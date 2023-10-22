@@ -11,11 +11,14 @@ module.exports = {
     },
         
     login: (req, res) => res.render("login"),
+    
 
     profile: (req, res) => res.render("user_profile"),
 
     access: (req, res) => {
         const user = userServices.findUserEmail("email", req.body.email)
+        const data= req.body;
+        req.session.userData=data;
        
         if(!user){
            return res.render("login", {

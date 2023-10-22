@@ -3,6 +3,7 @@
 const {Router} = require("express")
 const mainController = require("../controllers/main-controller")
 const {body} = require("express-validator")
+const userLogin= require("../middlewares/userLogin");
 
 // ************* Router *************
 
@@ -52,25 +53,25 @@ const registerValidations = [
 // ************* Rutas *************
 
 
-router.get("/", mainController.home)
+router.get("/", mainController.home);
 
 router.get("/login", mainController.login)
 router.post("/login", mainController.access)
 router.get("/profile/:id", mainController.profile)
 
 router.get("/registro", mainController.registro)
-router.post("/registro", upload.single("imagenDePerfil"), registerValidations, mainController.procesoRegistro)
+router.post("/registro",upload.single("imagenDePerfil"), registerValidations, mainController.procesoRegistro)
 
 router.get("/carrito", mainController.carrito)
 
 router.get("/products", mainController.products)
 
-router.get("/products/create", mainController.createForm);
+router.get("/products/create",userLogin, mainController.createForm);
 router.post("/products", upload.single("image"),mainController.productCreateProcess)
 
 router.get("/products/:id", mainController.productDetail)
 
-router.get("/products/:id/edit", mainController.productEditForm)
+router.get("/products/:id/edit",userLogin, mainController.productEditForm)
 router.put("/products/:id", mainController.productEditProcess)
 
 router.delete("/products/:id", mainController.productDelete)
