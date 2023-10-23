@@ -18,14 +18,14 @@ module.exports = {
     },
 
     profile: (req, res) => {
-        console.log(req.cookies.UserEmail);
+        console.log(req.cookies.userEmail);
         const user = req.session.userLogged
         res.render("user_profile", {user})
     },
 
     logout: (req, res) => {
         req.session.destroy()
-        req.redirect("/")
+        return res.redirect("/")
     },
 
     access: (req, res) => {
@@ -42,8 +42,8 @@ module.exports = {
            })
         }
         
-        if(req.body.remember_user != undefined) {
-            res.cookie("UserEmail", req.body.email, {maxAge: (1000 * 60) * 2})
+        if(req.body.remember_user) {
+            res.cookie("userEmail", req.body.email, {maxAge: (1000 * 60) * 2})
         }
 
         if(!bcrypt.compareSync(req.body.password, user.password)){
