@@ -10,6 +10,9 @@ module.exports = {
         const products = productoServices.getAllProducts()
         res.render("index", {products})
     },
+        
+    login: (req, res) => res.render("login"),
+    
 
 // USERS
 
@@ -31,7 +34,13 @@ module.exports = {
     access: (req, res) => {
 
         const user = userServices.findUserEmail("email", req.body.email)
+<<<<<<< HEAD
+        const data= req.body;
+        req.session.userData=data;
+       
+=======
 
+>>>>>>> 10085a0391ee801a41b6bbe39732b5025bcd5306
         if(!user){
            return res.render("login", {
                 errors: {
