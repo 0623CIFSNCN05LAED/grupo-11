@@ -30,6 +30,7 @@ app.use(
         saveUninitialized:false,
     })
 );
+app.use(cookies())
 
 app.set("view engine", "ejs")
 app.set("views", "./src/views")
