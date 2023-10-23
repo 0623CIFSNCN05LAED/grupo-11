@@ -2,6 +2,8 @@
 
 const {Router} = require("express")
 const mainController = require("../controllers/main-controller")
+const productController = require("../controllers/product-controller")
+const userController = require("../controllers/user-controller")
 const {body} = require("express-validator")
 
 // ************* Router *************
@@ -39,30 +41,30 @@ router.get("/", mainController.home)
 
 //USERS ROUTERS
 
-router.get("/login", guetsMiddleware ,mainController.login)
-router.post("/login", mainController.access)
-router.get("/profile/:id", authMiddleware , mainController.profile)
-router.post("/logout", mainController.logout)
+router.get("/login", userController.login)
+router.post("/login", userController.access)
+router.get("/profile/:id", authMiddleware ,userController.profile)
+router.post("/logout", userController.logout)
 
-router.get("/registro", guetsMiddleware ,mainController.registro)
-router.post("/registro", upload.single("imagenDePerfil"), registerValidations ,mainController.procesoRegistro)
+router.get("/registro", userController.registro)
+router.post("/registro", upload.single("imagenDePerfil"), registerValidations, guetsMiddleware ,userController.procesoRegistro)
 
 
 //PRODUCTS ROUTERS
 
-router.get("/carrito", mainController.carrito)
+router.get("/carrito", productController.carrito)
 
-router.get("/products", mainController.products)
+router.get("/products", productController.products)
 
-router.get("/products/create", mainController.createForm);
-router.post("/products", upload.single("image"),mainController.productCreateProcess)
+router.get("/products/create", productController.createForm);
+router.post("/products", upload.single("image"),productController.productCreateProcess)
 
-router.get("/products/:id", mainController.productDetail)
+router.get("/products/:id", productController.productDetail)
 
-router.get("/products/:id/edit", mainController.productEditForm)
-router.put("/products/:id", mainController.productEditProcess)
+router.get("/products/:id/edit", productController.productEditForm)
+router.put("/products/:id", productController.productEditProcess)
 
-router.delete("/products/:id", mainController.productDelete)
+router.delete("/products/:id", productController.productDelete)
 
 // Export
 
