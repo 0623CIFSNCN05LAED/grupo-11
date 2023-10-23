@@ -5,7 +5,7 @@ const mainController = require("../controllers/main-controller")
 const productController = require("../controllers/product-controller")
 const userController = require("../controllers/user-controller")
 const {body} = require("express-validator")
-
+const userLogin = require("../middledware/userLogin");
 // ************* Router *************
 
 const guetsMiddleware = require("../middledware/guetsMiddleware")
@@ -56,7 +56,7 @@ router.get("/carrito", productController.carrito)
 
 router.get("/products", productController.products)
 
-router.get("/products/create", productController.createForm);
+router.get("/products/create",userLogin, productController.createForm);
 router.post("/products", upload.single("image"),productController.productCreateProcess)
 
 router.get("/products/:id", productController.productDetail)
