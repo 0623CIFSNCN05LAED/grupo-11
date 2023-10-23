@@ -10,9 +10,6 @@ module.exports = {
         const products = productoServices.getAllProducts()
         res.render("index", {products})
     },
-        
-    login: (req, res) => res.render("login"),
-    
 
 // USERS
 
@@ -21,26 +18,20 @@ module.exports = {
     },
 
     profile: (req, res) => {
-        console.log(req.cookies.userEmail);
+        console.log(req.cookies);
         const user = req.session.userLogged
         res.render("user_profile", {user})
     },
 
     logout: (req, res) => {
         req.session.destroy()
-        return res.redirect("/")
+        res.redirect("/")
     },
 
     access: (req, res) => {
 
         const user = userServices.findUserEmail("email", req.body.email)
-<<<<<<< HEAD
-        const data= req.body;
-        req.session.userData=data;
-       
-=======
 
->>>>>>> 10085a0391ee801a41b6bbe39732b5025bcd5306
         if(!user){
            return res.render("login", {
                 errors: {
@@ -51,7 +42,7 @@ module.exports = {
            })
         }
         
-        if(req.body.remember_user) {
+        if(req.body.remember_user != undefined) {
             res.cookie("userEmail", req.body.email, {maxAge: (1000 * 60) * 2})
         }
 
