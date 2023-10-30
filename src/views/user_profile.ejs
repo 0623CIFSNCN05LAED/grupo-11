@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Profile"}) %>
+</head>
+<body>
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <%- include("partials/header") %>
+    </header>
+
+    <!------------------------------------- MAIN ----------------------------------->
+    <main class="bg-rgst">
+        <section>
+            <img class="rgst-image" src="images/rgst-image.jpeg" alt="">
+        </section>
+
+        <section>
+            <img class="rgst-image-mobile" src="images/register-bg-mobile.jpg" alt="">
+        </section>
+
+                <div class="rgst-container"> 
+
+                    <div class="input-rgst">
+                        <img src="/images/<%=user.imagenDePerfil %>">
+                    </div>
+
+                    <form class="form-rgst" method="post" action="/profile/<%= user.id %>" enctype="multipart/form-data">
+                        <div class="input-rgst">
+                            <label for="name" class="labels-rgst">Name:</label>
+                            <!-- <input type="feedback" id="name" name="name" required> -->
+                            <input type="text" class="box-rgstr-inpt"  name="name" id="name" value= "<%= user.name %>">
+
+                        </div>
+                        <div class="input-rgst">
+                            <label for="lastName" class="labels-rgst">Last Name:</label>
+                            <!-- <input type="feedback" id="lastName" name="lastName" required> -->
+                            <input type="text" class="box-rgstr-inpt" name="lastName" id="lastName" value="<%= user.lastName %>">
+                        </div>
+                        <div class="input-rgst">
+                            <label for="email" class="labels-rgst">Email:</label>
+                            <input type="email" class="box-rgstr-inpt" name="email" id="email" value="<%= user.email %>">
+                         
+                        </div>
+                    </form>
+                    <form class="form-rgst" method="post" action="/logout">
+                        <button class="input-rgst bt-mg" type="submit">Logout</button>
+                    </form>
+                </div>
+    </main>
+
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>
+

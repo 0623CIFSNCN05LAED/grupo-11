@@ -1,55 +1,96 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-     <link rel="stylesheet" href="/css/styles.css" />
-
-
-     <title>Sign In</title>
- </head>
-
+    <%- include("partials/head", {title: "Registro"}) %>
+</head>
 <body>
+    <!------------------------------------- HEADER ----------------------------------->
     <header>
-
-        <form action="" method="">
-            <div>
-                <label for="nombreUsuario">Nombre:</label>
-                <input type="text" name="nombreUsuario" id="nombreUsuario">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="apellidoUsuario">Apellido:</label>
-                <input type="text" name="apellidoUsuario" id="apellidoUsuario">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="passwordUsuario">Contraseña:</label>
-                <input type="password" name="passwordUsuario" id="passwordUsuario">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="emailUsuario">Email:</label>
-                <input type="email" name="emailUsuario" id="emailUsuario">
-                <span class="feedback"></span>
-            </div>
-            <div>
-                <label for="imagenDePerfil">Foto:</label>
-                <input type="file" name="imagenDePerfil" accept=".jpg, .png">
-                <span class="feedback"></span>
-            </div>
-            <button class="sb" type="submit">Enviar</button>
-        </form>
+        <%- include("partials/header") %>
     </header>
 
+    <!------------------------------------- MAIN ----------------------------------->
+    <main class="bg-rgst">
+        <section>
+            <img class="rgst-image" src="images/rgst-image.jpeg" alt="">
+        </section>
+
+        <section>
+            <img class="rgst-image-mobile" src="images/register-bg-mobile.jpg" alt="">
+        </section>
+
+                <div class="rgst-container">
+                    <div class="info-rgst">            
+                        <h2> Registrate aqui!</h2>
+                        <hr />
+                        <p class="txt-2">¡Bienvenido a nuestra página de Registro!
+                            Completa tus datos y accede a beneficios exclusivos!
+                            Podras tener acceso a mayores descuentos, horario anticipado de compra de 
+                            productos en sus lanzamientos y ademas invitaciones exclusivas a eventos.
+                        </p>
+                        
+                        <h3 class="LG"> LOGO </h3>
+                    </div>
+
+                    <form class="form-rgst" method="post" action="/registro" enctype="multipart/form-data">
+                        <div class="input-rgst">
+                            <label for="name" class="labels-rgst">Name:</label>
+                            <!-- <input type="feedback" id="name" name="name" required> -->
+                            <input type="text" class="box-rgstr-inpt" placeholder="Name" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : ""%>">
+                            <% if (locals.errors && errors.name) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.name.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="input-rgst">
+                            <label for="lastName" class="labels-rgst">Last Name:</label>
+                            <!-- <input type="feedback" id="lastName" name="lastName" required> -->
+                            <input type="text" class="box-rgstr-inpt" placeholder="Last Name" name="lastName" id="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : ""%>">
+                            <% if (locals.errors && errors.lastName) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.lastName.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="input-rgst">
+                            <label for="email" class="labels-rgst">Email:</label>
+                            <input type="email" class="box-rgstr-inpt" placeholder="email" name="email" id="email" value="<%= locals.oldData && oldData.email ? oldData.email : ""%>">
+                            <% if (locals.errors && errors.email) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.email.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="input-rgst">
+                            <label for="password" class="labels-rgst">Password:</label>
+                            <!-- <input type="password" id="password" name="password" required> -->
+                            <input type="password" class="box-rgstr-inpt" placeholder="Password" name="password" id="password">
+                            <% if (locals.errors && errors.password) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.password.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <div class="input-rgst">
+                            <label for="imagenDePerfil" class="labels-rgst">Foto:</label>
+                            <input type="file" name="imagenDePerfil">
+                            <span class="feedback"></span>
+                            <% if (locals.errors && errors.imagenDePerfil) { %>
+                                <div>
+                                    <p class="error-text"><%= errors.imagenDePerfil.msg %></p>
+                                </div>
+                            <% } %>
+                        </div>
+                        <button class="input-rgst bt-mg" type="submit">Register!</button>
+                    </form>
+                </div>
+    </main>
+
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
 </body>
+</html>
+

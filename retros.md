@@ -36,3 +36,27 @@
 
 ### 5. Dejar de hacer: no avisarnos cuando estamos atrasados o trabados con la tarea que tenemos asignada o que se nos complico por algun tema en particular o personal
 
+## Sprint 5
+
+### 1. Comenzar a hacer:  
+
+### 2. Hacer más: trabajar mas como equipo, tratando de resolver los problemas en conjunto 
+
+### 3. Continuar haciendo: comunicación y colaboración en el equipo ya sea por discord o por wasap
+
+### 4. Hacer menos.
+
+### 5. Dejar de hacer: 
+
+
+## Sprint 6
+
+### 1. Comenzar a hacer:  
+
+### 2. Hacer más: 
+
+### 3. Continuar haciendo: 
+
+### 4. Hacer menos.
+
+### 5. Dejar de hacer: 

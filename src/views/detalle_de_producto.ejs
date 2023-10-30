@@ -1,77 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-    <!---------------HEAD------------------>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalle de producto</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="css/styles.css">
+    <%- include("partials/head", {title: product.name}) %>
 </head>
 <body>
+    <!------------------------------------- HEADER ----------------------------------->
     <header>
-        <!-- LOGO -->
-        <h1>LOGO</h1>
-
-        <!-- HAMBURGUER MENU -->
-        <a href="#" class="hamburguer-menu">
-            <i class="fa-solid fa-bars hamburguer-menu"></i>
-        </a>
-
-        <!-- NAVBAR -->
-        <nav class="navbar">
-            <a class="navbar-item" href="/login">
-                Ingresar
-            </a>
-
-            <a class="navbar-item" href="/registro">
-                Crear cuenta
-            </a>
-
-            <a class="navbar-item" href="/carrito">
-                <i class="fa-solid fa-cart-shopping"></i>
-            </a>
-        </nav>
+        <%- include("partials/header") %>
     </header>
+
     <!------------------------------------- MAIN ----------------------------------->
-    
-     <!------------------------------------- FOOTER ----------------------------------->
-     <footer>
-        <section class="footer-section">
-            <h1 class="footer-logo">LOGO</h1>
-
-            <div class="social-networks">
-                <a class="social-network-icon" href="">
-                    <i class="fa-brands fa-instagram"></i>
-                </a>
-
-                <a class="social-network-icon" href="">
-                    <i class="fa-brands fa-tiktok"></i>
-                </a>
-
-                <a class="social-network-icon" href="">
-                    <i class="fa-brands fa-facebook-f"></i>
+    <main class="detalle_de_producto">
+        <section class="product-article">            
+            <div class="product-image-price-container">
+                <a href="">
+                    <img class="product-image" src="images/buzo.jpg" alt="Buzo">
                 </a>
             </div>
-        </section>
-        
-        <section class="footer-section">
-            <h3>CONTACTO</h3>
-            <form class="footer-form" action="" method="POST">
-                <label for="name"></label>
-                <input class="footer-input footer-name-input" type="text" id="name" maxlength="30" name="name" placeholder="Nombre">
-                <label for="email"></label>
-                <input class="footer-input footer-email-input" type="email" id="email" name="email" maxlength="100" placeholder="E-mail">
-                <label for="textarea"></label>
-                <textarea class="footer-input" name="mensaje" id="textarea" rows="10" maxlength="40" placeholder="Escriba su mensaje"></textarea>
+            <div>
+                <h1 class="product-name-detail">Hoodie super soft</h1>
+            </div>
+            <ol>
+                <p class="product-price-detail">$4.500</p>
+                <p class="product-discount-detail">25% OFF</p>
+            </ol>
+                          
+                <h4 class="product-style">Talles</h4>
+                <select id="options" class="form-select form-select talles-detail" name="options">
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                    </select>
+                
+                <div class="">
+                    <input type="submit" class="agregar-al-carrito-detail" value="AGREGAR AL CARRITO" data-store="product-buy-button" data-component="product.add-to-cart">
+                
+                <div class="product-style">
+                    <span class="calcular-envio-detail">CALCULAR ENVIO</span>
+                </div>                        
+                
 
-                <button class="footer-submit-button" type="submit">Enviar</button>
-            </form>
-        </section>
+
+            </div>
+           
+        
+
+
+
+
+    </main>
+     <!------------------------------------- FOOTER ----------------------------------->
+     <footer>
+        <%- include("partials/footer") %>
     </footer>
 </body>
 </html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <%- include("partials/head", {title: "Formulario de edición"}) %>
+</head>
+<body>
+
+    <!------------------------------------- HEADER ----------------------------------->
+    <header>
+        <%- include("partials/header") %>
+    </header>
+
+    <div>
+        <h2 class="title">Editar producto</h2>
+    </div>
+
+    <form action="/products/<%= product.id %>?_method=put" method="post">
+        <div>
+
+            <div class="recorte-2">
+                <label for="name" class="form-input">Nombre del producto:</label>
+                <input type="text" value="<%= product.name %>" id="name" name="name" placeholder="Ej: Buzo Novel">
+            </div>
+
+            <div class="recorte-2">
+                <label for="price" class="form-input">Precio del producto:</label>
+                <input type="number" value="<%= product.price %>" id="price" name="price" placeholder="Ej: 150">
+            </div>
+
+            <div class="recorte-2">
+                <label for="discount" class="form-input">Descuento:</label>
+                <input type="number" value="<%= product.discount %>" id="discount" name="discount" placeholder="Ej: 10 off">
+            </div>
+
+        </div>
+
+        <div>
+            <button type="submit">Guardar producto</button>
+        </div>
+    </form>
+
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
+        <%- include("partials/footer") %>
+    </footer>
+</body>
+</html>
