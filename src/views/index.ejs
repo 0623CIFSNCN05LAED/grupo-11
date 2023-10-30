@@ -13,7 +13,7 @@
     <main>
         <!-- BANNER -->
         <section class="banner">
-            <img class="banner-image" src="images/banner.png" alt="">
+            <img class="banner-image" src="images/home/banner.png" alt="">
         </section>
 
         <!-- PRODUCTS -->
@@ -30,7 +30,7 @@
                 <article class="product-article">
                     <div class="product-image-price-container">
                         <a href="/products/<%= product.id %>">
-                            <img src="/images/<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                            <img src="/images/products/<%= product.image %>" alt="<%= product.name %>" class="product-image">
                         </a>
                         <p class="product-price">$<%= product.price %></p>
                         <p class="product-discount"><%= product.discount %> OFF</p>

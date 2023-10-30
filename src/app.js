@@ -14,6 +14,8 @@ const cookies = require("cookie-parser");
 const app = express();
 
 const mainRouter = require("./routes/main-router")
+const productRouter = require("./routes/product-router")
+const userRouter = require("./routes/user-router")
 
 
 // ************* Middlewares *************
@@ -43,3 +45,5 @@ app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`))
 // ************* Router *************
 
 app.use(mainRouter)
+app.use(productRouter)
+app.use(userRouter)
