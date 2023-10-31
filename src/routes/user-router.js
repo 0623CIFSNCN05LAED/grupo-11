@@ -2,8 +2,8 @@
 
 const {Router} = require("express")
 const userController = require("../controllers/user-controller")
-const {body} = require("express-validator")
-const userLogin = require("../middledware/userLogin");
+
+const registerValidation = require("../middledware/registerValidations")
 // ************* Router *************
 
 const guetsMiddleware = require("../middledware/guetsMiddleware")
@@ -29,21 +29,17 @@ const upload = multer({storage})
 
 // Validaciones
 
-const registerValidations = require("../middledware/registerValidations")
-
 // ************* Rutas *************
 
 //USERS ROUTERS
 
-router.get("/login", userController.login)
+router.get("/login", guetsMiddleware, userController.login)
 router.post("/login", userController.access)
 router.get("/profile/:id", authMiddleware ,userController.profile)
 router.post("/logout", userController.logout)
 
-router.get("/registro", userController.registro)
-router.post("/registro", upload.single("imagenDePerfil"), registerValidations, guetsMiddleware ,userController.procesoRegistro)
+router.get("/registro", guetsMiddleware, userController.registro)
+router.post("/registro", upload.single("imagenDePerfil"), registerValidation, userController.procesoRegistro)
 
 // Export
-
-
 module.exports = router;
