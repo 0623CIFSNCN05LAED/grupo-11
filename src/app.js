@@ -16,6 +16,7 @@ const app = express();
 const mainRouter = require("./routes/main-router")
 const productRouter = require("./routes/product-router")
 const userRouter = require("./routes/user-router")
+const userLoggedMiddleware = require("./middledware/userLoggedMiddleware")
 
 
 // ************* Middlewares *************
@@ -33,6 +34,7 @@ app.use(
     })
 );
 app.use(cookies())
+app.use(userLoggedMiddleware)
 
 app.set("view engine", "ejs")
 app.set("views", "./src/views")

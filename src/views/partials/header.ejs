@@ -7,23 +7,38 @@
 
 <!-- NAVBAR -->
 <nav class="navbar">
-    <a class="navbar-item" href="/products">
-        Productos
-    </a>
 
-    <a class="navbar-item" href="/products/create">
-        Crear producto
-    </a>
+    <% if(locals.isLogged) { %>
 
-    <a class="navbar-item" href="/login">
-        Ingresar
-    </a>
+        <a class="navbar-item" href="/products">
+            Productos
+        </a>
+    
+        <a class="navbar-item" href="/products/create">
+            Crear producto
+        </a>
 
-    <a class="navbar-item" href="/registro">
-        Crear cuenta
-    </a>
+        <a class="navbar-item" href="/profile/:id">
+            Perfil
+        </a>
 
-    <a class="navbar-item" href="/carrito">
-        <i class="fa-solid fa-cart-shopping"></i>
-    </a>
+        <a class="navbar-item" href="/carrito">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+    <% } else { %>
+
+        <a class="navbar-item" href="/products">
+            Productos
+        </a>
+
+        <a class="navbar-item" href="/login">
+            Ingresar
+        </a>
+    
+        <a class="navbar-item" href="/registro">
+            Crear cuenta
+        </a>
+
+    <% } %>
 </nav>

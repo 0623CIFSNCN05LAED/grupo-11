@@ -40,16 +40,20 @@
                 
                 <div class="product-style">
                     <span class="calcular-envio-detail">CALCULAR ENVIO</span>
-                </div>                        
+                </div>   
                 
-                <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail">
-                    <button type="submit" class="agregar-al-carrito-detail">Eliminar</button>   
-                  
-                </form>
-            
-                <a class="agregar-al-carrito-detail " href="/products/<%= product.id %>/edit/" >
-                     Edit
-                </a>
+                <% if(locals.isLogged){ %>
+
+                    <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail">
+                        <button type="submit" class="agregar-al-carrito-detail">Eliminar</button>   
+                      
+                    </form>
+                
+                    <a class="agregar-al-carrito-detail " href="/products/<%= product.id %>/edit/" >
+                         Edit
+                    </a>
+
+                <% } %>
 
             </div>
            
