@@ -14,15 +14,15 @@
         <section class="product-article">            
             <div class="product-image-price-container">
                 <a href="">
-                    <img class="product-image" src="images/products/buzo.jpg" alt="Buzo">
+                    <img class="product-image" src="/images/products/<%= product.image %>" alt="Buzo">
                 </a>
             </div>
             <div>
-                <h1 class="product-name-detail">Hoodie super soft</h1>
+                <h1 class="product-name-detail"><%= product.name %></h1>
             </div>
             <ol>
-                <p class="product-price-detail">$4.500</p>
-                <p class="product-discount-detail">25% OFF</p>
+                <p class="product-price-detail"><%= product.price %></p>
+                <p class="product-discount-detail"><%=product.discount%>%</p>
             </ol>
                           
                 <h4 class="product-style">Talles</h4>
@@ -42,7 +42,14 @@
                     <span class="calcular-envio-detail">CALCULAR ENVIO</span>
                 </div>                        
                 
-
+                <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail">
+                    <button type="submit" class="agregar-al-carrito-detail">Eliminar</button>   
+                  
+                </form>
+            
+                <a class="agregar-al-carrito-detail " href="/products/<%= product.id %>/edit/" >
+                     Edit
+                </a>
 
             </div>
            

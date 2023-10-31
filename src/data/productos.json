@@ -26,5 +26,12 @@
     "price": 12000,
     "discount": 15,
     "image": "image-1695529172712.jpg"
+  },
+  {
+    "id": "11cf5937-1586-4218-ac64-5e79c96a6a37",
+    "name": "zapatillas nuevas",
+    "price": 36000,
+    "discount": 14,
+    "image": "image-1698715421282.jpg"
   }
 ]
