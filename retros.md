@@ -53,9 +53,9 @@
 
 ### 1. Comenzar a hacer:  
 
-### 2. Hacer más: 
+### 2. Hacer más: mayor particiapacion de algunos integrantes
 
-### 3. Continuar haciendo: 
+### 3. Continuar haciendo: comunicación y colaboración en el equipo ya sea por discord o por wasap
 
 ### 4. Hacer menos.
 
