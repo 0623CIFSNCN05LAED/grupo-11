@@ -61,5 +61,11 @@ module.exports = {
         productoServices.deleteProduct(id)
         res.redirect("/products")
       
+     },
+     list: (req, res) => {
+        productoServices.getAllProducts()
+            .then((products) => {
+            res.render("products", {products});
+    })
     }
 }
