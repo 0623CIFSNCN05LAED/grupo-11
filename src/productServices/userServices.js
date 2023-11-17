@@ -1,17 +1,31 @@
-const db = require("../data/db")
+const { Users } = require("../database/models");
 
 const userServices = {
+    // getAllUser: () => {
+    //     return Users.findAllUsers()
+    // },
 
-    getAllUser: () => {
-        return db.users.findAllUsers()
-    },
     getUserId: (id) => {
-        return db.users.findByPk(id)
-    },
-    findUserEmail: (email, text) => {
-        return db.users.findByField(email, text)
+        return Users.findByPk(id)
     },
 
+    // findUserEmail: (email, text) => {
+    //     return Users.findByField(email, text)
+    // },
+
+    findUserEmail: (text) => {
+        return Users.findOne({where: {email: text}})
+    },
+
+    createUser: (nuevoUsuario) => {
+        return Users.create({
+            name: nuevoUsuario.name,
+            last_name: nuevoUsuario.lastName,
+            email: nuevoUsuario.email,
+            password: nuevoUsuario.password,
+            profile_picture: nuevoUsuario.imagenDePerfil
+        })
+    }
 }
 
 module.exports = userServices
