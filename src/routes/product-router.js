@@ -28,7 +28,7 @@ const upload = multer({storage})
 
 //PRODUCTS ROUTERS
 
-router.get("/products", productController.products)
+router.get("/products", productController.list)
 
 router.get("/carrito", productController.carrito)
 

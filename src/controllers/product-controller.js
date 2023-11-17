@@ -8,64 +8,40 @@ module.exports = {
         res.render("carrito_de_compras")
     },
 
-    products:(req,res)=>{
-        const products = productoServices.getAllProducts()
-        res.render("products",{products})
-    },
-
     createForm:(req, res) => {
         res.render("product-create-form",)
     },
 
+    list: (req, res) => {
+        productoServices.getAllProducts()
+            .then((products) => {
+            res.render("products", {products});
+        })
+    },
+
     productCreateProcess: (req, res) => {
-        const product = {
-            name: req.body.name,
-            price: Number(req.body.price),
-            discount: Number(req.body.discount),
-            image: req.file ? req.file.filename : "defaul-image.png"
-        }
-        productoServices.createProduct(product)
-        res.redirect("/products")
+        // hecho con db
+        productoServices.createProduct(req.body).then(productos => {res.redirect("/products")})
     },
 
     productDetail: (req, res) => {
         const id = req.params.id
-        const product = productoServices.getProductId(id)
-        
-
-        res.render("detalle_de_producto", {product})
+        return productoServices.getProductId(id).then(product => res.render("detalle_de_producto", {product}))
     },
 
     productEditForm: (req, res) => {
         const id = req.params.id
-        const product = productoServices.getProductId(id)
-        res.render("product-edit-form", {product})
+        return productoServices.getProductId(id).then(product => res.render("product-edit-form", {product}))
     },
 
     productEditProcess: (req, res) => {
         const product = req.body
         const id = req.params.id
-
-        let productoEditado = {
-            ...product,
-            price: Number(req.body.price),
-            discount: Number(req.body.discount)
-        }
-
-        productoServices.updateProduct(id, productoEditado)
-        res.redirect("/products")
+        return productoServices.updateProduct(product, id).then(product => res.redirect("/products"))
     },
 
     productDelete: (req, res) => {
         const id = req.params.id
-        productoServices.deleteProduct(id)
-        res.redirect("/products")
-      
-     },
-     list: (req, res) => {
-        productoServices.getAllProducts()
-            .then((products) => {
-            res.render("products", {products});
-    })
-    }
+        productoServices.deleteProduct(id).then(() => res.redirect("/products"))
+    },
 }

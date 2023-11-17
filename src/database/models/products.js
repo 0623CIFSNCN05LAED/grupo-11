@@ -9,8 +9,8 @@ module.exports = (sequelize, DataTypes) => {
       },
       {
         tableName: "products",
-        // createdAt: "created_at",
-        // updatedAt: "updated_at",
+        createdAt: "created_at",
+        updatedAt: "updated_at",
       }
     );
   
