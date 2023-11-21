@@ -15,6 +15,13 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: "updated_at",
       }
     );
+    Model.associate = (model) => {
 
+      Model.hasOne(model.ShoppingCart, {
+        as:"users",
+        foreignKey:"id_users"
+      });
+  
+    }
     return Model;
   };

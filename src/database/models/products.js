@@ -13,6 +13,24 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: "updated_at",
       }
     );
-  
+    Model.associate = (model) => {
+
+      Model.belongsToMany(model.Size, {
+        as: "size",
+        through: "products_size",
+        foreignKey: "id_product",
+        otherKey: "id_size",
+        timestamps: false
+    });
+
+      Model.belongsToMany(model.ShoppingCart, {
+        as: "shopping_cart",
+        through: "products_shopping_cart",
+        foreignKey: "id_product",
+        otherKey: "id_shopping_cart",
+        timestamps: false
+      })
+    }
+
     return Model;
   };

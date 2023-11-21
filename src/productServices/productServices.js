@@ -4,7 +4,12 @@ const Sequelize = require("sequelize");
 const productoServices = {
 
     getAllProducts:()=>{
-        return Products.findAll()
+        return Products.findAll({
+            include: [
+                "size",
+                "shopping_cart"
+            ]
+        })
     },
 
     getProductId: (id) => {

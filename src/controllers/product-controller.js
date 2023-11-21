@@ -15,6 +15,7 @@ module.exports = {
     list: (req, res) => {
         productoServices.getAllProducts()
             .then((products) => {
+            console.log(products);
             res.render("products", {products});
         })
     },

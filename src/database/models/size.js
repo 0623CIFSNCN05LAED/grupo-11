@@ -8,9 +8,21 @@ module.exports = (sequelize, DataTypes) => {
       },
       {
         tableName: "size",
+        timestamps: false
      
       }
     );
-  
+      
+    Model.associate = (model) => {
+
+      Model.belongsToMany(model.Products, {
+        as: "product",
+        through: "products_size",
+        foreignKey: "id_size",
+        otherKey: "id_product",
+        timestamps: false
+    });
+    }
+
     return Model;
   };
