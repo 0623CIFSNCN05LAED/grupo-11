@@ -18,14 +18,14 @@
         <section>
             <img class="rgst-image-mobile" src="images/register/register-bg-mobile.jpg" alt="">
         </section>
-
+        
                 <div class="rgst-container"> 
 
-                    <div class="input-rgst">
-                        <img src="/images/usersProfile/<%=user.imagenDePerfil %>">
+                    <div class="input-rgst profile-image">
+                        <img src="/images/usersProfile/<%=user.profile_picture %>">
                     </div>
 
-                    <form class="form-rgst" method="post" action="/profile/<%= user.id %>" enctype="multipart/form-data">
+                    <div class="user-info">
                         <div class="input-rgst">
                             <div class="labels-rgst">
                                 <p>Nombre:</p>
@@ -44,13 +44,13 @@
                         </div>
                         <div class="input-rgst">
                             <div class="labels-rgst">
-                                <p>Nombre:</p>
+                                <p>Email:</p>
                             </div>
                             <div class="box-rgstr-inpt">
                                 <%= user.email %>
                             </div>
                         </div>
-                    </form>
+                    </div>
                     <form class="form-rgst" method="post" action="/logout">
                         <button class="input-rgst bt-mg" type="submit">Logout</button>
                     </form>

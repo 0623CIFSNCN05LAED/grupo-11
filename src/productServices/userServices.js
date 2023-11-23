@@ -23,7 +23,7 @@ const userServices = {
             last_name: nuevoUsuario.lastName,
             email: nuevoUsuario.email,
             password: nuevoUsuario.password,
-            profile_picture: nuevoUsuario.imagenDePerfil
+            profile_picture: nuevoUsuario.profile_picture
         })
     }
 }

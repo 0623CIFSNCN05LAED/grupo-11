@@ -22,6 +22,7 @@ module.exports = {
 
     productCreateProcess: (req, res) => {
         // hecho con db
+        console.log(req.body.image)
         productoServices.createProduct(req.body).then(productos => {res.redirect("/products")})
     },
 
