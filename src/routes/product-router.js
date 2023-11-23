@@ -33,7 +33,7 @@ router.get("/products", productController.list)
 router.get("/carrito", productController.carrito)
 
 router.get("/products/create", authMiddleware, productController.createForm);
-router.post("/products", upload.single("image"),productController.productCreateProcess)
+router.post("/products", upload.single("image"), productController.productCreateProcess)
 
 router.get("/products/:id", productController.productDetail)
 

@@ -16,14 +16,13 @@ const productoServices = {
         return Products.findByPk(id)
     },
 
-    createProduct: (product) => {
+    createProduct: (product, image) => {
         return Products.create({
             price: product.price,
             discount: product.discount,
             product_name: product.name,
-            image: product.image
+            image: image
         })
-        // return db.products.create(product)
     },
 
     updateProduct: (product, id) => {

@@ -15,15 +15,12 @@ module.exports = {
     list: (req, res) => {
         productoServices.getAllProducts()
             .then((products) => {
-            console.log(products);
             res.render("products", {products});
         })
     },
 
     productCreateProcess: (req, res) => {
-        // hecho con db
-        console.log(req.body.image)
-        productoServices.createProduct(req.body).then(productos => {res.redirect("/products")})
+        productoServices.createProduct(req.body, req.file.filename).then(productos => {res.redirect("/products")})
     },
 
     productDetail: (req, res) => {
