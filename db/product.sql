@@ -13,11 +13,15 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`)
 );
 
+insert into `products` values (1, 20000, 15, 'Buzo Oversize', 'buzo.jpg', null, null), (2, 27000, 10, 'Campera de Jean', 'campera-jean.jpg', null, null), (3, 12000, 5, 'Jogger', 'jogger.jpg', null, null), (4, 10000, 5, 'Remera Oversize', 'remera-oversize.jpg', null, null);
+
 create table `size` (
 	`id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
  	`size_name` varchar(95) not null,
  	primary key (`id`)
 );
+
+insert into `size` values (1, 'XXS'),(2, 'XS'),(3, 'S'),(4,'M'),(5,'L'),(6,'XL'),(7,'XXL');
 
 create table `users` (
 	`id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
