@@ -1,11 +1,26 @@
 const productoServices = require("../productServices/productServices")
+const shoppingCartServices = require("../productServices/shoppingCartServices")
 
 module.exports = {
 
 // PRODUCTOS
 
     carrito:(req,res)=>{
-        res.render("carrito_de_compras")
+        shoppingCartServices.getAtllShoppingCart().then(productos => {
+            let total = 0
+            productos.forEach(producto => {
+                total += producto.total
+            });
+            res.render("carrito_de_compras", {productos, total})
+        })
+    },
+
+    agregarACarrito: (req, res) => {
+        const idProducto = req.params.id
+        productoServices.getProductId(idProducto).then(producto => {
+            shoppingCartServices.addToCart(producto)
+            res.redirect("/carrito")
+        })
     },
 
     createForm:(req, res) => {
@@ -25,7 +40,9 @@ module.exports = {
 
     productDetail: (req, res) => {
         const id = req.params.id
-        return productoServices.getProductId(id).then(product => res.render("detalle_de_producto", {product}))
+        return productoServices.getProductId(id).then(product => {
+            res.render("detalle_de_producto", {product})
+    })
     },
 
     productEditForm: (req, res) => {

@@ -40,7 +40,6 @@ const productoServices = {
             where: {id: id}
         })
     },
-    
 };
 
 module.exports = productoServices;

@@ -11,20 +11,23 @@
     </header>
 
     <!------------------------------------- MAIN ----------------------------------->
-    <article class="product-article">
-        <div class="product-image-price-container">
-            <img class="product-image"  alt="campera-jean">
-        </div>
-    </article>
+    
 
     <form action="" method="">
-        <div class="margin-left recorte">
-            <label for="nombreProducto"></label>
-            <input type="text" name="nombreProducto" id="nombreProducto">
-            <span class="feedback"></span>
+
+        <div class="productos-en-carrito">
+            <% productos.forEach(producto => { %>
+
+                <div class="producto-en-carrito" style="margin-bottom: 300px;">
+                    <img style="width: 100px;" src="/images/products/<%= producto.image %>" alt="Imágen del producto">
+                    <p class="nombre-producto-carrito"><%= producto.product_name %></p>
+                    <p class="precio-producto-carrito"><%= producto.total %></p>
+                </div>
+    
+            <% }) %>
         </div>
 
-        <div class="margin-left recorte">
+        <!-- <div class="margin-left recorte">
             <h4 for="option">Selecciona cantidad:</h4>
                 <select id="options" class="form-select form-select talles-detail" name="options">
                     <option value="1">1</option>
@@ -39,24 +42,10 @@
                     <option value="10">10</option>
                     </select>
             </select>
-        </div>
+        </div> -->
 
         <div class="up recorte-2">
-            <label for="Subtotal">Subtotal:</label>
-            <input type="text" name="Subtotal" id="Subtotal">
-            <span class="feedback"></span>
-        </div>
-
-        <div class="up recorte-2">
-            <label for="CalcularEnvio">Calcular envío:</label>
-            <input for="file" name="CalcularEnvío" id="CalcularEnvío" >
-            <span class="feedback"></span>
-        </div>
-
-        <div class="up recorte-2">
-            <label for="Total">Total:</label>
-            <input type="text" name="Total" id="Total">
-            <span class="feedback"></span>
+            <p>Total: <%= total %></p>
         </div>
 
         <div class="flex flex-position border-s">

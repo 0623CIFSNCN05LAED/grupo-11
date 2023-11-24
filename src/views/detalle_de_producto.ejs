@@ -36,7 +36,9 @@
                     </select>
                 
                 <div class="">
-                    <input type="submit" class="agregar-al-carrito-detail" value="AGREGAR AL CARRITO" data-store="product-buy-button" data-component="product.add-to-cart">
+                    <form action="/carrito/<%= product.id %>" method="post" enctype="multipart/form-data">
+                        <button class="agregar-carrito" type="submit">AGREGAR AL CARRITO</button>
+                    </form>
                 
                 <div class="product-style">
                     <span class="calcular-envio-detail">CALCULAR ENVIO</span>
