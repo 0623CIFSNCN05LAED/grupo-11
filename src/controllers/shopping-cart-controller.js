@@ -3,14 +3,14 @@ const productoServices = require("../productServices/productServices")
 
 module.exports = {
 
-    carrito:(req,res)=>{
-        shoppingCartServices.getAtllShoppingCart().then(productos => {
-            let total = 0
-            productos.forEach(producto => {
-                total += producto.total
-            });
-            res.render("carrito_de_compras", {productos, total})
-        })
+    carrito: async (req,res)=>{
+        const productos = await shoppingCartServices.getAtllShoppingCart()
+
+        const productosUsuario = await shoppingCartServices.productsFilter(productos, req)
+
+        const total = await shoppingCartServices.getTotalPrice(productosUsuario)
+
+        res.render("carrito_de_compras", {productosUsuario, total})
     },
 
     agregarACarrito: (req, res) => {

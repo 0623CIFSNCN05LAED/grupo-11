@@ -14,6 +14,30 @@ const shoppingCartServices = {
             total: producto.price,
             id_users: idUser
         })
+    },
+
+    productsFilter: (productos, req) => {
+            const user = req.session.userLogged
+            const userId = user.id
+            const productosUsuario = []
+
+            productos.forEach(producto => {
+                if(userId === producto.id_users){
+                    productosUsuario.push(producto)
+                }
+            });
+
+            return productosUsuario
+    },
+
+    getTotalPrice: (productosUsuario) => {
+        let total = 0
+
+        productosUsuario.forEach(producto => {
+            total += producto.total
+        });
+
+        return total
     }
 
 }
