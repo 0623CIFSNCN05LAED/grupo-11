@@ -30,9 +30,6 @@ const upload = multer({storage})
 
 router.get("/products", productController.list)
 
-router.get("/carrito", productController.carrito)
-router.post("/carrito/:id", productController.agregarACarrito)
-
 router.get("/products/create", authMiddleware, productController.createForm);
 router.post("/products", upload.single("image"), productController.productCreateProcess)
 

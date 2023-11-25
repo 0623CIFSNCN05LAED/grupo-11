@@ -16,6 +16,7 @@ const app = express();
 const mainRouter = require("./routes/main-router")
 const productRouter = require("./routes/product-router")
 const userRouter = require("./routes/user-router")
+const shoppingCartRouter = require("./routes/shopping-cart-router")
 const userLoggedMiddleware = require("./middledware/userLoggedMiddleware")
 
 
@@ -49,3 +50,4 @@ app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`))
 app.use(mainRouter)
 app.use(productRouter)
 app.use(userRouter)
+app.use(shoppingCartRouter)
