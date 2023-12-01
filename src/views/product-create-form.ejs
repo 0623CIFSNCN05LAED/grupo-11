@@ -7,33 +7,38 @@
     <header>
         <!-- LOGO -->
         <%- include("partials/header")%>
+        <script src="/js/creacionProducto.js" defer></script>
     </header>
 
     <div>
         <h2 class="title">Formulario de creacion de productos</h2>
     </div>
 
-    <form action="/products" method="post" enctype="multipart/form-data">
+    <form action="/products" method="post" enctype="multipart/form-data" id="createForm">
         <div>
 
             <div class="recorte-2">
                 <label for="name" class="form-input">Nombre del producto:</label>
                 <input type="text" id="name" name="name" placeholder="Ej: Buzo Novel">
+                <span class="errorMsg" id="nameError"></span>
             </div>
 
             <div class="recorte-2">
                 <label for="price" class="form-input">Precio del producto:</label>
                 <input type="number" id="price" name="price" placeholder="Ej: 150">
+                <span class="errorMsg" id="priceError"></span>
             </div>
 
             <div class="recorte-2">
                 <label for="discount" class="form-input">Descuento:</label>
                 <input type="number" id="discount" name="discount" placeholder="Ej: 10 off">
+                <span class="errorMsg" id="discountError"></span>
             </div>
 
             <div class="recorte-2">
                 <label for="image" class="form-input">Imagen:</label>
                 <input type="file" name="image" id="image">
+                <span class="errorMsg" id="imageError"></span>
             </div>
 
         </div>
