@@ -7,6 +7,7 @@
     <!------------------------------------- HEADER ----------------------------------->
     <header>
         <%- include("partials/header") %>
+        <script src="/js/registro.js" defer></script>
     </header>
 
     <!------------------------------------- MAIN ----------------------------------->
@@ -32,11 +33,12 @@
                         <h3 class="LG"> LOGO </h3>
                     </div>
 
-                    <form class="form-rgst" method="post" action="/registro" enctype="multipart/form-data">
+                    <form class="form-rgst" method="post" action="/registro" enctype="multipart/form-data" id="registerForm">
                         <div class="input-rgst">
                             <label for="name" class="labels-rgst">Name:</label>
                             <!-- <input type="feedback" id="name" name="name" required> -->
                             <input type="text" class="box-rgstr-inpt" placeholder="Name" name="name" id="name" value="<%= locals.oldData && oldData.name ? oldData.name : ""%>">
+                            <span class="errorMsg" id="nameError"></span>
                             <% if (locals.errors && errors.name) { %>
                                 <div>
                                     <p class="error-text"><%= errors.name.msg %></p>
@@ -46,6 +48,7 @@
                         <div class="input-rgst">
                             <label for="lastName" class="labels-rgst">Last Name:</label>
                             <!-- <input type="feedback" id="lastName" name="lastName" required> -->
+                            <span class="errorMsg" id="lastNameError"></span>
                             <input type="text" class="box-rgstr-inpt" placeholder="Last Name" name="lastName" id="lastName" value="<%= locals.oldData && oldData.lastName ? oldData.lastName : ""%>">
                             <% if (locals.errors && errors.lastName) { %>
                                 <div>
@@ -56,6 +59,7 @@
                         <div class="input-rgst">
                             <label for="email" class="labels-rgst">Email:</label>
                             <input type="email" class="box-rgstr-inpt" placeholder="email" name="email" id="email" value="<%= locals.oldData && oldData.email ? oldData.email : ""%>">
+                            <span class="errorMsg" id="emailError"></span>
                             <% if (locals.errors && errors.email) { %>
                                 <div>
                                     <p class="error-text"><%= errors.email.msg %></p>
@@ -65,6 +69,7 @@
                         <div class="input-rgst">
                             <label for="password" class="labels-rgst">Password:</label>
                             <!-- <input type="password" id="password" name="password" required> -->
+                            <span class="errorMsg" id="passwordError"></span>
                             <input type="password" class="box-rgstr-inpt" placeholder="Password" name="password" id="password">
                             <% if (locals.errors && errors.password) { %>
                                 <div>

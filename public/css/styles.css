@@ -620,5 +620,14 @@ button:hover {
     margin-top: 60px;
  }
 
+ .errorMsg {
+     display: none;
+     color: red;
+ }
+
+ .display {
+     display: block;
+ }
+
  
 
