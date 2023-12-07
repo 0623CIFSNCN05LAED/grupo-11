@@ -24,7 +24,7 @@ create table `size` (
 insert into `size` values (1, 'XXS'),(2, 'XS'),(3, 'S'),(4,'M'),(5,'L'),(6,'XL'),(7,'XXL');
 
 create table `users` (
-	`id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
+	`id` varchar(96) NOT NULL,
 	`name` varchar(96) not null,
 	`last_name` varchar(96) not null,
 	`email` varchar(96) not null,
@@ -42,7 +42,7 @@ create table `shopping_cart` (
 	`id_product` smallint(9) not null,
 	`quantity` smallint(9) not null,
 	`total` smallint(9) not null,
-	`id_users` smallint(9) unsigned not null,
+	`id_users` varchar(96) not null,
 	`created_at` timestamp NOT NULL DEFAULT now(),
 	`updated_at` timestamp NOT NULL DEFAULT now(),
 	primary key (`id`),

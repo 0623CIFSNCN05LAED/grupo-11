@@ -1,3 +1,5 @@
+const { v4: uuidv4 } = require('uuid');
+
 const {validationResult} = require("express-validator")
 const User = require("../data/User")
 const bcrypt = require("bcryptjs")
@@ -76,6 +78,7 @@ module.exports = {
 
         let nuevoUsuario = {
             ...req.body,
+            id:uuidv4(),
             password: bcrypt.hashSync(req.body.password, 10),
             profile_picture: req.file.filename
         }

@@ -18,7 +18,9 @@ const userServices = {
     },
 
     createUser: (nuevoUsuario) => {
+      console.log(nuevoUsuario.id);
         return Users.create({
+            id: nuevoUsuario.id,
             name: nuevoUsuario.name,
             last_name: nuevoUsuario.lastName,
             email: nuevoUsuario.email,
@@ -29,3 +31,4 @@ const userServices = {
 }
 
 module.exports = userServices
+
