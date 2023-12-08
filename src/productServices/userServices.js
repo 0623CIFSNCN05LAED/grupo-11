@@ -1,9 +1,9 @@
 const { Users } = require("../database/models");
 
 const userServices = {
-    // getAllUser: () => {
-    //     return Users.findAllUsers()
-    // },
+    getAllUser: () => {
+         return Users.findAll()
+     },
 
     getUserId: (id) => {
         return Users.findByPk(id)
