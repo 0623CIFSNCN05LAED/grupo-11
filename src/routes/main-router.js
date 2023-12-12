@@ -8,30 +8,6 @@ const apiRouter = require('./api/index')
 
 const router = Router()
 
-
-
-// HEAD
-
-// ******* MULTER ******* //
-
-const path = require("path")
-const multer = require("multer")
-
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, path.join(__dirname, "../../public/images"))
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-  })
-
-const upload = multer({storage})
-
-// Validaciones
-
-
-
 // ************* Rutas *************
 
 router.use('/api', apiRouter )

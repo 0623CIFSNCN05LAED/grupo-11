@@ -2,8 +2,8 @@
 
 const {Router} = require("express")
 const userController = require("../controllers/user-controller")
-
 const registerValidation = require("../middledware/registerValidations")
+const multerUpload = require("./multer/multerConfig")
 // ************* Router *************
 
 const guetsMiddleware = require("../middledware/guetsMiddleware")
@@ -12,22 +12,18 @@ const authMiddleware = require("../middledware/authMiddleware")
 const router = Router()
 // HEAD
 // ******* MULTER ******* //
+// const multer = require("multer")
 
-const path = require("path")
-const multer = require("multer")
+// const storage = multer.diskStorage({
+//     destination: (req, file, cb) => {
+//       cb(null, path.join(__dirname, "../../public/images/usersProfile"))
+//     },
+//     filename: function (req, file, cb) {
+//       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
+//     }
+//   })
 
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, path.join(__dirname, "../../public/images/usersProfile"))
-    },
-    filename: function (req, file, cb) {
-      cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-    }
-  })
-
-const upload = multer({storage})
-
-// Validaciones
+// const upload = multer({storage})
 
 // ************* Rutas *************
 
@@ -39,7 +35,7 @@ router.get("/profile/:id", authMiddleware ,userController.profile)
 router.post("/logout", userController.logout)
 
 router.get("/registro", guetsMiddleware, userController.registro)
-router.post("/registro", upload.single("imagenDePerfil"), registerValidation, userController.procesoRegistro)
+router.post("/registro", multerUpload.single("imagenDePerfil"), registerValidation, userController.procesoRegistro)
 
 // Export
 module.exports = router;
