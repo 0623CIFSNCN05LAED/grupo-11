@@ -5,23 +5,11 @@ const productController = require("../controllers/product-controller")
 const multerUpload = require("./multer/multerConfig")
 // ************* Router *************
 
-const authMiddleware = require("../middledware/authMiddleware")
-
 const router = Router()
 
-const path = require("path")
-// const multer = require("multer")
+// ************* Middlewares *************
 
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//       cb(null, path.join(__dirname, "../../public/images/products"))
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-//     }
-//   })
-
-// const upload = multer({storage})
+const authMiddleware = require("../middledware/authMiddleware")
 
 // ************* Rutas *************
 

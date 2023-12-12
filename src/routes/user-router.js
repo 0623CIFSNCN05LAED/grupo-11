@@ -6,24 +6,12 @@ const registerValidation = require("../middledware/registerValidations")
 const multerUpload = require("./multer/multerConfig")
 // ************* Router *************
 
+const router = Router()
+
+// ************* Middlewares *************
+
 const guetsMiddleware = require("../middledware/guetsMiddleware")
 const authMiddleware = require("../middledware/authMiddleware")
-
-const router = Router()
-// HEAD
-// ******* MULTER ******* //
-// const multer = require("multer")
-
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//       cb(null, path.join(__dirname, "../../public/images/usersProfile"))
-//     },
-//     filename: function (req, file, cb) {
-//       cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname))
-//     }
-//   })
-
-// const upload = multer({storage})
 
 // ************* Rutas *************
 
