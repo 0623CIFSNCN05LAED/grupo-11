@@ -60,3 +60,16 @@
 ### 4. Hacer menos.
 
 ### 5. Dejar de hacer: 
+
+
+## Sprint 7
+
+### 1. Comenzar a hacer:  
+
+### 2. Hacer más: mantener el trello actualizado
+
+### 3. Continuar haciendo: comunicación y colaboración en el equipo realizando los sprints en conjunto y dandonos soporte con la tareas que se lleva cada uno 
+
+### 4. Hacer menos: 
+
+### 5. Dejar de hacer: no avisarnos cuando estamos atrasados con lo que teniamos asignado y eso impacta en el trabajo del otro
