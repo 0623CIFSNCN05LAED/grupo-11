@@ -2,6 +2,7 @@
 
 const {Router} = require("express")
 const shoppingCartController = require("../controllers/shopping-cart-controller")
+const authMiddleware = require("../middledware/authMiddleware")
 // ************* Router *************
 
 const router = Router()
@@ -9,7 +10,7 @@ const router = Router()
 // ************* Rutas *************
 
 router.get("/carrito", shoppingCartController.carrito)
-router.post("/carrito/:id", shoppingCartController.agregarACarrito)
+router.post("/carrito/:id", authMiddleware,shoppingCartController.agregarACarrito)
 
 // Export
 
