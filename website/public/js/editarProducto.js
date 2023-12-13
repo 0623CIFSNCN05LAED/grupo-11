@@ -1,29 +1,28 @@
 
 const validations = [
-    {
-      field: "name",
-      check: (input) => input.value.length > 0,
-      message: "Debe contener al menos un caracter",
-    },
-    {
-      field: "price",
-      check: (input) => input.value > 0,
-      message: "Debe ser un valor mayor a 0",
-    },
+  {
+    field: "name",
+    check: (input) => input.value.length > 0,
+    message: "Debe contener al menos un caracter",
+  },
+  {
+    field: "price",
+    check: (input) => input.value > 0,
+    message: "Debe ser un valor mayor a 0",
+  },
+  {
+    field: "discount",
+    check: (input) => input.value > 0 ,
+    message: "Debe ser un valor mayor a 0",
+  },
+]
     
-        {
-          field: "discount",
-          check: (input) => input.value > 0 ,
-          message: "Debe ser un valor mayor a 0",
-        },
-        
-    ]
-    validations.forEach((validation) => {
-        const inputId = validation.field;
-        const input = document.getElementById(inputId);
-        const inputErrorMsg = document.getElementById(inputId + "Error");
+validations.forEach((validation) => {
+  const inputId = validation.field;
+  const input = document.getElementById(inputId);
+  const inputErrorMsg = document.getElementById(inputId + "Error");
       
-        function validate() {
+  function validate() {
           console.log("input.value", input.value);
           inputValidation(validation, input, inputErrorMsg);
         }
