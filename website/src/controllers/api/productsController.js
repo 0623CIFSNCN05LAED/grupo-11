@@ -8,6 +8,7 @@ module.exports = {
       meta: {
         status: 201,
         url: req.originalUrl,
+        total: products.length
       },
       data: products,
     })},

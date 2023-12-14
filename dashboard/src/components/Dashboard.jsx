@@ -1,12 +1,14 @@
 import './Dashboard.css'
-import Products from './content/Products'
-import Users from './content/Users'
+import ContentWrap from './ContentWrap'
+import SearchWrap from './SearchWrap'
+import MenuWrap from './MenuWrap'
 
 function DashBoard(){
     return(
         <div className="dashboard">
-           <Products/>
-           <Users/>
+            <SearchWrap/>
+            <MenuWrap/>
+            <ContentWrap/>
         </div>
     )
 }
