@@ -4,6 +4,8 @@ const express = require ('express');
 const path = require('path')
 const methodOverride = require("method-override");
 
+
+
 // *********** session ************
 
 const session = require ('express-session');
@@ -12,6 +14,15 @@ const session = require ('express-session');
 const cookies = require("cookie-parser");
 
 const app = express();
+
+const cors = require("cors");
+app.use(
+  cors(
+    (corsOptions = {
+      origin: "*",
+    })
+  )
+);
 
 const mainRouter = require("./routes/main-router")
 const productRouter = require("./routes/product-router")
@@ -45,7 +56,7 @@ app.set("views", "./src/views")
 const PORT= process.env.PORT || 3011
 app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`))
 
-// ************* Router *************
+// ************* Router *************npm
 
 app.use(mainRouter)
 app.use(productRouter)
