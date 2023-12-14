@@ -49,21 +49,21 @@ if (validationsResult.every((val) => val == true)) {
 form.submit();
 }
 });
-      function inputValidation(validation, input, inputErrorMsg) {
-        if (!input.value) {
-          inputErrorMsg.innerText = "El campo no debe estar vacío";
-          inputErrorMsg.classList.add("display");
-          return false;
-        }
       
-        if (!validation.check(input)) {
-          inputErrorMsg.innerText = validation.message;
-          inputErrorMsg.classList.add("display");
-          return false;
-        }
+function inputValidation(validation, input, inputErrorMsg) {
+  if (!input.value) {      
+    inputErrorMsg.innerText = "El campo no debe estar vacío";      
+    inputErrorMsg.classList.add("display");      
+    return false;
+}     
+  if (!validation.check(input)) {
+    inputErrorMsg.innerText = validation.message;
+    inputErrorMsg.classList.add("display");
+    return false;
+}
       
-        inputErrorMsg.innerText = "";
-        inputErrorMsg.classList.remove("display");
-        return true;
-      };
+  inputErrorMsg.innerText = "";
+  inputErrorMsg.classList.remove("display");
+  return true;
+};
       
