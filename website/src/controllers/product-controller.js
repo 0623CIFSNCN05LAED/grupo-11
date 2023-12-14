@@ -1,5 +1,4 @@
-const productoServices = require("../productServices/productServices")
-const shoppingCartServices = require("../productServices/shoppingCartServices")
+const productoServices = require("../services/productServices")
 
 module.exports = {
 

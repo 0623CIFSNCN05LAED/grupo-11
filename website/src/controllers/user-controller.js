@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 const {validationResult} = require("express-validator")
 const User = require("../data/User")
 const bcrypt = require("bcryptjs")
-const userServices = require("../productServices/userServices")
+const userServices = require("../services/userServices")
 
 module.exports = {
 
