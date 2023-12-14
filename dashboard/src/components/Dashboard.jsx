@@ -1,12 +1,12 @@
 import './Dashboard.css'
 import Products from './content/Products'
+import Users from './content/Users'
 
 function DashBoard(){
     return(
         <div className="dashboard">
-           <Products>
-            
-           </Products>
+           <Products/>
+           <Users/>
         </div>
     )
 }
