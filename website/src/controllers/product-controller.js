@@ -1,4 +1,5 @@
 const productoServices = require("../services/productServices")
+const sizesServices = require("../services/sizeServicies")
 
 module.exports = {
 
@@ -19,11 +20,12 @@ module.exports = {
         productoServices.createProduct(req.body, req.file.filename).then(productos => {res.redirect("/products")})
     },
 
-    productDetail: (req, res) => {
+    productDetail: async (req, res) => {
         const id = req.params.id
-        return productoServices.getProductId(id).then(product => {
-            res.render("detalle_de_producto", {product})
-    })
+        const sizes = await sizesServices.getAllSize()
+        const product = await productoServices.getProductId(id)
+
+        return res.render("detalle_de_producto", {product, sizes})
     },
 
     productEditForm: (req, res) => {

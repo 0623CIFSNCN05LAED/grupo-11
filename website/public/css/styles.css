@@ -511,7 +511,6 @@ button:hover {
 }
 
 .errorMsg {
-    display: none;
     color: red;
     font-size: small;
 }
@@ -522,6 +521,17 @@ button:hover {
 
 .remember-label{
     font-size: 1rem;
+}
+
+.access-error-text{
+    color: red;
+    font-size: small;
+}
+
+/*--------------------------------- CARRITO ---------------------------------*/
+
+.agregar-carrito{
+    display: block;
 }
 
 /*--------------------------------- MEDIA QUERIES ---------------------------------*/

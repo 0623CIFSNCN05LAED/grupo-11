@@ -14,4 +14,4 @@ const sizeServices = {
    
 };
 
-module.exports = sizeServicesServices;
+module.exports = sizeServices;

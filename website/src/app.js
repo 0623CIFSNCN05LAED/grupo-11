@@ -3,17 +3,23 @@
 const express = require ('express');
 const path = require('path')
 const methodOverride = require("method-override");
+const mainRouter = require("./routes/main-router")
+const productRouter = require("./routes/product-router")
+const userRouter = require("./routes/user-router")
+const shoppingCartRouter = require("./routes/shopping-cart-router")
 
-
-
-// *********** session ************
+// ************* Session *************
 
 const session = require ('express-session');
 
-// ********** Cookies ***********
+// ************* Cookies *************
 const cookies = require("cookie-parser");
 
+// ************* App *************
+
 const app = express();
+
+// ************* CORS *************
 
 const cors = require("cors");
 app.use(
@@ -24,15 +30,11 @@ app.use(
   )
 );
 
-const mainRouter = require("./routes/main-router")
-const productRouter = require("./routes/product-router")
-const userRouter = require("./routes/user-router")
-const shoppingCartRouter = require("./routes/shopping-cart-router")
-const userLoggedMiddleware = require("./middledware/userLoggedMiddleware")
-
-
 // ************* Middlewares *************
 
+const userLoggedMiddleware = require("./middledware/userLoggedMiddleware")
+
+// ************* Uses *************
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(methodOverride("_method"))
 app.use(express.json())
@@ -48,6 +50,8 @@ app.use(
 app.use(cookies())
 app.use(userLoggedMiddleware)
 
+// ************* Sets *************
+
 app.set("view engine", "ejs")
 app.set("views", "./src/views")
 
@@ -56,7 +60,7 @@ app.set("views", "./src/views")
 const PORT= process.env.PORT || 3011
 app.listen(PORT, () => console.log(`Servidor corriendo en el puerto ${PORT}`))
 
-// ************* Router *************npm
+// ************* Router *************
 
 app.use(mainRouter)
 app.use(productRouter)

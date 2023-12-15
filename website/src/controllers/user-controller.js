@@ -25,9 +25,9 @@ module.exports = {
 
     access: async (req, res) => {
 
-        const user = await userServices.findUserEmail(req.body.email)
+        const userInDB = await userServices.findUserEmail(req.body.email)
 
-        if(!user){
+        if(!userInDB){
             return res.render("login", {
                 errors: {
                     email: {
@@ -41,7 +41,7 @@ module.exports = {
             res.cookie("recordame", req.body.email, {maxAge: (1000 * 60) * 2})
         }
 
-        if(!bcrypt.compareSync(req.body.password, user.password)){
+        if(!bcrypt.compareSync(req.body.password, userInDB.password)){
             return res.render("login", {
                 errors: {
                     password: {
@@ -52,8 +52,8 @@ module.exports = {
 
         } else {
             //userLogged es el nombre que le doy a la propiedad del session
-            req.session.userLogged = user
-            return res.redirect("/profile/" + user.id)
+            req.session.userLogged = userInDB
+            return res.redirect("/profile/" + userInDB.id)
         }
         
     },

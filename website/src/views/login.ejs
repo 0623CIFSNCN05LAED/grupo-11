@@ -33,7 +33,7 @@
             <div class="input">
                 <span class="errorMsg" id="emailError"></span>
                 <% if(locals.errors && errors.email) { %>
-                    <div class="login-error-text">
+                    <div class="access-error-text">
                         <%= errors.email.msg %>
                     </div>
                 <% } %>
@@ -41,7 +41,7 @@
 
                 <span class="errorMsg" id="passwordError"></span>
                 <% if(locals.errors && errors.password) { %>
-                    <div class="txt-1" style="color: red;">
+                    <div class="access-error-text">
                         <%= errors.password.msg %>
                     </div>
                 <% } %>

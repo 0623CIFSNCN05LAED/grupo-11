@@ -11,58 +11,57 @@
 
     <!------------------------------------- MAIN ----------------------------------->
     <main class="detalle_de_producto">
-        <section class="product-article">            
+        <section class="product-article">
             <div class="product-image-price-container">
                 <a href="">
                     <img class="product-image" src="/images/products/<%= product.image %>" alt="Buzo">
                 </a>
             </div>
             <div>
-                <h1 class="product-name-detail"><%= product.name %></h1>
+                <h1 class="product-name-detail"><%= product.product_name %></h1>
             </div>
-            <ol>
-                <p class="product-price-detail"><%= product.price %></p>
+            <div>
+                <p class="product-price-detail">$<%= product.price %></p>
                 <p class="product-discount-detail"><%=product.discount%>%</p>
-            </ol>
-                <h4 class="product-style">Talles</h4>
+            </div>
+
+            <h4 class="product-style">Talles</h4>
+
+            <form action="/carrito/<%= product.id %>" method="post" enctype="multipart/form-data">
                 <select id="options" class="form-select form-select talles-detail" name="options">
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                    </select>
+                    <% sizes.forEach(size => { %>
+                        <option value=<%= size.name %>><%= size.size_name %></option>
+                    <% }); %>
+                </select>
+
+                <button class="agregar-carrito" type="submit">AGREGAR AL CARRITO</button>
+            </form>
                 
-                <div class="">
-                    <form action="/carrito/<%= product.id %>" method="post" enctype="multipart/form-data">
-                        <button class="agregar-carrito" type="submit">AGREGAR AL CARRITO</button>
-                    </form>
-                
+            <div>                
                 <div class="product-style">
                     <span class="calcular-envio-detail">CALCULAR ENVIO</span>
-                </div>   
+                </div>
                 
                 <% if(locals.isLogged){ %>
 
                     <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail">
                         <button type="submit" class="agregar-al-carrito-detail">Eliminar</button>   
-                      
                     </form>
                 
-                    <a class="agregar-al-carrito-detail " href="/products/<%= product.id %>/edit/" >
-                         Edit
+                    <a class="agregar-al-carrito-detail " href="/products/<%= product.id %>/edit/">
+                        Edit
                     </a>
 
                 <% } %>
 
             </div>
-           
+
     <%- include("partials/burguerMenu") %>
 
-            </main>
-     <!------------------------------------- FOOTER ----------------------------------->
-     <footer>
+        </section>
+    </main>
+    <!------------------------------------- FOOTER ----------------------------------->
+    <footer>
         <%- include("partials/footer") %>
     </footer>
 </body>

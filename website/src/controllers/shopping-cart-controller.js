@@ -13,10 +13,13 @@ module.exports = {
         res.render("carrito_de_compras", {productosUsuario, total})
     },
 
-    agregarACarrito: (req, res) => {
+    agregarACarrito: async (req, res) => {
         const idProducto = req.params.id
         const user = req.session.userLogged
         const userId = user.id
+        const size = req.body
+        console.log("TALLE ELEGIDO ===>>>", size)
+
         productoServices.getProductId(idProducto).then(producto => {
             shoppingCartServices.addToCart(producto, userId)
             res.redirect("/carrito")
