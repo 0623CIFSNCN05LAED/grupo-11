@@ -566,6 +566,10 @@ button:hover {
     width: 180px;
 }
 
+.mensaje-carrito-vacio{
+    margin: 200px auto 200px;
+}
+
 /*--------------------------------- MEDIA QUERIES ---------------------------------*/
 
 /* TABLET */

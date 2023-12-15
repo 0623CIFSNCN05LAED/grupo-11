@@ -29,13 +29,17 @@
             </div>
         <% }) %>
 
-        <div class="total-carrito">
-            <p>Total: <%= total %></p>
-        </div>
-
-        <div class="contenedor-boton-comprar-carrito">
-            <button class="boton-comprar-carrito" type="submit">Iniciar Compra</button>
-        </div>
+        <% if(productosUsuario.length > 0) { %>
+            <div class="total-carrito">
+                <p>Total: <%= total %></p>
+            </div>
+    
+            <div class="contenedor-boton-comprar-carrito">
+                <button class="boton-comprar-carrito" type="submit">Iniciar Compra</button>
+            </div>
+        <% } else { %>
+            <h2 class="mensaje-carrito-vacio">Empezá a agregar productos a tu carrito!</h2>
+        <% } %>
 
     </main>
 
