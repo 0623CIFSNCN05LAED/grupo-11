@@ -9,7 +9,7 @@ const router = Router()
 
 // ************* Rutas *************
 
-router.get("/carrito", shoppingCartController.carrito)
+router.get("/carrito",authMiddleware, shoppingCartController.carrito)
 router.post("/carrito/:id", authMiddleware,shoppingCartController.agregarACarrito)
 
 // Export
