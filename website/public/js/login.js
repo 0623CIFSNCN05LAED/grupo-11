@@ -17,7 +17,6 @@ validations.forEach((validation) => {
   const inputErrorMsg = document.getElementById(inputId + "Error");
       
   function validate() {
-    console.log("input.value", input.value);
     inputValidation(validation, input, inputErrorMsg);
   }
   input.addEventListener("blur", validate);

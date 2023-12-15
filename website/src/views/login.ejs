@@ -14,25 +14,18 @@
     </header>
 
     <!------------------------------------- MAIN ----------------------------------->
-
     <div class="login-container">
 
         <div class="info">
-
             <p class="txt-1"> Gracias por visitarnos </p>
-
             <h2> Bienvenido de nuevo</h2>
-            <hr />
-
-            <p class="txt-2">¡Bienvenido a nuestra página de inicio de sesión!
-                Estamos encantados de tenerte de vuelta. Ingresa tus credenciales para acceder a tu cuenta personalizada
-                y desbloquear un mundo de posibilidades.
-
-            <h3 class="LG"> LOGO </h3>
+            <p class="txt-2">
+                ¡Bienvenido a nuestra página de inicio de sesión! Estamos encantados de tenerte de vuelta. Ingresa tus credenciales para acceder a tu cuenta personalizada y desbloquear un mundo de posibilidades.
+            </p>
         </div>
 
         <form class="form" action="/login" method="POST" id="loginForm">
-            <h2>login</h2>
+            <h2>LOGIN</h2>
 
             <p class="txt-2"> Estamos aquí para hacer que tu experiencia sea excepcional. Gracias por confiar en
                 nosotros como tu destino en línea.¡Ingresa ahora y comienza tu viaje con nosotros!
@@ -40,35 +33,33 @@
 
 
             <div class="input">
-                <label></label>
-                <input type="email" name="email" class="box" placeholder="email" id="email">
                 <span class="errorMsg" id="emailError"></span>
                 <% if(locals.errors && errors.email) { %>
-                    <div class="txt-1" style="color: red;">
+                    <div class="login-error-text">
                         <%= errors.email.msg %>
                     </div>
                 <% } %>
+                <input type="email" name="email" class="box" placeholder="email" id="email">
 
-                <input type="password" name="password" class="box" placeholder="password" id="password">
                 <span class="errorMsg" id="passwordError"></span>
-
                 <% if(locals.errors && errors.password) { %>
                     <div class="txt-1" style="color: red;">
                         <%= errors.password.msg %>
                     </div>
                 <% } %>
+                <input type="password" name="password" class="box" placeholder="password" id="password">
 
-                <label for="recordame">recordame</label>
+                <label class="remember-label" for="recordame">recordame</label>
                 <input type="checkbox" name="recordame">
-
-                <a href="#">Olvide mi contraseña</a>
-                <button type="submit" value="login"  class="boton-log">Login</button>
+                <button type="submit" value="login" class="boton-log">Login</button>
             </div>
 
 
         </form>
 
     </div>
+
+    <%- include("partials/burguerMenu") %>
     <!------------------------------------- FOOTER ----------------------------------->
     <footer>
         <%- include("partials/footer") %>
