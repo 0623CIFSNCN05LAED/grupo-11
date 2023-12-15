@@ -16,6 +16,12 @@ const shoppingCartServices = {
         })
     },
 
+    deleteProductFromCart: (id) => {
+        return ShoppingCart.destroy({
+            where: {id: id}
+        })
+    },
+
     productsFilter: (productos, req) => {
             const user = req.session.userLogged
             const userId = user.id

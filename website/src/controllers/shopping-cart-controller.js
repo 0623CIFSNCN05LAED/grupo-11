@@ -26,4 +26,9 @@ module.exports = {
         })
     },
 
+    borrarProductoCarrito: async (req, res) => {
+        const id = req.params.id
+        shoppingCartServices.deleteProductFromCart(id).then(() => res.redirect("/carrito"))
+    }
+
 }

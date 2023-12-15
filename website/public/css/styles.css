@@ -534,6 +534,38 @@ button:hover {
     display: block;
 }
 
+.producto-en-carrito{
+    width: 100%;
+    display: flex;
+}
+
+.contenedor-imagen-producto-carrito{
+    width: 30%;
+}
+
+.imagen-producto-carrito{
+    width: 100%;
+}
+
+.info-producto-carrito{
+    width: 70%;
+    padding: 20px;
+}
+
+.borrar-producto-carrito{
+    margin-top: 20px;
+}
+
+.total-carrito{
+    background-color: #555;
+    color: white;
+    padding: 10px 10px 10px 25px;
+    border-left: 8px solid black;
+    border-radius: 10px;
+    margin: 30px 0;
+    width: 180px;
+}
+
 /*--------------------------------- MEDIA QUERIES ---------------------------------*/
 
 /* TABLET */
@@ -560,6 +592,28 @@ button:hover {
     /* LOGIN */
     .login-container {
         width: 60%;
+    }
+
+    /* CARRITO */    
+    .producto-en-carrito{
+        height: 200px;
+    }
+    
+    .contenedor-imagen-producto-carrito{
+        width: 20%;
+    }
+    
+    .imagen-producto-carrito{
+        width: 130px;
+    }
+    
+    .info-producto-carrito{
+        width: 80%;
+        padding: 40px;
+    }
+    
+    .borrar-producto-carrito{
+        margin-top: 20px;
     }
 
     /* FOOTER */
@@ -667,6 +721,24 @@ button:hover {
         padding: 150px 100px;
         width: 50%;
         text-align: center;
+    }
+
+    /* CARRITO */    
+    .producto-en-carrito{
+        height: 150px;
+    }
+    
+    .contenedor-imagen-producto-carrito{
+        width: 10%;
+    }
+    
+    .imagen-producto-carrito{
+        width: 95px;
+    }
+    
+    .info-producto-carrito{
+        width: 90%;
+        padding: 15px;
     }
 
     /* FOOTER */

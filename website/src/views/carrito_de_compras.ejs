@@ -12,49 +12,32 @@
 
     <!------------------------------------- MAIN ----------------------------------->
 
-    <form action="" method="">
+    <main>
 
-        <div class="productos-en-carrito">
-            <% productosUsuario.forEach(producto => { %>
-
-                <div class="producto-en-carrito" style="margin-bottom: 300px;">
-                    <img style="width: 100px;" src="/images/products/<%= producto.image %>" alt="Imágen del producto">
+        <% productosUsuario.forEach(producto => { %>
+            <div class="producto-en-carrito">
+                <div class="contenedor-imagen-producto-carrito">
+                    <img class="imagen-producto-carrito" src="/images/products/<%= producto.image %>" alt="Imágen del producto">
+                </div>
+                <div class="info-producto-carrito">
                     <p class="nombre-producto-carrito"><%= producto.product_name %></p>
                     <p class="precio-producto-carrito"><%= producto.total %></p>
+                    <form action="/carrito/<%=producto.id%>?_method=delete" method="POST" class="formulario-borrar-producto-carrito">
+                        <button type="submit" class="borrar-producto-carrito">Borrar</button>
+                    </form>
                 </div>
-    
-            <% }) %>
-        </div>
+            </div>
+        <% }) %>
 
-        <!-- <div class="margin-left recorte">
-            <h4 for="option">Selecciona cantidad:</h4>
-                <select id="options" class="form-select form-select talles-detail" name="options">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    </select>
-            </select>
-        </div> -->
-
-        <div class="up recorte-2">
+        <div class="total-carrito">
             <p>Total: <%= total %></p>
         </div>
 
-        <!-- <div class="flex flex-position border-s">
-            <button type="submit">Iniciar Compra</button>
-        </div> -->
+        <div class="contenedor-boton-comprar-carrito">
+            <button class="boton-comprar-carrito" type="submit">Iniciar Compra</button>
+        </div>
 
-        <a  href="/"  class="flex flex-position border-s">
-            Ver más productos
-        </a>
-    </form>
+    </main>
 
     <%- include("partials/burguerMenu") %>
 
