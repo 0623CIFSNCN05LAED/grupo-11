@@ -2,7 +2,7 @@
 
 const {Router} = require("express")
 const productController = require("../controllers/product-controller")
-const multerUpload = require("./multer/multerConfig")
+const multerUpload = require("./multer/multerProductsConfig")
 // ************* Router *************
 
 const router = Router()

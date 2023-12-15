@@ -3,7 +3,7 @@
 const {Router} = require("express")
 const userController = require("../controllers/user-controller")
 const registerValidation = require("../middledware/registerValidations")
-const multerUpload = require("./multer/multerConfig")
+const multerUpload = require("./multer/multerUsersConfig")
 // ************* Router *************
 
 const router = Router()
