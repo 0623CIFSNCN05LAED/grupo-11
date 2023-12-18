@@ -25,35 +25,36 @@
                 <p class="product-discount-detail"><%=product.discount%>%</p>
             </div>
 
-            <h4 class="product-style">Talles</h4>
-
             <form action="/carrito/<%= product.id %>" method="post" enctype="multipart/form-data">
-                <select id="options" class="form-select form-select talles-detail" name="options">
+                <label for="size">Talle</label>
+                <select id="size" class="form-select form-select talles-detail" name="size">
                     <% sizes.forEach(size => { %>
                         <option value=<%= size.name %>><%= size.size_name %></option>
                     <% }); %>
                 </select>
 
+                <label for="quantity">Cantidad</label>
+                <select name="quantity" id="quantity">
+                    <option value="1" selected>1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+
                 <button class="agregar-carrito" type="submit">AGREGAR AL CARRITO</button>
             </form>
                 
-            <div>                
-                <div class="product-style">
-                    <span class="calcular-envio-detail">CALCULAR ENVIO</span>
-                </div>
-                
-                <% if(locals.isLogged){ %>
-
+            <div>
+                <% if(locals.isLogged && locals.admin){ %>
                     <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail">
                         <button type="submit" class="agregar-al-carrito-detail">Eliminar</button>   
                     </form>
-                
+
                     <a class="agregar-al-carrito-detail " href="/products/<%= product.id %>/edit/">
                         Edit
                     </a>
-
                 <% } %>
-
             </div>
 
     <%- include("partials/burguerMenu") %>

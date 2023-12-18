@@ -30,6 +30,7 @@ create table `users` (
 	`email` varchar(96) not null,
 	`password` varchar(96) not null,
 	`profile_picture` varchar(96) not null,
+	`rank` varchar(96) not null,
 	`created_at` timestamp NOT NULL DEFAULT now(),
 	`updated_at` timestamp NOT NULL DEFAULT now(),
 	primary key (`id`)

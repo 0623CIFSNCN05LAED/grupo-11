@@ -2,30 +2,27 @@ const { Users } = require("../database/models");
 
 const userServices = {
     getAllUser: () => {
-         return Users.findAll()
-     },
+        return Users.findAll()
+    },
 
     getUserId: (id) => {
         return Users.findByPk(id)
     },
-
-    // findUserEmail: (email, text) => {
-    //     return Users.findByField(email, text)
-    // },
 
     findUserEmail: (text) => {
         return Users.findOne({where: {email: text}})
     },
 
     createUser: (nuevoUsuario) => {
-      console.log(nuevoUsuario.id);
+        console.log("NUEVO USUARIO DATOS =====>>>>>", nuevoUsuario)
         return Users.create({
             id: nuevoUsuario.id,
             name: nuevoUsuario.name,
             last_name: nuevoUsuario.lastName,
             email: nuevoUsuario.email,
             password: nuevoUsuario.password,
-            profile_picture: nuevoUsuario.profile_picture
+            profile_picture: nuevoUsuario.profile_picture,
+            rank: nuevoUsuario.rank
         })
     }
 }

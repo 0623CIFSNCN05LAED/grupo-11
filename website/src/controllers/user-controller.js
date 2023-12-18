@@ -53,6 +53,10 @@ module.exports = {
         } else {
             //userLogged es el nombre que le doy a la propiedad del session
             req.session.userLogged = userInDB
+            //defino si el usuario es admin o no y lo guardo en session
+            if (userInDB.rank == "admin"){
+                req.session.admin = true
+            }
             return res.redirect("/profile/" + userInDB.id)
         }
         
@@ -69,7 +73,6 @@ module.exports = {
             return res.render("registro", {errors: errors.mapped(), oldData: req.body})
         }
 
-        // let userInDB = User.findByField("email", req.body.email)
         let userInDB = await userServices.findUserEmail(req.body.email)
 
         if(userInDB){
@@ -80,11 +83,12 @@ module.exports = {
             ...req.body,
             id:uuidv4(),
             password: bcrypt.hashSync(req.body.password, 10),
-            profile_picture: req.file.filename
+            profile_picture: req.file.filename,
+            rank: "user"
         }
 
         userServices.createUser(nuevoUsuario)
 
-        return res.redirect("/")
+        return res.redirect("/login")
     }
 }
