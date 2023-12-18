@@ -15,10 +15,13 @@ module.exports = {
 
     agregarACarrito: async (req, res) => {
         const idProducto = req.params.id
+        console.log("ID DEL PRODUCTO ===>>>", idProducto)
         const user = req.session.userLogged
+        console.log("USUARIO ===>>>", user);
         const userId = user.id
-        const size = req.body
-        console.log("TALLE ELEGIDO ===>>>", size)
+        console.log("USUARIO ID ===>>>", userId);
+        const data = req.body
+        console.log("DATA FORMULARIO ===>>>", data)
 
         productoServices.getProductId(idProducto).then(producto => {
             shoppingCartServices.addToCart(producto, userId)

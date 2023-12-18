@@ -10,7 +10,14 @@ module.exports = {
         url: req.originalUrl,
         total: products.length
       },
-      data: products,
+      products: products.map(product => ({
+        id: product.id,
+        name: product.product_name,
+        price: product.price,
+        discount: product.discount,
+        image: product.image,
+        detail: `http://localhost:3011/api/products/${product.id}`
+      })),
     })},
 
     productDetail: async (req, res) => {
@@ -21,7 +28,6 @@ module.exports = {
           id: req.params.id,
         },
         data: product,
-      })},
-  
-     
+      })
+    },
 };
