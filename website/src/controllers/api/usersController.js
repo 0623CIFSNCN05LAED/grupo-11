@@ -16,7 +16,7 @@ module.exports = {
         last_name: user.last_name,
         email: user.email,
         rank: user.rank,
-        detail: `http://localhost:3011/api/products/${user.id}`
+        detail: `http://localhost:3011/api/users/${user.id}`
       })),
     })},
 

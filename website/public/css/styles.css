@@ -549,11 +549,11 @@ button:hover {
 
 .info-producto-carrito{
     width: 70%;
-    padding: 20px;
+    padding-left: 25px;
 }
 
 .borrar-producto-carrito{
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 .total-carrito{
@@ -613,11 +613,11 @@ button:hover {
     
     .info-producto-carrito{
         width: 80%;
-        padding: 40px;
+        padding: 10px 25px;
     }
     
     .borrar-producto-carrito{
-        margin-top: 20px;
+        margin-top: 5px;
     }
 
     /* FOOTER */
@@ -742,7 +742,7 @@ button:hover {
     
     .info-producto-carrito{
         width: 90%;
-        padding: 15px;
+        padding: 0px;
     }
 
     /* FOOTER */

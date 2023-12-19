@@ -21,7 +21,9 @@
                 </div>
                 <div class="info-producto-carrito">
                     <p class="nombre-producto-carrito"><%= producto.product_name %></p>
-                    <p class="precio-producto-carrito"><%= producto.total %></p>
+                    <p class="precio-producto-carrito">Precio: $<%= producto.total %></p>
+                    <p class="talle-producto-carrito">Talle: <%= producto.size %></p>
+                    <p class="cantidad-producto-carrito">Cantidad: <%= producto.quantity %></p>
                     <form action="/carrito/<%=producto.id%>?_method=delete" method="POST" class="formulario-borrar-producto-carrito">
                         <button type="submit" class="borrar-producto-carrito">Borrar</button>
                     </form>

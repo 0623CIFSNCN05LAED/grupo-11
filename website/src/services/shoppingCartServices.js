@@ -6,13 +6,15 @@ const shoppingCartServices = {
         return ShoppingCart.findAll()
     },
 
-    addToCart: (producto, idUser) => {
+    addToCart: (producto, idUser, size, quantity, total) => {
         ShoppingCart.create({
             image: producto.image,
             product_name: producto.product_name,
             id_product: producto.id,
-            total: producto.price,
-            id_users: idUser
+            total: total,
+            id_users: idUser,
+            quantity: quantity,
+            size: size
         })
     },
 
