@@ -1,10 +1,10 @@
-function ProductsItem({product_name}){
+function ProductsItem({name}){
     return(
         <button 
         type="button"
         className="list-group-item list-group-item-action text-center"
         >
-            {product_name} 
+            {name} 
         </button>
     )
 }

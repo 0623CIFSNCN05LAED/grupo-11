@@ -10,8 +10,8 @@ function Users() {
         const fetchData = async () => {
             const response = await fetch("http://localhost:3011/api/users")
             const result = await response.json()
-            console.log(result.data);
-            setUser(result.data)
+            console.log("USUARIOS", result.users);
+            setUser(result.users)
         }
 
         fetchData()
@@ -28,13 +28,9 @@ function Users() {
                 {users.length === 0 ?
                     "Cargando..." :
                     users.map((user) => (
-                        <UsersItem 
+                        <UsersItem
                             key={user.id}
                             name={user.name}
-                            last_name={user.last_name}
-                            email={user.email}
-                            password={user.password}
-                            profile_picture={user.profile_picture}
                         />
                     ))}
             </div>

@@ -1,18 +1,17 @@
-import TotalProducts from "./content/TotalProducts"
 import { useState, useEffect } from "react"
-import TotalUsers from "./content/TotalUsers"
+import DataPanel from "./content/DataPanel"
 
 function HeaderWrap () {
 
-    const [total, setTotal] = useState()
-    const [totalUsers, setTotalUsers] = useState()
+    const [totalProducts, setTotalProducts] = useState(null)
+    const [totalUsers, setTotalUsers] = useState(null)
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch("http://localhost:3011/api/products")
             const result = await response.json()
             const totalProducts = result.meta.total
-            setTotal(totalProducts)
+            setTotalProducts(totalProducts)
         }
 
         fetchData()
@@ -29,12 +28,12 @@ function HeaderWrap () {
         fetchData()
     }, [])
 
-
-
     return(
-        <div>
-            <TotalProducts total={total} />
-            <TotalUsers total={totalUsers}/>
+        <div className="container-fluid">
+            <DataPanel data={[
+                {title: "Total de productos", total: totalProducts},
+                {title: "Total de usuarios", total: totalUsers}
+            ]} />
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import HeaderWrap from "./HeaderWrap"
+import LastProduct from "./content/LastProduct"
 import Products from "./content/Products"
 import Users from "./content/Users"
 
@@ -8,6 +9,7 @@ function ContentWrap () {
             <HeaderWrap/>
             <Products/>
             <Users/>
+            <LastProduct/>
         </main>
     )
 }

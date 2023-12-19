@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
-import ProductsItem from "./ProductsItem";
+import UsersItem from "./UsersItem";
 
 
 function Products() {
 
-    const [products, setProtuct] = useState([])
+    const [products, setProducts] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch("http://localhost:3011/api/products")
             const result = await response.json()
-            console.log(result.data);
-            setProtuct(result.data)
+            console.log("PRODUCTOS", result.products);
+            setProducts(result.products)
         }
 
         fetchData()
@@ -23,17 +23,14 @@ function Products() {
             <div className="list-group shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                 <button type="button" className="list-group-item list-group-item-action active text-center"
                     aria-current="true">
-                    Listado de Productos
+                    Listado de productos
                 </button>
                 {products.length === 0 ?
                     "Cargando..." :
                     products.map((product) => (
-                        <ProductsItem
+                        <UsersItem 
                             key={product.id}
-                            price={product.price}
-                            discount={product.discount}
-                            product_name={product.product_name}
-                            image={product.image}
+                            name={product.name}
                         />
                     ))}
             </div>
