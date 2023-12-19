@@ -57,7 +57,7 @@ module.exports = {
             if (userInDB.rank == "admin"){
                 req.session.admin = true
             }
-            return res.redirect("/profile/" + userInDB.id)
+            return res.redirect("/profile")
         }
         
     },

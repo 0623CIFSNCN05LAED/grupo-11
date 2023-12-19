@@ -19,7 +19,7 @@ const authMiddleware = require("../middledware/authMiddleware")
 
 router.get("/login", guetsMiddleware, userController.login)
 router.post("/login", userController.access)
-router.get("/profile/:id", authMiddleware ,userController.profile)
+router.get("/profile", authMiddleware ,userController.profile)
 router.post("/logout", userController.logout)
 
 router.get("/registro", guetsMiddleware, userController.registro)
