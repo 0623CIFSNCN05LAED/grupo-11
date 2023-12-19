@@ -24,6 +24,16 @@ const userServices = {
             profile_picture: nuevoUsuario.profile_picture,
             rank: nuevoUsuario.rank
         })
+    },
+
+    updateUser: (user, id) => {
+        return Users.update({
+            name: user.name,
+            last_name: user.last_name,
+            password: user.password
+        }, {
+            where:{id: id}
+        })
     }
 }
 

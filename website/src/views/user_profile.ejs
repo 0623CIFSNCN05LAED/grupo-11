@@ -54,6 +54,9 @@
                     <form class="form-rgst" method="post" action="/logout">
                         <button class="input-rgst bt-mg" type="submit">Logout</button>
                     </form>
+                    <form class="form-rgst" method="get" action="/profile/<%= user.id %>/edit">
+                    <button class="input-rgst bt-mg" type="submit">Edit</button>
+                    </form>
                     <%- include("partials/burguerMenu") %>
                 </div>
     </main>

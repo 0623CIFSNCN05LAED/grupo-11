@@ -90,5 +90,16 @@ module.exports = {
         userServices.createUser(nuevoUsuario)
 
         return res.redirect("/login")
-    }
+    },
+    editProfile: (req, res) =>{
+        const id = req.params.id
+        return userServices.getUserId(id).then(user => res.render("edit_profile", {user}))
+    },
+
+    productEditProcessProfile: (req, res) => {
+        const user = req.body
+        console.log(user);
+        const id = req.params.id
+        return userServices.updateUser(user, id).then(user => res.redirect("/profile/" + id))
+    },
 }

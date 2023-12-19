@@ -25,5 +25,8 @@ router.post("/logout", userController.logout)
 router.get("/registro", guetsMiddleware, userController.registro)
 router.post("/registro", multerUpload.single("imagenDePerfil"), registerValidation, userController.procesoRegistro)
 
+router.get("/profile/:id/edit", userController.editProfile)
+router.put("/profile/:id", userController.productEditProcessProfile)
+
 // Export
 module.exports = router;
