@@ -2,7 +2,7 @@
 
 const {Router} = require("express")
 const userController = require("../controllers/user-controller")
-const registerValidation = require("../middledware/registerValidations")
+const registerValidations = require("../middledware/registerValidations")
 const multerUpload = require("./multer/multerUsersConfig")
 // ************* Router *************
 
@@ -23,7 +23,7 @@ router.get("/profile", authMiddleware ,userController.profile)
 router.post("/logout", userController.logout)
 
 router.get("/registro", guetsMiddleware, userController.registro)
-router.post("/registro", multerUpload.single("imagenDePerfil"), registerValidation, userController.procesoRegistro)
+router.post("/registro", multerUpload.single("imagenDePerfil"), registerValidations, userController.procesoRegistro)
 
 router.get("/profile/:id/edit", userController.editProfile)
 router.put("/profile/:id", userController.productEditProcessProfile)

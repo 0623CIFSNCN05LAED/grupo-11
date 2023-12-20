@@ -1,8 +1,7 @@
 function guetsMiddleware(req, res, next){
 
     if(req.session.userLogged) {
-        let user = req.session.userLogged
-        return res.redirect("/profile/" + user.id)
+        return res.redirect("/profile")
     }
     next();
 

@@ -100,6 +100,6 @@ module.exports = {
         const user = req.body
         console.log(user);
         const id = req.params.id
-        return userServices.updateUser(user, id).then(user => res.redirect("/profile/" + id))
+        return userServices.updateUser(user, id).then(user => res.redirect("/profile"))
     },
 }
