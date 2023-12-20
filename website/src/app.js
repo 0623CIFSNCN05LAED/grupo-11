@@ -35,6 +35,7 @@ app.use(
 const userLoggedMiddleware = require("./middledware/userLoggedMiddleware")
 const userAdmin = require("./middledware/userAdmin")
 
+
 // ************* Uses *************
 app.use(express.static(path.join(__dirname, '../public')))
 app.use(methodOverride("_method"))

@@ -1,5 +1,6 @@
 const productoServices = require("../services/productServices")
 const sizesServices = require("../services/sizeServicies")
+const {validationResult} = require("express-validator")
 
 module.exports = {
 
@@ -17,6 +18,12 @@ module.exports = {
     },
 
     productCreateProcess: (req, res) => {
+        let errors = validationResult(req)
+
+        if(errors.errors.length > 0){
+            return res.render("product-create-form", {errors: errors.mapped(), oldData: req.body})
+        }
+
         productoServices.createProduct(req.body, req.file.filename).then(productos => {res.redirect("/products")})
     },
 
@@ -29,6 +36,12 @@ module.exports = {
     },
 
     productEditForm: (req, res) => {
+        let errors = validationResult(req)
+
+        if(errors.errors.length > 0){
+            return res.render("product-edit-form", {errors: errors.mapped(), oldData: req.body})
+        }
+
         const id = req.params.id
         return productoServices.getProductId(id).then(product => res.render("product-edit-form", {product}))
     },
@@ -36,7 +49,7 @@ module.exports = {
     productEditProcess: (req, res) => {
         const product = req.body
         const id = req.params.id
-        return productoServices.updateProduct(product, id).then(product => res.redirect("/products"))
+        return productoServices.updateProduct(product, id, req.file.filename).then(product => res.redirect("/products"))
     },
 
     productDelete: (req, res) => {

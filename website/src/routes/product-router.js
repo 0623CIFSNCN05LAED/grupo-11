@@ -3,6 +3,7 @@
 const {Router} = require("express")
 const productController = require("../controllers/product-controller")
 const multerUpload = require("./multer/multerProductsConfig")
+const productsValidations = require("../middledware/productsValidations")
 // ************* Router *************
 
 const router = Router()
@@ -18,12 +19,13 @@ const authMiddleware = require("../middledware/authMiddleware")
 router.get("/products", productController.list)
 
 router.get("/products/create", authMiddleware, productController.createForm);
-router.post("/products", multerUpload.single("image"), productController.productCreateProcess)
+router.post("/products", multerUpload.single("image"), productsValidations , productController.productCreateProcess)
+
 
 router.get("/products/:id", productController.productDetail)
 
 router.get("/products/:id/edit", productController.productEditForm)
-router.put("/products/:id", productController.productEditProcess)
+router.put("/products/:id", multerUpload.single("image"), productsValidations, productController.productEditProcess)
 
 router.delete("/products/:id", productController.productDelete)
 

@@ -25,11 +25,13 @@ const productoServices = {
         })
     },
 
-    updateProduct: (product, id) => {
+    updateProduct: (product, id, image) => {
         return Products.update({
             price: product.price,
             discount: product.discount,
-            product_name: product.name
+            product_name: product.name,
+            image: image
+
         }, {
             where: {id: id}
         })
