@@ -34,6 +34,7 @@ app.use(
 
 const userLoggedMiddleware = require("./middledware/userLoggedMiddleware")
 const userAdmin = require("./middledware/userAdmin")
+const recordameMiddleware = require("./middledware/recordameMiddledware")
 
 
 // ************* Uses *************
@@ -52,6 +53,7 @@ app.use(
 app.use(cookies())
 app.use(userLoggedMiddleware)
 app.use(userAdmin)
+app.use(recordameMiddleware)
 
 // ************* Sets *************
 
