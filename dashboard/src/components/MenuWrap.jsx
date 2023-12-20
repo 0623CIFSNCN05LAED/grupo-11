@@ -2,11 +2,8 @@ function MenuWrap(){
     return (
         <header className="menu-wrap">
 			<figure className="user">
-				<div className="user-avatar">
-					<img src="./assets/img/logo-dh.png" alt="Logo Digital House	"/>
-				</div>
 				<figcaption>
-					Digital House
+					Home
 				</figcaption>
 			</figure>
 			<nav>
@@ -14,39 +11,21 @@ function MenuWrap(){
 					<h3>Opciones</h3>
 					<ul>
 						<li>
-							<a href="#">
+							<a href="#listaProductos">
 								<i className="bi bi-film" style={{fontSize: "1.2rem", color: "cornflowerblue"}}></i>
-								- Películas
+								- Productos
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#listaUsuarios">
 								<i className="bi bi-play-circle" style={{fontSize: "1.2rem", color: "cornflowerblue"}}></i>
-								- Cines
+								- Usuarios
 							</a>
 						</li>
 						<li>
-							<a href="#">
+							<a href="#detalleUltimoProducto">
 								<i className="bi bi-person" style={{fontSize: "1.2rem", color: "cornflowerblue"}}></i>
-								- Géneros
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i className="bi bi-bar-chart"></i>
-								- Más populares
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i className="bi bi-tags"></i>
-								- Promociones
-							</a>
-						</li>
-						<li>
-							<a href="#">
-								<i className="bi bi-graph-up"></i>
-								- Estadísticas
+								- Último producto
 							</a>
 						</li>
 					</ul>

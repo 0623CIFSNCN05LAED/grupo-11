@@ -17,7 +17,7 @@ function Users() {
     }, [])
 
     return (
-        <section className="content">
+        <section className="content" id="listaUsuarios">
             <h2 className="mt-3">Usuarios</h2>
             <div className="list-group shadow-sm p-3 mb-5 bg-body-tertiary rounded">
                 <button type="button" className="list-group-item list-group-item-action active text-center"
