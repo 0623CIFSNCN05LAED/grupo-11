@@ -10,7 +10,6 @@ function Products() {
         const fetchData = async () => {
             const response = await fetch("http://localhost:3011/api/products")
             const result = await response.json()
-            console.log("PRODUCTOS", result.products);
             setProducts(result.products)
         }
 

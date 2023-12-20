@@ -2,24 +2,18 @@ import { useEffect, useState } from "react";
 
 function LastProduct () {
 
-    const [products, setProtuct] = useState([])
-    const [lastProduct, setLastProduct] = useState()
+    const [lastProduct, setLastProduct] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
             const response = await fetch("http://localhost:3011/api/products")
             const result = await response.json()
-            console.log(result.products);
-            setProtuct(result.products)
-        }
-
-        const getLastProduct = () => {
-            const last = products[products.length - 1];
-            setLastProduct(last.name)
+            const last = result.products[result.products.length-1].name
+            console.log(last);
+            setLastProduct(last)
         }
 
         fetchData()
-        getLastProduct()
     }, [])
 
     return (

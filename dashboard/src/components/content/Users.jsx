@@ -10,7 +10,6 @@ function Users() {
         const fetchData = async () => {
             const response = await fetch("http://localhost:3011/api/users")
             const result = await response.json()
-            console.log("USUARIOS", result.users);
             setUser(result.users)
         }
 
