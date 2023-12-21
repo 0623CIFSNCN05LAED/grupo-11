@@ -20,7 +20,9 @@ module.exports = {
 
     logout: (req, res) => {
         req.session.destroy()
+        res.cookie("recordame", "", {maxAge: -1})
         res.redirect("/login")
+        
     },
 
     access: async (req, res) => {
@@ -100,6 +102,7 @@ module.exports = {
         const user = req.body
         console.log(user);
         const id = req.params.id
+        req.session.userLogged = {...req.session.userLogged, ...user}
         return userServices.updateUser(user, id).then(user => res.redirect("/profile"))
     },
 }
