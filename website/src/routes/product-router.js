@@ -24,8 +24,8 @@ router.post("/products", multerUpload.single("image"), productsValidations , pro
 
 router.get("/products/:id", productController.productDetail)
 
-router.get("/products/:id/edit", productController.productEditForm)
-router.put("/products/:id", multerUpload.single("image"), productsValidations, productController.productEditProcess)
+router.get("/products/:id/edit", authMiddleware,productController.productEditForm)
+router.put("/products/:id", multerUpload.single("image"),productsValidations, productController.productEditProcess)
 
 router.delete("/products/:id", productController.productDelete)
 
