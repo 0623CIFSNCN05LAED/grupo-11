@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
     <%- include("partials/head", {title: "Formulario de edición"}) %>
+    <script src="/js/editUser.js" defer></script>
 </head>
 <body>
 
     <!------------------------------------- HEADER ----------------------------------->
     <header>
         <%- include("partials/header") %>
-        <script src="/js/editUser.js" defer></script>
     </header>
 
     <div>
@@ -42,6 +42,7 @@
             <button type="submit">Guardar usuario</button>
         </div>
     </form>
+    <%- include("partials/burguerMenu") %>
 
     <!------------------------------------- FOOTER ----------------------------------->
     <footer>

@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
     <%- include("partials/head", {title: "Formulario de edición"}) %>
+    <script src="/js/editarProducto.js" defer></script>
 </head>
 <body>
 
     <!------------------------------------- HEADER ----------------------------------->
     <header>
         <%- include("partials/header") %>
-        <script src="/js/editarProducto.js" defer></script>
     </header>
 
     <div>
@@ -20,7 +20,7 @@
 
             <div class="recorte-2">
                 <label for="name" class="form-input">Nombre del producto:</label>
-                <input type="text" value="<%= product.name %>" id="name" name="name" placeholder="Ej: Buzo Novel">
+                <input type="text" value="<%= product.product_name %>" id="name" name="name" placeholder="Ej: Buzo Novel">
                 <span class="errorMsg" id="nameError"></span>
                 <% if (locals.errors && errors.name) { %>
                     <div>
