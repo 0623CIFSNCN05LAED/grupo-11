@@ -36,6 +36,8 @@ create table `users` (
 	primary key (`id`)
 );
 
+insert into `users` values ('e5e6e66a-4c5e-41b2-9cb0-3c86a734ba66', 'Leandro', 'Heffes', 'leandroheffes@outlook.es', '$2a$10$J50y7L3SVAhXwJV8SRst2eE.CLYiu36ByqbHRIEgzWNZUMfnouDJm', 'imagenDePerfil-1703686340303.jpg', 'admin', null, null);
+
 create table `shopping_cart` ( 
 	`id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
 	`image` varchar(95) not null,
