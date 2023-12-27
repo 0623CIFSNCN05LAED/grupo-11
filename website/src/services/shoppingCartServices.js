@@ -46,6 +46,14 @@ const shoppingCartServices = {
         });
 
         return total
+    },
+
+    updateQuantity:(quantity, id) => {
+        return ShoppingCart.update({
+            quantity: quantity
+        },{
+            where: {id:id}
+        })
     }
 
 }
