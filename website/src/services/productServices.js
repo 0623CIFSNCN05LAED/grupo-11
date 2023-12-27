@@ -31,7 +31,6 @@ const productoServices = {
             discount: product.discount,
             product_name: product.name,
             image: image
-
         }, {
             where: {id: id}
         })

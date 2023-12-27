@@ -11,6 +11,7 @@ const router = Router()
 // ************* Middlewares *************
 
 const authMiddleware = require("../middledware/authMiddleware")
+const isAdmin = require("../middledware/isAdmin")
 
 // ************* Rutas *************
 
@@ -18,13 +19,13 @@ const authMiddleware = require("../middledware/authMiddleware")
 
 router.get("/products", productController.list)
 
-router.get("/products/create", authMiddleware, productController.createForm);
+router.get("/products/create", isAdmin ,authMiddleware, productController.createForm);
 router.post("/products", multerUpload.single("image"), productsValidations , productController.productCreateProcess)
 
 
 router.get("/products/:id", productController.productDetail)
 
-router.get("/products/:id/edit", authMiddleware,productController.productEditForm)
+router.get("/products/:id/edit", isAdmin ,authMiddleware, productController.productEditForm)
 router.put("/products/:id", multerUpload.single("image"),productsValidations, productController.productEditProcess)
 
 router.delete("/products/:id", productController.productDelete)

@@ -29,8 +29,7 @@ const userServices = {
     updateUser: (user, id) => {
         return Users.update({
             name: user.name,
-            last_name: user.last_name,
-            password: user.password
+            last_name: user.last_name
         }, {
             where:{id: id}
         })

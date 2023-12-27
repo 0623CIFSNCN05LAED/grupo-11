@@ -49,7 +49,7 @@ module.exports = {
     productEditProcess: (req, res) => {
         const product = req.body
         const id = req.params.id
-        return productoServices.updateProduct(product, id, req.file.filename).then(product => res.redirect("/products"))
+        return productoServices.updateProduct(product, id, req.file).then(product => res.redirect("/products"))
     },
 
     productDelete: (req, res) => {

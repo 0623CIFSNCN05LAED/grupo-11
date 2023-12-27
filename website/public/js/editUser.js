@@ -8,11 +8,6 @@ const validations = [
         field: "last_name",
         check: (input) => input.value.length > 0,
         message: "Debe tener almenos un caracter"
-    },
-    {
-        field:"password",
-        check: (input) => input.value.length > 5,
-        message: "Debe tenre almenos 5 caracteres"
     }
 ]
 
