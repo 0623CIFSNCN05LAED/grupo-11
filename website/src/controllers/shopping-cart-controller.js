@@ -18,50 +18,11 @@ module.exports = {
         const user = req.session.userLogged
         const userId = user.id
         const size = req.body.size
-        const quantity = req.body.quantity
+        const quantity = Number(req.body.quantity)
 
-        const productsInCart = await shoppingCartServices.getAtllShoppingCart()
-        if(productsInCart < 1){
-            productoServices.getProductId(idProducto).then(producto => {
-                const total = producto.price * quantity
-                shoppingCartServices.addToCart(producto, userId, size, quantity, total)
-                res.redirect("/carrito")
-            }
-            )
-        }else{
-            productsInCart.forEach(product => {
-                if(product.id_product == idProducto && product.size == size){
-                    const newQuantity = product.quantity + quantity
-                    shoppingCartServices.updateQuantity(newQuantity, producto.id)
-                    res.redirect("/carrito")
-                }else{
-                    productoServices.getProductId(idProducto).then(producto => {
-                        const total = producto.price * quantity
-                        shoppingCartServices.addToCart(producto, userId, size, quantity, total)
-                        res.redirect("/carrito")
-                    }
-                    )
-                }
-            });
-        }
+        const cartProducts = await shoppingCartServices.getAllShoppingCartUser(userId)
 
-        // shoppingCartServices.getAtllShoppingCart().then(products => {
-        //     products.forEach(product => {
-        //         if(product.id_product === idProducto && product.size === size){
-        //             console.log("si hay conincidencia");
-        //             product.quantity += quantity
-        //             res.redirect("/carrito")
-        //         }else{
-        //             console.log("no hay productos iguales");
-                    
-        //         }
-        //     });
-
-            // productoServices.getProductId(idProducto).then(producto => {
-            //     const total = producto.price * quantity
-            //     shoppingCartServices.addToCart(producto, userId, size, quantity, total)
-            //     res.redirect("/carrito")
-            // })
+        shoppingCartServices.addToCartIteration(idProducto, userId, size, quantity, cartProducts, res)
 
     },
 

@@ -8,7 +8,9 @@ let recordameMiddleware = async (req, res, next) => {
             where : {email: req.cookies.recordame}
         })
         req.session.userLogged = userFromCookie
-        req.session.admin = true
+        if(userFromCookie.rank === "admin"){
+            req.session.admin = true
+        }
     }
 
     if (req.session.userLogged) {
@@ -17,6 +19,6 @@ let recordameMiddleware = async (req, res, next) => {
     }
 
     return next ()
- }
+}
 
 module.exports = recordameMiddleware
