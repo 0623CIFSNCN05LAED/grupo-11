@@ -8,6 +8,7 @@ let recordameMiddleware = async (req, res, next) => {
             where : {email: req.cookies.recordame}
         })
         req.session.userLogged = userFromCookie
+        req.session.admin = true
     }
 
     if (req.session.userLogged) {
