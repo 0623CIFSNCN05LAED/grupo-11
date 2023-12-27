@@ -13,7 +13,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`)
 );
 
-insert into `products` values (1, 20000, 15, 'Buzo Oversize', 'buzo.jpg', null, null), (2, 27000, 10, 'Campera de Jean', 'campera-jean.jpg', null, null), (3, 12000, 5, 'Jogger', 'jogger.jpg', null, null), (4, 10000, 5, 'Remera Oversize', 'remera-oversize.jpg', null, null);
+insert into `products` values (1, 20000, 15, 'Buzo Oversize', 'buzo.jpg', null, null), (2, 27000, 10, 'Campera de Jean', 'campera-jean.jpg', null, null), (3, 12000, 5, 'Jogger', 'jogger.jpg', null, null), (4, 10000, 5, 'Remera Oversize', 'remera-oversize.jpg', null, null), (5, 25000, 5, 'Short Mom LightBlue', 'Short-Mom-Light-Blue.jpg', null, null), (6, 35000, 7, 'Jeans Straight Blue', 'Jeans-Straight-Blue.jpg', null, null), (7, 15000, 10, 'ribbed-neck-midi-manga-larga', 'ribbed-neck-midi-manga-larga.png', null, null), (8, 15000, 2, 'Short de Baño', 'short-de-baño.jpg', null, null), (9, 10000, 5, 'Top Ribb', 'top-ribb.png', null, null), (10, 12000, 5, 'Remera Oversize Crop', 'remera-oversize-crop_1.png', null, null), (11, 13000, 15, 'Remera Manga Larga Oversize', 'remera-manga-larga-oversize_1.png', null, null), (12, 35000, 10, 'Jeans Relaxed Hombre Camel Black', 'Jeans-Relaxed-Hombre-Camel-Black.png', null, null), (13, 25000, 15, 'Hoddie Wide Cut Frisado', 'hoddie-wide-cut-frisado.jpg', null, null);
 
 create table `size` (
 	`id` smallint(6) unsigned NOT NULL AUTO_INCREMENT,
