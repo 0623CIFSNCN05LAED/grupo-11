@@ -14,12 +14,12 @@
         <h2 class="title">Formulario de creacion de productos</h2>
     </div>
 
-    <form action="/products" method="post" enctype="multipart/form-data" id="createForm">
+    <form class="create-product-form" action="/products" method="post" enctype="multipart/form-data" id="createForm">
         <div>
 
-            <div class="recorte-2">
-                <label for="name" class="form-input">Nombre del producto:</label>
-                <input type="text" id="name" name="name" placeholder="Ej: Buzo Novel">
+            <div class="input-containet-create-edit-product">
+                <label for="name">Nombre del producto:</label>
+                <input class="input-create-edit-form" type="text" id="name" name="name" placeholder="Ej: Buzo Novel">
                 <span class="errorMsg" id="nameError"></span>
                 <% if (locals.errors && errors.name) { %>
                     <div>
@@ -28,9 +28,9 @@
                 <% } %>
             </div>
 
-            <div class="recorte-2">
-                <label for="price" class="form-input">Precio del producto:</label>
-                <input type="number" id="price" name="price" placeholder="Ej: 150">
+            <div class="input-containet-create-edit-product">
+                <label for="price">Precio del producto:</label>
+                <input class="input-create-edit-form" type="number" id="price" name="price" placeholder="Ej: 150">
                 <span class="errorMsg" id="priceError"></span>
                 <% if (locals.errors && errors.price) { %>
                     <div>
@@ -39,9 +39,9 @@
                 <% } %>
             </div>
 
-            <div class="recorte-2">
-                <label for="discount" class="form-input">Descuento:</label>
-                <input type="number" id="discount" name="discount" placeholder="Ej: 10 off">
+            <div class="input-containet-create-edit-product">
+                <label for="discount">Descuento:</label>
+                <input class="input-create-edit-form" type="number" id="discount" name="discount" placeholder="Ej: 10 off">
                 <span class="errorMsg" id="discountError"></span>
                 <% if (locals.errors && errors.discount) { %>
                     <div>
@@ -50,9 +50,9 @@
                 <% } %>
             </div>
 
-            <div class="recorte-2">
-                <label for="image" class="form-input">Imagen:</label>
-                <input type="file" name="image" id="image">
+            <div class="input-containet-create-edit-product">
+                <label for="image">Imagen:</label>
+                <input class="input-create-edit-form" type="file" name="image" id="image">
                 <span class="errorMsg" id="imageError"></span>
                 <% if (locals.errors && errors.image) { %>
                     <div>
@@ -63,7 +63,7 @@
 
         </div>
 
-        <div>
+        <div class="create-edit-product-submit-button">
             <button type="submit">Guardar producto</button>
         </div>
     </form>

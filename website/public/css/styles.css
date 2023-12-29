@@ -94,12 +94,10 @@ header {
     object-position: top;
 }
 
-.filter-button {
-    border: 2px solid rgb(58, 58, 58);
-    width: 100%;
+.home-title{
     text-align: center;
-    padding: 10px;
-    font-weight: 600;
+    margin-top: 20px;
+    font-size: 1.5rem;
 }
 
 .product-article {
@@ -270,19 +268,12 @@ margin: 10px 0;
 
 /* -------------------------------- Register ------------------------------ */
 
-
-
-
-
-
 .bg-rgst{
     position:relative;
     overflow: hidden; 
     width: 100vw;
     height: 100vh;
 }
-
-
 
 .rgst-image {
     width: 100%;
@@ -570,6 +561,25 @@ button:hover {
     margin: 200px auto 200px;
 }
 
+/* --------------------------------- CREATE PRODUCT FORM --------------------------------- */
+
+.create-product-form{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.input-containet-create-edit-product{
+    margin: 10px;
+    width: 100%;
+}
+
+.create-edit-product-submit-button{
+    margin-top: 10px;
+    width: 100%;
+}
+
 /*--------------------------------- MEDIA QUERIES ---------------------------------*/
 
 /* TABLET */
@@ -591,6 +601,10 @@ button:hover {
 
     .product-article {
         width: 49%;
+    }
+
+    .home-title{
+        font-size: 1.7rem;
     }
 
     /* LOGIN */
@@ -618,6 +632,13 @@ button:hover {
     
     .borrar-producto-carrito{
         margin-top: 5px;
+    }
+
+    /* CREATE PRODUCT FORM */
+
+    .input-containet-create-edit-product{
+        margin: 10px;
+        width: 700px;
     }
 
     /* FOOTER */
@@ -688,6 +709,10 @@ button:hover {
         width: 24%;
     }
 
+    .home-title{
+        font-size: 2rem;
+    }
+
     /* LOGIN */
     .login-container {
         height: auto;
@@ -743,6 +768,17 @@ button:hover {
     .info-producto-carrito{
         width: 90%;
         padding: 0px;
+    }
+
+    /* CREATE PRODUCT FORM */
+
+    .input-containet-create-edit-product{
+        margin: 15px 0;
+        width: 1100px;
+    }
+
+    .input-create-edit-form{
+        padding: 15px;
     }
 
     /* FOOTER */
