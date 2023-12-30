@@ -15,12 +15,12 @@
         <h2 class="title">Editar producto</h2>
     </div>
 
-    <form action="/products/<%= product.id %>?_method=put" method="post" id="editForm" enctype="multipart/form-data">
+    <form class="create-product-form" action="/products/<%= product.id %>?_method=put" method="post" id="editForm" enctype="multipart/form-data">
         <div>
 
-            <div class="recorte-2">
-                <label for="name" class="form-input">Nombre del producto:</label>
-                <input type="text" value="<%= product.product_name %>" id="name" name="name" placeholder="Ej: Buzo Novel">
+            <div class="input-containet-create-edit-product">
+                <label for="name">Nombre del producto:</label>
+                <input class="input-create-edit-form" type="text" value="<%= product.product_name %>" id="name" name="name" placeholder="Ej: Buzo Novel">
                 <span class="errorMsg" id="nameError"></span>
                 <% if (locals.errors && errors.name) { %>
                     <div>
@@ -29,9 +29,9 @@
                 <% } %>
             </div>
 
-            <div class="recorte-2">
-                <label for="price" class="form-input">Precio del producto:</label>
-                <input type="number" value="<%= product.price %>" id="price" name="price" placeholder="Ej: 150">
+            <div class="input-containet-create-edit-product">
+                <label for="price">Precio del producto:</label>
+                <input class="input-create-edit-form" type="number" value="<%= product.price %>" id="price" name="price" placeholder="Ej: 150">
                 <span class="errorMsg" id="priceError"></span>
                 <% if (locals.errors && errors.price) { %>
                     <div>
@@ -40,9 +40,9 @@
                 <% } %>
             </div>
 
-            <div class="recorte-2">
-                <label for="discount" class="form-input">Descuento:</label>
-                <input type="number" value="<%= product.discount %>" id="discount" name="discount" placeholder="Ej: 10 off">
+            <div class="input-containet-create-edit-product">
+                <label for="discount">Descuento:</label>
+                <input class="input-create-edit-form" type="number" value="<%= product.discount %>" id="discount" name="discount" placeholder="Ej: 10 off">
                 <span class="errorMsg" id="discountError"></span>
                 <% if (locals.errors && errors.discount) { %>
                     <div>
@@ -52,9 +52,9 @@
 
             </div>
 
-            <div class="recorte-2">
-                <label for="image" class="form-input">Imagen:</label>
-                <input type="file" name="image" id="image">
+            <div class="input-containet-create-edit-product">
+                <label for="image">Imagen:</label>
+                <input class="input-create-edit-form" type="file" name="image" id="image">
                 <span class="errorMsg" id="imageError"></span>
                 <% if (locals.errors && errors.image) { %>
                     <div>
@@ -63,11 +63,9 @@
                 <% } %>
             </div>
 
-
-
         </div>
 
-        <div>
+        <div class="create-edit-product-submit-button">
             <button type="submit">Guardar producto</button>
         </div>
     </form>
