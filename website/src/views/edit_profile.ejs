@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
+<head  >
     <%- include("partials/head", {title: "Formulario de edición"}) %>
     <script src="/js/editUser.js" defer></script>
 </head>
 <body>
 
     <!------------------------------------- HEADER ----------------------------------->
-    <header>
+    <header class="header-config header-c2 header-c3 header-c4 ">
         <%- include("partials/header") %>
     </header>
 
@@ -18,28 +18,28 @@
     <form action="/profile/<%= user.id %>?_method=put" method="post" id="editForm">
         <div>
 
-            <div class="recorte-2">
+            <div class="recorte-2 edit-na edit-dos">
                 <label for="name" class="form-input">Nombre del usuario:</label>
-                <input type="text" value="<%= user.name %>" id="name" name="name" placeholder="nombre">
+                <input class="type-c type-b"type="text" value="<%= user.name %>" id="name" name="name" placeholder="nombre">
                 <span class="errorMsg" id="nameError"></span>
             </div>
 
-            <div class="recorte-2">
+            <div class="recorte-2 edit-na edit-dos">
                 <label for="last_name" class="form-input">Apellido del usuario:</label>
-                <input type="text" value="<%= user.last_name %>" id="last_name" name="last_name" placeholder="apellido">
+                <input class="type-c type-b "type="text" value="<%= user.last_name %>" id="last_name" name="last_name" placeholder="apellido">
                 <span class="errorMsg" id="last_nameError"></span>
             </div>
             
         </div>
 
-        <div>
+        <div class="edit-buttom buttom-m">
             <button type="submit">Guardar usuario</button>
         </div>
     </form>
     <%- include("partials/burguerMenu") %>
 
     <!------------------------------------- FOOTER ----------------------------------->
-    <footer>
+    <footer class="footer-config footer-m footer-ed">
         <%- include("partials/footer") %>
     </footer>
 </body>

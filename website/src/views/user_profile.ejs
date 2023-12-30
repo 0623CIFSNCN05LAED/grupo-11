@@ -12,14 +12,14 @@
     <!------------------------------------- MAIN ----------------------------------->
     <main class="bg-rgst">
         
-                <div class="rgst-container"> 
+                <div class="rgst-container user-conteiner user-c "> 
 
-                    <div class="input-rgst profile-image">
+                    <div class="input-rgst profile-image form-g-image image-i ">
                         <img src="/images/usersProfile/<%=user.profile_picture %>">
                     </div>
 
-                    <div class="user-info">
-                        <div class="input-rgst">
+                    <div class="user-info user-mod global">
+                        <div class="input-rgst user-p ">
                             <div class="labels-rgst">
                                 <p>Nombre:</p>
                             </div>
@@ -27,16 +27,16 @@
                                 <%= user.name %>
                             </div>
                         </div>
-                        <div class="input-rgst">
-                            <div class="labels-rgst">
+                        <div class="input-rgst user-p ">
+                            <div class="labels-rgst ">
                                 <p>Apellido:</p>
                             </div>
                             <div class="box-rgstr-inpt">
                                 <%= user.last_name %>
                             </div>
                         </div>
-                        <div class="input-rgst">
-                            <div class="labels-rgst">
+                        <div class="input-rgst user-p ">
+                            <div class="labels-rgst ">
                                 <p>Email:</p>
                             </div>
                             <div class="box-rgstr-inpt">
@@ -45,10 +45,10 @@
                         </div>
                     </div>
                     <form class="form-rgst" method="post" action="/logout">
-                        <button class="input-rgst bt-mg" type="submit">Logout</button>
+                        <button class="input-rgst bt-mg input-l edit-l " type="submit">Logout</button>
                     </form>
                     <form class="form-rgst" method="get" action="/profile/<%= user.id %>/edit">
-                    <button class="input-rgst bt-mg" type="submit">Edit</button>
+                    <button class="input-rgst bt-mg input-e edit-e " type="submit">Edit</button>
                     </form>
                     <%- include("partials/burguerMenu") %>
                 </div>

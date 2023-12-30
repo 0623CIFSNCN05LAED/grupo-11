@@ -337,8 +337,9 @@ margin: 10px 0;
 }
 
 .user-info {
-    width: 30%;
+    width: 20%;
     text-align: center;
+    margin-right: 5px;
  }
 .labels-rgst{
     color:black;
@@ -619,6 +620,38 @@ button:hover {
     .borrar-producto-carrito{
         margin-top: 5px;
     }
+    .user-p{
+        width: 230%;
+       
+    }
+    .image-i{
+        margin-right: 150px;
+    }
+    .edit-buttom{
+        margin-top: 17px;
+       width:13px;
+    }
+    .edit-na{
+        margin-right: -50px;
+        font-size: 20px;
+       
+    }
+    .header-config{
+    
+        margin-left:-25px;
+        font-size: 18px;
+    
+    }
+  
+    .footer-m{
+        margin-right: -100px;
+    }
+    .type-b{
+        font-size: 18px;
+    }
+    
+  
+
 
     /* FOOTER */
     .social-network-icon {
@@ -658,22 +691,46 @@ button:hover {
     }
     
     .input-rgst {
-        margin-bottom: 1px;
+        margin-bottom: 5px;
+        
+    
     }
     .bt-mg{
-        margin-top: 5px;
+        margin-top: 10px;
+    
+        
     }
     .form-rgst {
-        width: 80%;
+        width: 50px;
         text-align: center;
+    
+        
      }
     .labels-rgst{
         color:white;
+  
     }
     .profile-image{
-        width: 10%;
+        width: 120px;
+        
     }
-
+    .edit-e{
+        margin-left: -20px;
+    }
+    .edit-l{
+       margin-left:-20px;
+     
+    }
+    .global{
+        margin-right: 230px;
+    }
+    .header-c2{
+        margin-right: 130px;
+    }
+    .header-c4{
+        margin-right: -30px;
+    }
+   
 }
 
 /* DESKTOP */
@@ -726,6 +783,54 @@ button:hover {
         width: 50%;
         text-align: center;
     }
+    .form-g-image{
+      margin-right: 200px;
+      margin-bottom: 80px;
+      
+    }
+    .user-mod{
+        margin-right: 260px;
+        margin-bottom: 80px;
+        width: 160px;
+    }
+    .input-l{
+        margin-right: 100px;
+        margin-left: -30px;
+        
+        
+    }
+    .input-e{
+        margin-right: 10px;
+        margin-left: -110px;
+        
+       
+    }
+    .header-c3{
+        margin-right:170px;
+    }
+    .footer-config{
+        margin-right: 190px;
+    }
+    .edit-dos{
+        font-size:18px;
+      
+       }
+    .type-c{
+        font-size: 15px;
+        padding:8px;
+       
+    }
+    .buttom-m{
+        padding:8px;
+    
+    }
+    .footer-ed{
+        margin-right:-50px;
+    }
+    .header-c4{
+        margin-right: 25px;
+    }
+   
 
     /* CARRITO */    
     .producto-en-carrito{
@@ -744,7 +849,7 @@ button:hover {
         width: 90%;
         padding: 0px;
     }
-
+    
     /* FOOTER */
     footer {
         font-size: 1.2rem;
