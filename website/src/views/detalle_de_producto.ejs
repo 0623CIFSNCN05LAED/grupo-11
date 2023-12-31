@@ -11,7 +11,7 @@
 
     <!------------------------------------- MAIN ----------------------------------->
     <main class="detalle_de_producto">
-        <section class="product-article">
+        <section class="product-article input-create-edit-form">
             <div class="product-image-price-container">
                 <a href="">
                     <img class="product-image" src="/images/products/<%= product.image %>" alt="Buzo">
@@ -47,13 +47,14 @@
                 
             <div>
                 <% if(locals.isLogged && locals.admin){ %>
-                    <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail">
-                        <button type="submit" class="agregar-al-carrito-detail">Eliminar</button>   
+                    <form action="/products/<%= product.id %>?_method=delete" method="POST" class="agregar-al-carrito-detail" style="margin: 2px;">
+                        <button type="submit" class="agregar-al-carrito-detail ">Eliminar</button>   
                     </form>
 
-                    <a class="agregar-al-carrito-detail " href="/products/<%= product.id %>/edit/">
-                        Edit
-                    </a>
+                    <form action="/products/<%= product.id %>/edit" method="get" class="agregar-al-carrito-detail" style="margin: 2px;">
+                        <button type="submit" class="agregar-al-carrito-detail">Editar</button>
+                    </form>
+
                 <% } %>
             </div>
 
