@@ -1,11 +1,10 @@
 function UsersItem({name}){
     return(
-        <button 
-        type="button"
+        <div 
         className="list-group-item list-group-item-action text-center"
         >
             {name} 
-        </button>
+        </div>
     )
 }
 

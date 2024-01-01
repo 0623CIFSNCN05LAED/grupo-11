@@ -1,11 +1,8 @@
 function ProductsItem({name}){
     return(
-        <button 
-        type="button"
-        className="list-group-item list-group-item-action text-center"
-        >
+        <div className="list-group-item list-group-item-action text-center">
             {name} 
-        </button>
+        </div>
     )
 }
 

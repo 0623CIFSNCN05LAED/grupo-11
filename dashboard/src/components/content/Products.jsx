@@ -20,10 +20,10 @@ function Products() {
         <section className="content" id="listaProductos">
             <h2 className="mt-3">Productos</h2>
             <div className="list-group shadow-sm p-3 mb-5 bg-body-tertiary rounded">
-                <button type="button" className="list-group-item list-group-item-action active text-center"
+                <div className="list-group-item list-group-item-action active text-center"
                     aria-current="true">
                     Listado de productos
-                </button>
+                </div>
                 {products.length === 0 ?
                     "Cargando..." :
                     products.map((product) => (
