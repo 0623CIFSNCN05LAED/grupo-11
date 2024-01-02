@@ -51,7 +51,6 @@ form.submit();
 });
       
 function inputValidation(validation, input, inputErrorMsg) {
-        
   if (!input.value) {       
     inputErrorMsg.innerText = "El campo no debe estar vacío";      
     inputErrorMsg.classList.add("display");     
@@ -66,4 +65,3 @@ function inputValidation(validation, input, inputErrorMsg) {
     inputErrorMsg.classList.remove("display");
     return true;
   };
-      

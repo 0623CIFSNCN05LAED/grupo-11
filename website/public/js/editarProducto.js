@@ -23,12 +23,12 @@ validations.forEach((validation) => {
   const inputErrorMsg = document.getElementById(inputId + "Error");
       
   function validate() {
-          console.log("input.value", input.value);
-          inputValidation(validation, input, inputErrorMsg);
-        }
-        input.addEventListener("blur", validate);
-        input.addEventListener("input", validate);
-      });
+    console.log("input.value", input.value);
+    inputValidation(validation, input, inputErrorMsg);
+  }
+    input.addEventListener("blur", validate);
+    input.addEventListener("input", validate);
+  });
 
       const form = document.getElementById("editForm");
 
@@ -55,15 +55,13 @@ function inputValidation(validation, input, inputErrorMsg) {
     inputErrorMsg.innerText = "El campo no debe estar vacío";      
     inputErrorMsg.classList.add("display");      
     return false;
-}     
+  }     
   if (!validation.check(input)) {
     inputErrorMsg.innerText = validation.message;
     inputErrorMsg.classList.add("display");
     return false;
-}
-      
+  }
   inputErrorMsg.innerText = "";
   inputErrorMsg.classList.remove("display");
   return true;
 };
-      

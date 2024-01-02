@@ -13,6 +13,7 @@ const router = Router()
 router.use('/api', apiRouter )
 
 router.get("/", mainController.home)
+router.post("/", mainController.redirect)
 
 // Export
 
