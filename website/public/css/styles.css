@@ -902,7 +902,7 @@ button:hover {
     } */
 
     .form-rgst{
-        width: 70%;
+        width: 100%;
         margin: auto;
     }
 
@@ -922,9 +922,9 @@ button:hover {
         width: 40%;
     }
 
-    .form-rgst{
+    /* .form-rgst{
         width: 10%;
-    }
+    } */
 
     .profile-button{
         width: auto;
