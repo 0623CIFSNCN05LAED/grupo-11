@@ -302,7 +302,7 @@ margin: 10px 0;
     /* margin: auto; */
     /* justify-content: space-evenly; */
     /* align-items: center; */
-    z-index: 100;
+    /* z-index: 100; */
     /* position: relative; */
     /* padding: 5rem; */
 }
@@ -334,15 +334,6 @@ margin: 10px 0;
     width: 100%;
 }
 
-.profile-image{
-    width: 10%;
-}
-
-.user-info {
-    width: 20%;
-    text-align: center;
-    margin-right: 5px;
- }
 .labels-rgst{
     color:black;
 }
@@ -358,6 +349,27 @@ margin: 10px 0;
 .form-rgst{
     display: flex;
     flex-wrap: wrap;
+}
+
+/*--------------------------------- PROFILE ---------------------------------*/
+
+.user-container{
+    width: 100%;
+}
+
+.profile-image-container{
+    width: 50%;
+    margin: auto;
+}
+
+.profile-image{
+    width: 100%;
+}
+
+.user-info {
+    width: 80%;
+    text-align: center;
+    margin: 20px auto;
 }
 
 /*--------------------------------- FOOTER ---------------------------------*/
@@ -649,11 +661,11 @@ button:hover {
         margin-top: 5px;
     }
     .user-p{
-        width: 230%;
+        /* width: 230%; */
     }
-    .image-i{
+    /* .image-i{
         margin-right: 150px;
-    }
+    } */
     .edit-buttom{
         margin-top: 17px;
         width:13px;
@@ -673,9 +685,6 @@ button:hover {
     .type-b{
         font-size: 18px;
     }
-    
-  
-
 
     /* CREATE PRODUCT FORM */
 
@@ -698,6 +707,9 @@ button:hover {
     .form-rgst{
         padding: 0 100px;
     }
+
+    /* PROFILE */
+    
 }
 
 @media (min-width: 1023px) {
@@ -705,20 +717,17 @@ button:hover {
         margin-top: 10px;
     }
 
-    .profile-image{
+    /* .profile-image{
         width: 120px;
         
-    }
-    .edit-e{
+    } */
+    /* .edit-e{
         margin-left: -20px;
-    }
-    .edit-l{
+    } */
+    /* .edit-l{
        margin-left:-20px;
      
-    }
-    .global{
-        margin-right: 230px;
-    }
+    } */
     .header-c2{
         margin-right: 130px;
     }
@@ -782,19 +791,14 @@ button:hover {
         width: 50%;
         text-align: center;
     }
-    .form-g-image{
+    /* .form-g-image{
         margin-right: 200px;
         margin-bottom: 80px;
-    }
-    .user-mod{
-        margin-right: 260px;
-        margin-bottom: 80px;
-        width: 160px;
-    }
-    .input-l{
+    } */
+    /* .input-l{
         margin-right: 100px;
         margin-left: -30px;
-    }
+    } */
     .input-e{
         margin-right: 10px;
         margin-left: -110px;
@@ -877,5 +881,25 @@ button:hover {
     .form-rgst{
         width: 70%;
         margin: auto;
+    }
+
+    /* PROFILE */
+    .user-container{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 100px;
+        justify-content: space-between;
+    }
+
+    .profile-image-container{
+        width: 20%;
+    }
+
+    .user-info{
+        width: 40%;
+    }
+
+    .form-rgst{
+        width: 10%;
     }
 }

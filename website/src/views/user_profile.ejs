@@ -12,13 +12,12 @@
     <!------------------------------------- MAIN ----------------------------------->
     <main class="bg-rgst">
         
-                <div class="rgst-container user-conteiner user-c "> 
-
-                    <div class="input-rgst profile-image form-g-image image-i ">
-                        <img src="/images/usersProfile/<%=user.profile_picture %>">
+                <div class="user-container"> 
+                    <div class="profile-image-container form-g-image image-i ">
+                        <img class="profile-image" src="/images/usersProfile/<%=user.profile_picture %>">
                     </div>
 
-                    <div class="user-info user-mod global">
+                    <div class="user-info">
                         <div class="input-rgst user-p ">
                             <div class="labels-rgst">
                                 <p>Nombre:</p>
@@ -27,6 +26,7 @@
                                 <%= user.name %>
                             </div>
                         </div>
+
                         <div class="input-rgst user-p ">
                             <div class="labels-rgst ">
                                 <p>Apellido:</p>
@@ -35,6 +35,7 @@
                                 <%= user.last_name %>
                             </div>
                         </div>
+
                         <div class="input-rgst user-p ">
                             <div class="labels-rgst ">
                                 <p>Email:</p>
@@ -43,13 +44,17 @@
                                 <%= user.email %>
                             </div>
                         </div>
+
                     </div>
+
                     <form class="form-rgst" method="post" action="/logout">
-                        <button class="input-rgst bt-mg input-l edit-l " type="submit">Logout</button>
+                        <button type="submit">Logout</button>
                     </form>
+
                     <form class="form-rgst" method="get" action="/profile/<%= user.id %>/edit">
-                    <button class="input-rgst bt-mg input-e edit-e " type="submit">Edit</button>
+                        <button type="submit">Edit</button>
                     </form>
+
                     <%- include("partials/burguerMenu") %>
                 </div>
     </main>
