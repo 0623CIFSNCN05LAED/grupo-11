@@ -7,7 +7,7 @@
 <body>
 
     <!------------------------------------- HEADER ----------------------------------->
-    <header class="header-config header-c2 header-c3 header-c4 ">
+    <header>
         <%- include("partials/header") %>
     </header>
 
@@ -15,31 +15,26 @@
         <h2 class="title">Editar usuario</h2>
     </div>
 
-    <form action="/profile/<%= user.id %>?_method=put" method="post" id="editForm">
-        <div>
+    <form class="edit-profile-form" action="/profile/<%= user.id %>?_method=put" method="post" id="editForm">
 
-            <div class="recorte-2 edit-na edit-dos">
-                <label for="name" class="form-input">Nombre del usuario:</label>
-                <input class="type-c type-b"type="text" value="<%= user.name %>" id="name" name="name" placeholder="nombre">
+            <div class="info-user-container">
+                <label for="name">Nombre del usuario:</label>
+                <input class="profile-edit-input" type="text" value="<%= user.name %>" id="name" name="name" placeholder="nombre">
                 <span class="errorMsg" id="nameError"></span>
             </div>
 
-            <div class="recorte-2 edit-na edit-dos">
-                <label for="last_name" class="form-input">Apellido del usuario:</label>
-                <input class="type-c type-b "type="text" value="<%= user.last_name %>" id="last_name" name="last_name" placeholder="apellido">
+            <div>
+                <label for="last_name">Apellido del usuario:</label>
+                <input class="profile-edit-input" type="text" value="<%= user.last_name %>" id="last_name" name="last_name" placeholder="apellido">
                 <span class="errorMsg" id="last_nameError"></span>
             </div>
-            
-        </div>
 
-        <div class="edit-buttom buttom-m">
-            <button type="submit">Guardar usuario</button>
-        </div>
+            <button class="edit-profile-button" type="submit">Guardar usuario</button>
     </form>
     <%- include("partials/burguerMenu") %>
 
     <!------------------------------------- FOOTER ----------------------------------->
-    <footer class="footer-config footer-m footer-ed">
+    <footer>
         <%- include("partials/footer") %>
     </footer>
 </body>

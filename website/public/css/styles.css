@@ -372,6 +372,11 @@ margin: 10px 0;
     margin: 20px auto;
 }
 
+.profile-button{
+    width: 80%;
+    margin: 10px auto;
+}
+
 /*--------------------------------- FOOTER ---------------------------------*/
 
 footer {
@@ -607,6 +612,22 @@ button:hover {
     width: 100%;
 }
 
+/*--------------------------------- EDIT PROFILE FORM ---------------------------------*/
+
+.edit-profile-form{
+    width: 90%;
+    margin: 20px auto;
+}
+
+.info-user-container{
+    margin: 15px 0;
+}
+
+.edit-profile-button{
+    width: 100%;
+    margin-top: 15px;
+}
+
 /*--------------------------------- MEDIA QUERIES ---------------------------------*/
 
 /* TABLET */
@@ -708,8 +729,10 @@ button:hover {
         padding: 0 100px;
     }
 
-    /* PROFILE */
-    
+    /* EDIT PROFILE FORM */
+    .edit-profile-form{
+        width: 80%;
+    }
 }
 
 @media (min-width: 1023px) {
@@ -901,5 +924,26 @@ button:hover {
 
     .form-rgst{
         width: 10%;
+    }
+
+    .profile-button{
+        width: auto;
+    }
+
+    /* EDIT PROFILE */
+    .edit-profile-form{
+        padding: 50px 0;
+    }
+
+    .info-user-container{
+        margin: 30px 0;
+    }
+
+    .edit-profile-button{
+        margin-top: 30px;
+    }
+
+    .profile-edit-input{
+        padding: 15px;
     }
 }

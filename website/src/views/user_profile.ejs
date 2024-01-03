@@ -48,11 +48,11 @@
                     </div>
 
                     <form class="form-rgst" method="post" action="/logout">
-                        <button type="submit">Logout</button>
+                        <button class="profile-button" type="submit">Logout</button>
                     </form>
 
                     <form class="form-rgst" method="get" action="/profile/<%= user.id %>/edit">
-                        <button type="submit">Edit</button>
+                        <button class="profile-button" type="submit">Edit</button>
                     </form>
 
                     <%- include("partials/burguerMenu") %>
